@@ -1,0 +1,266 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background: #ffff;
+}
+
+.btn {
+  background: linear-gradient(275.14deg, #059cc5 -31.5%, #c971ff 117.14%);
+  padding: 10px 12px !important;
+  color: white;
+  border-radius: 12px;
+  height: fit-content;
+  transition: all 0.5s ease-in-out !important;
+}
+
+.btn:hover {
+  background: linear-gradient(275.14deg, #c971ff -31.5%, #059cc5 117.14%);
+}
+
+.tabbtn:hover {
+  background: rgb(213, 236, 244);
+  zoom: 105%;
+  border: none;
+}
+
+.btnNonActive {
+  padding: 10px 12px !important;
+  color: black;
+  border-radius: 12px;
+  height: fit-content;
+  border: 1px solid lightgray;
+}
+
+.swipeToLeft {
+  animation: animatSwipeLeft 0.5s ease-in;
+}
+
+@keyframes animatSwipeLeft {
+  0% {
+    right: -100%;
+  }
+
+  100% {
+    right: 0%;
+  }
+}
+
+.swipeToRight {
+  animation: animatSwipeRight 0.5s ease-in;
+}
+
+@keyframes animatSwipeRight {
+  0% {
+    right: 0;
+  }
+
+  100% {
+    right: -100%;
+  }
+}
+
+/* .animate-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+} */
+.animate-text span.text-in {
+  display: inline-block;
+  animation: flipInX 0.75s linear;
+}
+.animate-text span::after {
+  content: "";
+  position: absolute;
+}
+.animate-text span {
+  display: inline-block;
+  position: relative;
+  display: none;
+}
+
+/* .bgHero {
+  background-image: url("../assets/bgHero.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+} */
+
+.techSlideData {
+  display: flex !important;
+  justify-content: center;
+}
+
+li.slick-active button:before {
+  color: #059cc5 !important;
+}
+
+.slick-dots li button:before {
+  font-size: 14px !important;
+  color: #059cc5 !important;
+}
+
+.zoom {
+  transition: transform 0.2s; /* Animation */
+}
+
+.zoom:hover {
+  transform: scale(
+    1.2
+  ); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
+}
+
+@media only screen and (max-width: 768px) {
+  .slick-dots li button:before {
+    font-size: 10px !important;
+  }
+}
+
+.slide-btn {
+  width: 50px !important;
+  z-index: 10 !important;
+}
+
+.slick-next {
+  right: -60px !important;
+}
+
+.slick-prev {
+  left: -60px !important;
+}
+
+@media only screen and (max-width: 900px) {
+  .slide-btn {
+    width: 40px !important;
+  }
+
+  .slick-next {
+    right: -0 !important;
+  }
+
+  .slick-prev {
+    left: -0 !important;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .slide-btn {
+    width: 35px !important;
+  }
+
+  .slick-next {
+    right: 5px !important;
+  }
+
+  .slick-prev {
+    left: 5px !important;
+  }
+}
+
+.flex {
+  display: flex !important;
+}
+
+.slick-prev:before {
+  content: "" !important;
+}
+
+.slick-next:before {
+  content: "" !important;
+}
+
+/* Initially hide the scrollbar */
+.priceList::-webkit-scrollbar {
+  width: 0px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Show scrollbar on hover */
+.priceList:hover::-webkit-scrollbar {
+  width: 6px;
+  opacity: 1;
+}
+
+/* Customize the scrollbar track */
+.priceList::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Customize the scrollbar thumb */
+.priceList::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+/* Add hover effect to the thumb */
+.priceList:hover::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.aboutInfo {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .aboutInfo {
+    display: flex;
+  }
+  /* .my-iframe {
+    width: 400px !important;
+    height: 300px !important;
+  } */
+  .my-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    transform: scale(0.8); /* Adjust the scale factor */
+    transform-origin: top left; /* Set the origin for scaling */
+  }
+}
+
+.testimonials
+  > .slick-slider
+  > .slick-list
+  > .slick-track
+  > .slick-slide
+  > div {
+  display: flex !important;
+  justify-content: center !important;
+}
+
+/* animations  */
+
+.fadeIn-animation {
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.roboUpAndDown {
+  animation: roboPulse 3s ease-in-out infinite;
+}
+
+@keyframes roboPulse {
+  0% {
+    transform: translateY(16px);
+  }
+
+  50% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(16px);
+  }
+}
