@@ -87,7 +87,7 @@ import WebM6 from "@/assets/chart6.webp";
 
 import SMM1 from "@/assets/smm/smm1.jpg";
 import SMM2 from "@/assets/smm/smm2.png";
-import SMM3 from "@/assets/smm/smm3.png";
+// import SMM3 from "@/assets/smm/smm3.png";
 import SMM4 from "@/assets/smm/smm4.png";
 import SMM5 from "@/assets/smm/smm5.png";
 import SMM6 from "@/assets/smm/smm6.png";
@@ -602,7 +602,7 @@ export const galleryData = [
   {
     id: 81,
     category: "SMM",
-    imageUrl: SMM3,
+    imageUrl: SMM2,
   },
   {
     id: 82,
