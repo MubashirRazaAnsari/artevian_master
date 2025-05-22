@@ -166,7 +166,7 @@ export const pricingData = [
       { text: "100% Unique Design Guarantee", included: true },
       { text: "Money Back Guarantee", included: true },
       {
-        text: "<strong>Automated Inventory/Shipping/Supplier Module",
+        text: "Automated Inventory/Shipping/Supplier Module",
         included: true,
       },
       {
@@ -260,14 +260,14 @@ export const pricingData = [
       { text: "Account Management", included: true },
       { text: "Event Integration", included: true },
       { text: "Advanced Data Security", included: true },
-      { text: "<strong>Purchase Orders</strong>", included: true },
+      { text: "Purchase Orders", included: true },
       {
         text: "With integrated purchase orders, you can easily replenish your inventory levels by ordering more stock and even track when those new items will arrive.",
         included: true,
       },
       { text: "Partial orders fulfill", included: true },
       { text: "Backordering", included: true },
-      { text: "<strong>Financial Reports</strong>", included: true },
+      { text: "Financial Reports", included: true },
       {
         text: "Generate extremely detailed reports for your inventory, sales and services. Filter your reports by date-range and category to see what’s making you the most money.",
         included: true,
@@ -560,7 +560,7 @@ export const pricingData = [
 
       { text: "Complete Deployment ", included: true },
 
-      { text: "<b>Value Added Services</b>", included: true },
+      { text: "Value Added Services", included: true },
       { text: "Dedicated Project Manager ", included: true },
 
       { text: "100% Ownership Rights ", included: true },
@@ -629,7 +629,7 @@ export const pricingData = [
 
       { text: "Complete Deployment", included: true },
 
-      { text: "<b>Value Added Services</b>", included: true },
+      { text: "Value Added Services", included: true },
 
       { text: "Dedicated Project Manager", included: true },
 
