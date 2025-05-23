@@ -22,14 +22,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <SpeedInsights>
-        <head>
-          <script
-            src="https://website-widgets.pages.dev/dist/sienna.min.js"
-            defer
-          ></script>
-        </head>
-        <body className={inter.className}>
+      <head>
+        <script
+          src="https://website-widgets.pages.dev/dist/sienna.min.js"
+          defer
+        ></script>
+      </head>
+      <body className={inter.className}>
+        <SpeedInsights>
           <Navbar />
           {children}
           <Footer />
@@ -55,8 +55,8 @@ s0.parentNode.insertBefore(s1,s0);
             strategy="afterInteractive"
             defer
           />
-        </body>
-      </SpeedInsights>
+        </SpeedInsights>
+      </body>
     </html>
   );
 }
