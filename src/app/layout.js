@@ -7,7 +7,6 @@ import Footer from "@/Components/Footer";
 import "aos/dist/aos.css";
 import AOSInit from "@/config/Aos";
 import Script from "next/script";
-import { SpeedInsights } from "@vercel/speed-insights/next";
 
 const inter = Poppins({
   subsets: ["latin"],
@@ -29,16 +28,15 @@ export default function RootLayout({ children }) {
         ></script>
       </head>
       <body className={inter.className}>
-        <SpeedInsights>
-          <Navbar />
-          {children}
-          <Footer />
-          <AOSInit />
-          <Script
-            id="tawk-to"
-            strategy="afterInteractive"
-            dangerouslySetInnerHTML={{
-              __html: `var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        <Navbar />
+        {children}
+        <Footer />
+        <AOSInit />
+        <Script
+          id="tawk-to"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
 (function(){
 var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
 s1.async=true;
@@ -48,14 +46,13 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();
 `,
-            }}
-          />
-          <Script
-            src="https://website-widgets.pages.dev/dist/sienna.min.js"
-            strategy="afterInteractive"
-            defer
-          />
-        </SpeedInsights>
+          }}
+        />
+        <Script
+          src="https://website-widgets.pages.dev/dist/sienna.min.js"
+          strategy="afterInteractive"
+          defer
+        />
       </body>
     </html>
   );
