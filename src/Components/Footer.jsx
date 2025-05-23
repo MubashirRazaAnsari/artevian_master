@@ -32,7 +32,7 @@ const Footer = () => {
             <div>
               <h4 className="font-bold text-xl">Give Us a Call</h4>
               <h1 className="text-3xl font-bold text-primary mt-3">
-                <Link href="tel:+17195173486">+1 719 517 3486</Link>
+                <Link href="tel:+17207732616">+1 720 773 2616</Link>
               </h1>
             </div>
           </div>
@@ -101,7 +101,7 @@ const Footer = () => {
                 <span>
                   <FaPhone color="#059cc5" size={24} />
                 </span>{" "}
-                <Link href="tel:+17195173486">+1 719 517 3486</Link>
+                <Link href="tel:+17207732616">+1 720 773 2616</Link>
               </li>
             </ul>
           </div>

@@ -36,8 +36,8 @@ const ContactInfo = () => {
               alt="location icon"
               className="w-6 object-contain"
             />{" "}
-            <Link href="tel:+17195173486" className="text-gray-500">
-              +1 719 517 3486
+            <Link href="tel:+17207732616" className="text-gray-500">
+              +1 720 773 2616
             </Link>
           </li>
           <li className="flex items-center gap-3">
