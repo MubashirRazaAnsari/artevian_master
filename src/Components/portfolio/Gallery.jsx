@@ -430,6 +430,7 @@ const Gallery = ({ selectedPortfolio }) => {
                       <motion.div
                         className="relative w-full h-[300px] overflow-hidden"
                         initial="initial"
+                        loading="lazy"
                         animate={isHovered === item.id ? "hover" : "initial"}
                         variants={getCategoryAnimation(item.category)}
                       >

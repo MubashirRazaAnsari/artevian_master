@@ -44,7 +44,7 @@ const BusinessCounter = () => {
     >
       <div className="container lg:w-[90%] w-full flex justify-between items-center">
         <div className="text-white w-full border-r-2 border-white px-0.5">
-          <h1 className="lg:text-5xl sm:text-4xl text-2xl font-bold text-center w-full">
+          <h1 className="lg:text-5xl sm:text-2xl text-xl font-bold text-center w-full">
             {projects}+
           </h1>
           <p className="text-center lg:text-xl text-xs md:text-lg">
@@ -52,7 +52,7 @@ const BusinessCounter = () => {
           </p>
         </div>
         <div className="text-white w-full border-r-2 border-white px-0.5">
-          <h1 className="lg:text-5xl sm:text-4xl text-2xl font-bold text-center w-full">
+          <h1 className="lg:text-5xl sm:text-2xl text-xl font-bold text-center w-full">
             {reviews}+
           </h1>
           <p className="text-center lg:text-xl text-xs md:text-lg">

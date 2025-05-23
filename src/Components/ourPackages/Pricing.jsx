@@ -6,6 +6,8 @@ import { Check } from "lucide-react";
 import { categories, pricingData } from "/data/pricing";
 import { usePathname } from "next/navigation";
 import CheckoutButton from "../CheckoutButton";
+import Link from "next/link";
+
 
 const Pricing = ({ initialActiveTab }) => {
   const [selectedCategory, setSelectedCategory] = useState(
@@ -175,12 +177,11 @@ const Pricing = ({ initialActiveTab }) => {
               Can't find a plan that fits your needs? Let's craft something
               unique for your business.
             </p>
-            <a
-              href="/contact"
-              className="w-1/4 mx-auto mt-auto inline-block text-center bg-white text-purple-600 font-semibold py-3 rounded-lg hover:bg-gray-100 transition"
-            >
-              Contact Us
-            </a>
+            <div className="flex justify-center mt-6 mb-7">
+              <Link href="/contact">
+                <button className="btn">Contact Now</button>
+              </Link>
+            </div>
           </motion.div>
         </AnimatePresence>
       </div>
