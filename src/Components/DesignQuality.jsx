@@ -8,7 +8,11 @@ const DesignQuality = () => {
   return (
     <div className="w-full flex justify-center items-center px-4 lg:py-16 py-8 bg-[#F7F7FA]">
       <div className="container lg:w-[90%] w-full">
-        <h1 className="text-center text-gray-900 font-bold lg:text-6xl sm:text-4xl text-3xl xl:px-64 lg:px-36 px-0">
+        <h1
+          className="text-gray-900 font-bold text-center 
+                 text-xl sm:text-2xl md:text-3xl lg:text-6xl 
+                 leading-snug md:leading-normal"
+        >
           Digitally Focused <span className="text-primary">Quality Design</span>{" "}
           Services
         </h1>

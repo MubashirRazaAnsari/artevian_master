@@ -49,13 +49,6 @@ export default function Home() {
     },
   };
 
-  // Function to reset popup state for testing
-  const resetPopupState = () => {
-    safeLocalStorage.removeItem("artevian_popup_shown");
-    safeLocalStorage.removeItem("artevian_user_interacted");
-    setShowPopup(false);
-  };
-
   useEffect(() => {
     const shown = safeLocalStorage.getItem("artevian_popup_shown");
     const hasInteracted = safeLocalStorage.getItem("artevian_user_interacted");

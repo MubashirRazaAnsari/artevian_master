@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 const ContactPopUp = ({ onClose }) => {
   const [formData, setFormData] = useState({
@@ -11,6 +11,15 @@ const ContactPopUp = ({ onClose }) => {
   });
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState(null);
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsVisible(true);
+    }, 5000);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -60,19 +69,24 @@ const ContactPopUp = ({ onClose }) => {
   };
 
   return (
-    <div className="bg-my-gradient px-4 lg:py-10 py-5 rounded-2xl">
-      <div className="container xl:w-[80%] lg:w-[90%] w-full mx-auto">
-        <button
-          onClick={onClose}
-          className="absolute top-2 right-2 text-gray-500 hover:text-red-500"
-        >
-          ✕
+    <div
+      className={`fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-300 ${
+        isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+      }`}
+    >
+      <div
+        className="absolute inset-0 bg-black bg-opacity-50"
+        onClick={onClose}
+      ></div>
+      <div className="relative bg-my-gradient px-4 lg:py-10 py-5 rounded-2xl w-[95%] sm:w-[90%] md:w-[85%] lg:w-[65%] xl:w-[55%] max-w-3xl mx-auto">
+        <button onClick={onClose} className="font-bold ml-1">
+          X
         </button>
         <div className="text-center">
-          <h4 className="text-3xl font-bold text-white text-center">
+          <h4 className="text-2xl sm:text-3xl font-bold text-white text-center">
             Get In Touch
           </h4>
-          <p className="font-light text-white text-center mt-6">
+          <p className="font-light text-white text-center mt-4 sm:mt-6 text-sm sm:text-base">
             Ready to elevate your brand with Artevian? Contact us today to
             explore our digital marketing, web development, Mobile App
             development, Logo Design, Branding, Illustration and Animation
@@ -88,9 +102,12 @@ const ContactPopUp = ({ onClose }) => {
           </div>
         )}
         <form onSubmit={handleSubmit}>
-          <div className="text-white grid grid-cols-12 lg:gap-6 gap-3 mt-10">
+          <div className="text-white grid grid-cols-12 lg:gap-6 gap-3 mt-6 sm:mt-10">
             <div className="sm:col-span-6 col-span-12 flex flex-col gap-0.5">
-              <label htmlFor="firstName" className="my-2">
+              <label
+                htmlFor="firstName"
+                className="my-1 sm:my-2 text-sm sm:text-base"
+              >
                 First Name
               </label>
               <input
@@ -100,12 +117,15 @@ const ContactPopUp = ({ onClose }) => {
                 id="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                className="w-full bg-white text-gray-500 p-3 rounded-lg text-lg outline-none border-none"
+                className="w-full bg-white text-gray-500 p-2 sm:p-3 rounded-lg text-base sm:text-lg outline-none border-none"
                 disabled={loading}
               />
             </div>
             <div className="sm:col-span-6 col-span-12 flex flex-col gap-0.5">
-              <label htmlFor="lastName" className="my-2">
+              <label
+                htmlFor="lastName"
+                className="my-1 sm:my-2 text-sm sm:text-base"
+              >
                 Last Name
               </label>
               <input
@@ -115,12 +135,15 @@ const ContactPopUp = ({ onClose }) => {
                 id="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
-                className="w-full bg-white text-gray-500 p-3 rounded-lg text-lg outline-none border-none"
+                className="w-full bg-white text-gray-500 p-2 sm:p-3 rounded-lg text-base sm:text-lg outline-none border-none"
                 disabled={loading}
               />
             </div>
             <div className="col-span-12 flex flex-col gap-0.5">
-              <label htmlFor="phone" className="my-2">
+              <label
+                htmlFor="phone"
+                className="my-1 sm:my-2 text-sm sm:text-base"
+              >
                 Phone
               </label>
               <input
@@ -130,12 +153,15 @@ const ContactPopUp = ({ onClose }) => {
                 id="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full bg-white text-gray-500 p-3 rounded-lg text-lg outline-none border-none"
+                className="w-full bg-white text-gray-500 p-2 sm:p-3 rounded-lg text-base sm:text-lg outline-none border-none"
                 disabled={loading}
               />
             </div>
             <div className="col-span-12 flex flex-col gap-0.5">
-              <label htmlFor="email" className="my-2">
+              <label
+                htmlFor="email"
+                className="my-1 sm:my-2 text-sm sm:text-base"
+              >
                 Email
               </label>
               <input
@@ -145,12 +171,15 @@ const ContactPopUp = ({ onClose }) => {
                 id="email"
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full bg-white text-gray-500 p-3 rounded-lg text-lg outline-none border-none"
+                className="w-full bg-white text-gray-500 p-2 sm:p-3 rounded-lg text-base sm:text-lg outline-none border-none"
                 disabled={loading}
               />
             </div>
             <div className="col-span-12 flex flex-col gap-0.5">
-              <label htmlFor="message" className="my-2">
+              <label
+                htmlFor="message"
+                className="my-1 sm:my-2 text-sm sm:text-base"
+              >
                 Inquiry
               </label>
               <textarea
@@ -158,8 +187,8 @@ const ContactPopUp = ({ onClose }) => {
                 id="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="w-full bg-white text-gray-500 p-3 rounded-lg text-lg outline-none border-none"
-                rows="5"
+                className="w-full bg-white text-gray-500 p-2 sm:p-3 rounded-lg text-base sm:text-lg outline-none border-none"
+                rows="4"
                 disabled={loading}
               ></textarea>
             </div>
@@ -167,7 +196,7 @@ const ContactPopUp = ({ onClose }) => {
           <div className="flex justify-center items-center">
             <button
               type="submit"
-              className="btn lg:mt-10 mt-5"
+              className="btn lg:mt-10 mt-5 text-sm sm:text-base px-4 sm:px-6 py-2 sm:py-3"
               disabled={loading}
             >
               {loading ? "Sending..." : "Send Message"}

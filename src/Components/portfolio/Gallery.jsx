@@ -32,6 +32,9 @@ const Gallery = ({ selectedPortfolio }) => {
     if (category === "Video Editing") {
       return "video";
     }
+    if (category === "Mobile Apps") {
+      return "mobile-app";
+    }
     return category
       .toLowerCase()
       .replace(/[&]/g, "and") // Replace & with "and" for other categories
@@ -89,26 +92,33 @@ const Gallery = ({ selectedPortfolio }) => {
             },
           },
         };
+
       case "Mobile Apps":
         return {
+          initial: { scale: 1 },
           hover: {
             scale: 1.1,
-            rotate: [0, 5, -5, 0],
-            transition: { duration: 0.3 },
-          },
-        };
-      case "Branding":
-        return {
-          hover: {
-            scale: 1.1,
-            filter: ["hue-rotate(0deg)", "hue-rotate(360deg)"],
+            rotate: [0, 2, -2, 0],
             transition: {
-              duration: 1,
-              repeat: Infinity,
-              ease: "linear",
+              duration: 0.5,
+              ease: "easeInOut",
             },
           },
         };
+
+      case "Branding":
+        return {
+          initial: { scale: 1 },
+          hover: {
+            scale: 1.08,
+            filter: ["brightness(1)", "brightness(1.2)"],
+            transition: {
+              duration: 0.4,
+              ease: "easeInOut",
+            },
+          },
+        };
+
       case "Video Editing":
         return {
           initial: { scale: 1 },
@@ -116,9 +126,11 @@ const Gallery = ({ selectedPortfolio }) => {
             scale: 1.05,
             transition: {
               duration: 0.3,
+              ease: "easeOut",
             },
           },
         };
+
       case "2D/3D Animation":
         return {
           initial: { scale: 1 },
@@ -126,11 +138,94 @@ const Gallery = ({ selectedPortfolio }) => {
             scale: 1.05,
             transition: {
               duration: 0.3,
+              ease: "easeOut",
             },
           },
         };
+
+      case "Logo":
+        return {
+          initial: { scale: 1 },
+          hover: {
+            scale: 1.1,
+            transition: {
+              duration: 0.4,
+              ease: "easeOut",
+            },
+          },
+        };
+
+      case "SEO":
+        return {
+          initial: { scale: 1 },
+          hover: {
+            scale: 1.05,
+            transition: {
+              duration: 0.3,
+              ease: "easeOut",
+            },
+          },
+        };
+
+      case "Art & Illustration":
+        return {
+          initial: { scale: 1 },
+          hover: {
+            scale: 1.08,
+            transition: {
+              duration: 0.4,
+              ease: "easeOut",
+            },
+          },
+        };
+
+      case "Digital Marketing":
+        return {
+          initial: { scale: 1 },
+          hover: {
+            scale: 1.05,
+            transition: {
+              duration: 0.3,
+              ease: "easeOut",
+            },
+          },
+        };
+
+      case "SMM":
+        return {
+          initial: { scale: 1 },
+          hover: {
+            scale: 1.08,
+            transition: {
+              duration: 0.4,
+              ease: "easeOut",
+            },
+          },
+        };
+
+      case "Website Maintenance":
+        return {
+          initial: { scale: 1 },
+          hover: {
+            scale: 1.05,
+            transition: {
+              duration: 0.3,
+              ease: "easeOut",
+            },
+          },
+        };
+
       default:
-        return {};
+        return {
+          initial: { scale: 1 },
+          hover: {
+            scale: 1.05,
+            transition: {
+              duration: 0.3,
+              ease: "easeOut",
+            },
+          },
+        };
     }
   };
 
@@ -182,34 +277,67 @@ const Gallery = ({ selectedPortfolio }) => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6"
+              className={`grid ${
+                selectedCategory === "Mobile Apps"
+                  ? "grid-cols-1 md:grid-cols-2"
+                  : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
+              } gap-6 md:gap-8`}
             >
               {galleryData
                 .filter((item) => item.category === selectedCategory)
                 .map((item) => (
                   <motion.div
                     key={item.id}
-                    className={
+                    className={`relative overflow-hidden rounded-xl ${
                       selectedCategory === "Mobile Apps"
-                        ? `relative overflow-hidden rounded-xl backdrop-blur-sm`
-                        : `relative overflow-hidden rounded-xl bg-purple-800/20 backdrop-blur-sm`
-                    }
+                        ? "bg-transparent"
+                        : "bg-purple-800/20 backdrop-blur-sm"
+                    } shadow-lg hover:shadow-xl transition-shadow duration-300`}
                     onHoverStart={() => setIsHovered(item.id)}
                     onHoverEnd={() => setIsHovered(null)}
                   >
                     {item.category === "Mobile Apps" ? (
-                      // 📱 Mobile Mockup
-                      <div className="relative w-72 h-[500px] bg-black rounded-[2rem] border-[10px] border-gray-800 overflow-hidden mx-auto shadow-lg">
-                        <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-24 h-3 bg-gray-700 rounded-b-lg z-10" />
-                        <div className="relative w-full h-full">
-                          <Image
-                            src={item.imageUrl}
-                            alt={item.title}
-                            width={500}
-                            height={500}
-                            className="object-cover w-full h-full"
-                          />
-                        </div>
+                      // 📱 Multiple Mobile Mockups
+                      <div className="flex flex-row items-center justify-center gap-4 p-6">
+                        {[0, 1, 2].map((index) => (
+                          <div
+                            key={index}
+                            className="relative w-40 h-[350px] bg-black rounded-[2rem] border-[8px] border-gray-800 overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300"
+                          >
+                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-12 h-2 bg-gray-700 rounded-b-lg z-10" />
+                            <div className="relative w-full h-full">
+                              <Image
+                                src={
+                                  item.mockupImages?.[index] || item.imageUrl
+                                }
+                                alt={`${item.title} - Mockup ${index + 1}`}
+                                fill
+                                className="object-fill w-full h-full"
+                                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                              />
+                            </div>
+                          </div>
+                        ))}
+                        <motion.div
+                          initial={{ opacity: 0, y: 20 }}
+                          animate={{
+                            opacity: isHovered === item.id ? 1 : 0,
+                            y: isHovered === item.id ? 0 : 20,
+                          }}
+                          transition={{ duration: 0.3 }}
+                          className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
+                        >
+                          {item.title && (
+                            <h3 className="text-xl font-bold text-white mb-2">
+                              {item.title}
+                            </h3>
+                          )}
+                          {item.description && (
+                            <p className="text-gray-200 text-sm">
+                              {item.description}
+                            </p>
+                          )}
+                        </motion.div>
                       </div>
                     ) : item.category === "Website Design" ? (
                       // 🖥️ Website Scroll-Up Image
@@ -287,8 +415,9 @@ const Gallery = ({ selectedPortfolio }) => {
                         </motion.div>
                       </div>
                     ) : (
+                      // Default Image Display
                       <motion.div
-                        className="aspect-video relative overflow-hidden"
+                        className="relative w-full h-[300px] overflow-hidden"
                         initial="initial"
                         animate={isHovered === item.id ? "hover" : "initial"}
                         variants={getCategoryAnimation(item.category)}
@@ -296,9 +425,9 @@ const Gallery = ({ selectedPortfolio }) => {
                         <Image
                           src={item.imageUrl}
                           alt={item.title}
-                          width={500}
-                          height={500}
-                          className="object-fill w-full h-full"
+                          fill
+                          className="object-cover"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                         />
                       </motion.div>
                     )}
@@ -310,21 +439,18 @@ const Gallery = ({ selectedPortfolio }) => {
                         opacity: isHovered === item.id ? 1 : 0,
                         y: isHovered === item.id ? 0 : 20,
                       }}
+                      transition={{ duration: 0.3 }}
                       className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
                     >
-                      {item.title ? (
+                      {item.title && (
                         <h3 className="text-xl font-bold text-white mb-2">
-                          {" "}
-                          {item.title}{" "}
+                          {item.title}
                         </h3>
-                      ) : (
-                        ""
                       )}
-
-                      {item.description ? (
-                        <p className="text-gray-200">{item.description}</p>
-                      ) : (
-                        ""
+                      {item.description && (
+                        <p className="text-gray-200 text-sm">
+                          {item.description}
+                        </p>
                       )}
                     </motion.div>
                   </motion.div>

@@ -1055,7 +1055,7 @@ export const pricingData = [
     stripePriceId: "price_1RRKvQEETLRAdxomuKckDzSr",
     features: [
       { text: "1 Unique Design", included: true },
-      { text: "6 DEsign concepts", included: true },
+      { text: "6 Design concepts", included: true },
       { text: "Desdicated Designers", included: true },
       { text: "Dedicated Account Manager", included: true },
       { text: "Unlimited Revisions", included: true },
@@ -1839,10 +1839,10 @@ export const pricingData = [
   },
   {
     id: 36,
-    name: "STARTER",
+    name: "STARTER (1 Year)",
     category: "Website Maintenance",
-    price: 49.0,
-    originalPrice: 98.0,
+    price: 588.0,
+    originalPrice: 998.0,
     stripePriceId: "price_1RRL4SEETLRAdxomPQar7F8r",
     features: [
       { text: " Making updates on the current features", included: true },
@@ -1863,10 +1863,10 @@ export const pricingData = [
   },
   {
     id: 37,
-    name: "PROFESSIONAL",
+    name: "PROFESSIONAL (3 Years)",
     category: "Website Maintenance",
-    price: 69.0,
-    originalPrice: 1298.0,
+    price: 1296.0,
+    originalPrice: 2298.0,
     stripePriceId: "price_1RRL5HEETLRAdxomueGnQXHA",
     features: [
       { text: " Making updates on the current features", included: true },
@@ -1898,9 +1898,9 @@ export const pricingData = [
   },
   {
     id: 38,
-    name: "ADVANCED",
+    name: "ADVANCED (5 Years)",
     category: "Website Maintenance",
-    price: 149.0,
+    price: 1440.0,
     originalPrice: 2799.0,
     stripePriceId: "price_1RRL5qEETLRAdxomrM0YSeov",
     features: [
@@ -2192,7 +2192,7 @@ export const pricingData = [
   },
   {
     id: 49,
-    name: "App Lite (MVP) ",
+    name: "App Lite Web App ",
     category: "Mobile Apps",
     price: 1499.0,
     originalPrice: 2050.0,
@@ -2217,8 +2217,8 @@ export const pricingData = [
         included: true,
       },
 
-      { text: "Launch assistance on Play Store or App Store", included: true },
-      { text: "Timeline: 2–3 weeks", included: true },
+      // { text: "Launch assistance on Play Store or App Store", included: true },
+      // { text: "Timeline: 2–3 weeks", included: true },
     ],
   },
   {
@@ -2251,9 +2251,9 @@ export const pricingData = [
         included: true,
       },
 
-      { text: "2 rounds of revisions", included: true },
-      { text: "Launch support", included: true },
-      { text: "Timeline: 3–5 weeks", included: true },
+      { text: "Unlimited revision rounds", included: true },
+      // { text: "Launch support", included: true },
+      // { text: "Timeline: 3–5 weeks", included: true },
     ],
   },
   {
@@ -2291,8 +2291,8 @@ export const pricingData = [
         text: "Push notifications, API integration, basic analytics",
         included: true,
       },
-      { text: "3 revision rounds", included: true },
-      { text: "Timeline: 6–8 weeks", included: true },
+      { text: "Unlimited revision rounds", included: true },
+      // { text: "Timeline: 6–8 weeks", included: true },
     ],
   },
   {
@@ -2333,8 +2333,8 @@ export const pricingData = [
         text: "User login and profile features",
         included: true,
       },
-      { text: "4 revision rounds", included: true },
-      { text: "Timeline: 8–10 weeks", included: true },
+      { text: "Unlimited revision rounds", included: true },
+      // { text: "Timeline: 8–10 weeks", included: true },
     ],
   },
   {
@@ -2376,7 +2376,7 @@ export const pricingData = [
         included: true,
       },
       { text: "Dedicated project manager & dev team", included: true },
-      { text: "Timeline: 10–14 weeks", included: true },
+      // { text: "Timeline: 10–14 weeks", included: true },
     ],
   },
   {
@@ -2549,7 +2549,7 @@ export const pricingData = [
         included: true,
       },
       {
-        text: "12 custom posts per month (graphics + captions)",
+        text: "16 custom posts per month (graphics + captions)",
         included: true,
       },
       { text: "Basic content calendar", included: true },
@@ -2574,7 +2574,7 @@ export const pricingData = [
         included: true,
       },
       {
-        text: "20 custom posts per month (graphics + captions)",
+        text: "24 custom posts per month (graphics + captions)",
         included: true,
       },
       { text: "4 short-form videos or reels per month", included: true },
@@ -2600,7 +2600,7 @@ export const pricingData = [
         included: true,
       },
       {
-        text: "24 custom posts per month (graphics + captions)",
+        text: "36 custom posts per month (graphics + captions)",
         included: true,
       },
       { text: "6 short-form videos or reels per month", included: true },
@@ -2637,7 +2637,7 @@ export const pricingData = [
         included: true,
       },
       {
-        text: "30+ custom posts per month (graphics + captions)",
+        text: "40+ custom posts per month (graphics + captions)",
         included: true,
       },
       { text: "8 short-form videos or reels per month", included: true },

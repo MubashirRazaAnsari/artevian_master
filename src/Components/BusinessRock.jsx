@@ -9,7 +9,11 @@ const BusinessRock = () => {
     <div className="flex justify-center items-center px-4">
       <div className="container">
         <div className="w-full my-10 lg:py-20 md:py-16 py-8 bg-[#F7F7FA] rounded-lg relative">
-          <h1 className="text-center text-gray-900 font-bold lg:text-6xl sm:text-4xl xl:px-64 lg:px-36 px-0 text-3xl">
+          <h1
+            className="text-gray-900 font-bold text-center 
+                 text-xl sm:text-2xl md:text-3xl lg:text-6xl 
+                 leading-snug md:leading-normal"
+          >
             Our Digital Products will make your{" "}
             <span className="text-primary">Business Rock!</span>
           </h1>

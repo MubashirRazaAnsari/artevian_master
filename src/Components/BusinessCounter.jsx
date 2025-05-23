@@ -47,7 +47,7 @@ const BusinessCounter = () => {
           <h1 className="lg:text-5xl sm:text-4xl text-2xl font-bold text-center w-full">
             {projects}+
           </h1>
-          <p className="text-center lg:text-xl text-xs">
+          <p className="text-center lg:text-xl text-xs md:text-lg">
             Projects completed successfully
           </p>
         </div>
@@ -55,7 +55,7 @@ const BusinessCounter = () => {
           <h1 className="lg:text-5xl sm:text-4xl text-2xl font-bold text-center w-full">
             {reviews}+
           </h1>
-          <p className="text-center lg:text-xl text-xs">
+          <p className="text-center lg:text-xl text-xs md:text-lg">
             Projects completed successfully
           </p>
         </div>
@@ -63,7 +63,7 @@ const BusinessCounter = () => {
           <h1 className="lg:text-5xl sm:text-4xl text-2xl font-bold text-center w-full">
             {clients}+
           </h1>
-          <p className="text-center lg:text-xl text-xs">
+          <p className="text-center lg:text-xl md:text-lg text-xs">
             Satisfied Clients Reviews
           </p>
         </div>

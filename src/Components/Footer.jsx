@@ -12,6 +12,11 @@ import {
 import logo from "@/assets/black-logo.png";
 import Image from "next/image";
 import Link from "next/link";
+import Visa from "@/assets/payment_methods/visa.png";
+import ApplePay from "@/assets/payment_methods/applepay.png";
+import GooglePay from "@/assets/payment_methods/googlepay.png";
+import Master from "@/assets/payment_methods/master.png";
+import Paypal from "@/assets/payment_methods/paypal.png";
 
 const Footer = () => {
   return (
@@ -140,6 +145,43 @@ const Footer = () => {
                   <FaLinkedinIn size={20} />
                 </button>
               </Link>
+            </div>
+            <div className="flex flex-wrap justify-center gap-2 lg:mt-10">
+              <Image
+                src={Visa}
+                alt="Visa"
+                width={60}
+                height={35}
+                className="h-10 w-auto"
+              />
+              <Image
+                src={Master}
+                alt="Mastercard"
+                width={60}
+                height={35}
+                className="h-10 w-auto"
+              />
+              <Image
+                src={Paypal}
+                alt="PayPal"
+                width={60}
+                height={35}
+                className="h-10 w-auto"
+              />
+              <Image
+                src={ApplePay}
+                alt="Apple Pay"
+                width={60}
+                height={35}
+                className="h-10 w-auto"
+              />
+              <Image
+                src={GooglePay}
+                alt="Google Pay"
+                width={60}
+                height={35}
+                className="h-10 w-auto"
+              />
             </div>
           </div>
         </div>

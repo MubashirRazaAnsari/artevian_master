@@ -35,18 +35,13 @@ import SEO7 from "@/assets/SEO/seo7.png";
 import SEO8 from "@/assets/SEO/seo8.png";
 import SEO9 from "@/assets/SEO/seo9.png";
 //Branding Image
-import Branding1 from "/public/portfolio/1.webp";
-import Branding2 from "/public/portfolio/2.webp";
-import Branding3 from "/public/portfolio/3.webp";
-import Branding4 from "/public/portfolio/4.webp";
-import Branding5 from "/public/portfolio/5.webp";
-// import Branding6 from "/public/portfolio/6.jpg";
-import Branding7 from "/public/portfolio/7.webp";
-import Branding8 from "/public/portfolio/8.webp";
-import Branding9 from "/public/portfolio/9.webp";
-import Branding10 from "/public/portfolio/10.webp";
-import Branding11 from "/public/portfolio/11.webp";
-import Branding12 from "/public/portfolio/12.webp";
+import Branding1 from "@/assets/Branding/Branding1.jpg";
+import Branding2 from "@/assets/Branding/Branding2.jpg";
+import Branding3 from "@/assets/Branding/Branding3.jpg";
+import Branding4 from "@/assets/Branding/Branding4.jpg";
+import Branding5 from "@/assets/Branding/Branding5.jpg";
+import Branding6 from "@/assets/Branding/Branding6.jpg";
+
 // Art & Illustration Images
 import art1 from "@/assets/2D-Static/art1.jpg";
 import art2 from "@/assets/2D-Static/art2.jpg";
@@ -68,12 +63,18 @@ import art17 from "@/assets/2D-Static/art17.jpg";
 import art18 from "@/assets/2D-Static/art18.jpg";
 
 //Mobile App Images
-import MobileApp1 from "@/assets/MobileApp/mobileapp1.jpg";
-import MobileApp2 from "@/assets/MobileApp/mobileapp2.webp";
-import MobileApp3 from "@/assets/MobileApp/mobileapp3.jpg";
-import MobileApp4 from "@/assets/MobileApp/mobileapp4.webp";
-import MobileApp5 from "@/assets/MobileApp/mobileapp5.jpg";
-import MobileApp6 from "@/assets/MobileApp/mobileapp6.jpg";
+import MobileApp1o1 from "@/assets/MobileApp/mobileapp1-1.jpg";
+import MobileApp1o2 from "@/assets/MobileApp/mobileapp1-2.jpg";
+import MobileApp1o3 from "@/assets/MobileApp/mobileapp1-3.jpg";
+import MobileApp2o1 from "@/assets/MobileApp/mobileapp2-1.jpg";
+import MobileApp2o2 from "@/assets/MobileApp/mobileapp2-2.jpg";
+import MobileApp2o3 from "@/assets/MobileApp/mobileapp2-3.jpg";
+import MobileApp3o1 from "@/assets/MobileApp/mobileapp3-1.jpg";
+import MobileApp3o2 from "@/assets/MobileApp/mobileapp3-2.jpg";
+import MobileApp3o3 from "@/assets/MobileApp/mobileapp3-3.jpg";
+import MobileApp4o1 from "@/assets/MobileApp/mobileapp4-1.jpg";
+import MobileApp4o2 from "@/assets/MobileApp/mobileapp4-2.jpg";
+import MobileApp4o3 from "@/assets/MobileApp/mobileapp4-3.jpg";
 
 //Digital Marketing Images
 
@@ -107,295 +108,218 @@ export const galleryData = [
     id: 1,
     category: "Website Design",
     imageUrl: Ecommerce1,
-    title: "Web Design",
+    title: "Gaming Website Design",
     description: "Responsive and interactive web solutions",
   },
   {
     id: 2,
     category: "Website Design",
     imageUrl: Ecommerce2,
-    title: "Video Editing",
-    description: "Top-notch video editing",
+    title: "Traveling Website Design",
+    description: "Responsive and interactive web solutions",
   },
   {
     id: 3,
     category: "Website Design",
     imageUrl: Ecommerce3,
-    title: "Video Editing",
+    title: "Futuristic Website Design",
     description: "Unique brand experiences",
   },
   {
     id: 4,
     category: "Website Design",
     imageUrl: Ecommerce4,
-    title: "Video Editing",
-    description: "Engaging animated content",
+    title: "Construction Website Design",
+    description: "Responsive and interactive web solutions",
   },
   {
     id: 5,
     category: "Website Design",
     imageUrl: Ecommerce6,
-    title: "Video Editing",
+    title: "Gym Website Design",
     description: "Responsive and interactive web solutions",
   },
   {
     id: 6,
     category: "Website Design",
     imageUrl: Ecommerce5,
-    title: "Video Editing",
+    title: "Celeb Website Design",
     description: "Responsive and interactive web solutions",
   },
   {
     id: 7,
     category: "Website Design",
     imageUrl: Ecommerce7,
-    title: "Modern Web Design",
+    title: "Yoga Website Design",
     description: "Responsive and interactive web solutions",
   },
   {
     id: 8,
     category: "Website Design",
     imageUrl: Ecommerce8,
-    title: "Modern Web Design",
+    title: "Consultancy Website Design",
     description: "Responsive and interactive web solutions",
   },
   {
     id: 9,
     category: "Website Design",
     imageUrl: Ecommerce9,
-    title: "Modern Web Design",
+    title: "Booking Website Design",
     description: "Responsive and interactive web solutions",
   },
   {
     id: 10,
     category: "E-commerce",
-    imageUrl: WebsiteDesign1,
-    title: "Modern Web Design",
-    description: "Responsive and interactive web solutions",
+    imageUrl: WebsiteDesign2,
+    title: "DayFresh E-commerce Solution",
+    description: "Day Fresh E-commerce solutions",
   },
   {
     id: 11,
     category: "E-Commerce",
-    imageUrl: WebsiteDesign2,
-    title: "Modern Web Design",
-    description: "Responsive and interactive web solutions",
+    imageUrl: WebsiteDesign3,
+    title: "Grocery E-commerce Solution",
+    description: "Grocery E-commerce solutions",
   },
   {
     id: 12,
     category: "E-Commerce",
-    imageUrl: WebsiteDesign3,
-    title: "E-Commerce",
-    description: "Responsive and interactive web solutions",
+    imageUrl: WebsiteDesign4,
+    title: "Restaurant E-commerce Solution",
+    description: "Restaurant E-commerce solutions",
   },
   {
     id: 13,
     category: "E-Commerce",
-    imageUrl: WebsiteDesign4,
-    title: "E-Commerce",
-    description: "Responsive and interactive web solutions",
+    imageUrl: WebsiteDesign5,
+    title: "Ice-Cream E-commerce Solution",
+    description: "Ice-Cream E-commerce solutions",
   },
   {
     id: 14,
     category: "E-Commerce",
-    imageUrl: WebsiteDesign5,
-    title: "E-Commerce",
-    description: "Responsive and interactive web solutions",
+    imageUrl: WebsiteDesign6,
+    title: "Auto Parts E-commerce Solution",
+    description: "Auto Parts E-commerce solutions",
   },
   {
     id: 15,
     category: "E-Commerce",
-    imageUrl: WebsiteDesign6,
-    title: "E-Commerce",
-    description: "Responsive and interactive web solutions",
+    imageUrl: WebsiteDesign1,
+    title: "Car Dealership E-commerce Solution",
+    description: "Auto Parts E-commerce Solution",
   },
   {
     id: 16,
     category: "Logo",
     imageUrl: Logo1,
-    title: "Logo Design",
-    description: "Responsive and interactive web solutions",
   },
   {
     id: 17,
     category: "Logo",
     imageUrl: Logo2,
-    title: "Logo Design",
-    description: "Responsive and interactive web solutions",
   },
   {
     id: 18,
     category: "Logo",
     imageUrl: Logo3,
-    title: "Logo Design",
-    description: "Responsive and interactive web solutions",
   },
   {
     id: 19,
     category: "Logo",
     imageUrl: Logo4,
-    title: "Logo Design",
-    description: "Responsive and interactive web solutions",
   },
   {
     id: 20,
     category: "Logo",
     imageUrl: Logo5,
-    title: "Logo Design",
-    description: "Responsive and interactive web solutions",
   },
   {
     id: 21,
     category: "Logo",
     imageUrl: Logo6,
-    title: "Logo Design",
-    description: "Responsive and interactive web solutions",
   },
   {
     id: 22,
     category: "SEO",
     imageUrl: SEO2,
-    title: "E-Commerce",
-    description: "Responsive and interactive web solutions",
   },
   {
     id: 23,
     category: "SEO",
     imageUrl: SEO3,
-    title: "Logo",
-    description: "Logo",
   },
   {
     id: 24,
     category: "SEO",
     imageUrl: SEO4,
-    title: "Logo",
-    description: "Logo",
   },
   {
     id: 25,
     category: "SEO",
     imageUrl: SEO5,
-    title: "Logo",
-    description: "Unique brand experiences",
   },
   {
     id: 26,
     category: "SEO",
     imageUrl: SEO6,
-    title: "Logo",
-    description: "Engaging animated content",
   },
   {
     id: 27,
     category: "SEO",
     imageUrl: SEO1,
-    title: "Logo",
-    description: "Unique brand experiences",
   },
   {
     id: 28,
     category: "SEO",
     imageUrl: SEO7,
-    title: "Logo",
-    description: "Unique brand experiences",
   },
   {
     id: 29,
     category: "SEO",
     imageUrl: SEO8,
-    title: "Logo",
-    description: "Engaging animated content",
   },
   {
     id: 30,
     category: "SEO",
     imageUrl: SEO9,
-    title: "Logo",
-    description: "Unique brand experiences",
   },
   {
     id: 31,
     category: "E-Commerce",
     imageUrl: WebsiteDesign7,
-    title: "Logo",
-    description: "Unique brand experiences",
+    title: "Car Dealership E-commerce Solution",
+    description: "Unique E-commerce Solution",
   },
   {
     id: 32,
     category: "Branding",
     imageUrl: Branding1,
-    title: "Logo",
-    description: "Unique brand experiences",
   },
   {
     id: 33,
     category: "Branding",
     imageUrl: Branding2,
-    title: "Logo",
-    description: "Unique brand experiences",
   },
   {
     id: 34,
     category: "Branding",
     imageUrl: Branding3,
-    title: "Branding",
-    description: "Unique brand experiences",
   },
   {
     id: 35,
     category: "Branding",
     imageUrl: Branding4,
-    title: "Branding",
-    description: "Engaging animated content",
   },
   {
     id: 36,
     category: "Branding",
     imageUrl: Branding5,
-    title: "Branding",
-    description: "Unique brand experiences",
   },
   {
     id: 37,
     category: "Branding",
-    imageUrl: Branding7,
-    title: "Branding",
-    description: "Unique brand experiences",
-  },
-  {
-    id: 38,
-    category: "Branding",
-    imageUrl: Branding8,
-    title: "Branding",
-    description: "Responsive and interactive web solutions",
-  },
-  {
-    id: 39,
-    category: "Branding",
-    imageUrl: Branding9,
-    title: "Branding",
-    description: "Unique brand experiences",
-  },
-  {
-    id: 40,
-    category: "Branding",
-    imageUrl: Branding10,
-    title: "Branding",
-    description: "Unique brand experiences",
-  },
-  {
-    id: 41,
-    category: "Branding",
-    imageUrl: Branding11,
-    title: "Art & Illustration",
-    description: "Engaging animated content",
-  },
-  {
-    id: 42,
-    category: "Branding",
-    imageUrl: Branding12,
-    title: "Art & Illustration",
-    description: "Unique brand experiences",
+    imageUrl: Branding6,
   },
   {
     id: 43,
@@ -532,33 +456,37 @@ export const galleryData = [
   {
     id: 67,
     category: "Mobile Apps",
-    imageUrl: MobileApp1,
+    imageUrl: MobileApp1o1, // Fallback image
+    mockupImages: [MobileApp1o1, MobileApp1o2, MobileApp1o3],
   },
   {
     id: 68,
     category: "Mobile Apps",
-    imageUrl: MobileApp2,
+    imageUrl: MobileApp2o1,
+    mockupImages: [MobileApp2o1, MobileApp2o2, MobileApp2o3],
   },
   {
     id: 69,
     category: "Mobile Apps",
-    imageUrl: MobileApp3,
+    imageUrl: MobileApp3o1,
+    mockupImages: [MobileApp3o1, MobileApp3o2, MobileApp3o3],
   },
   {
     id: 70,
     category: "Mobile Apps",
-    imageUrl: MobileApp4,
+    imageUrl: MobileApp4o1,
+    mockupImages: [MobileApp4o1, MobileApp4o2, MobileApp4o3],
   },
-  {
-    id: 71,
-    category: "Mobile Apps",
-    imageUrl: MobileApp5,
-  },
-  {
-    id: 72,
-    category: "Mobile Apps",
-    imageUrl: MobileApp6,
-  },
+  // {
+  //   id: 71,
+  //   category: "Mobile Apps",
+  //   imageUrl: MobileApp5,
+  // },
+  // {
+  //   id: 72,
+  //   category: "Mobile Apps",
+  //   imageUrl: MobileApp6,
+  // },
   {
     id: 73,
     category: "Digital Marketing",

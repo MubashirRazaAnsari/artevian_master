@@ -32,6 +32,9 @@ const Pricing = ({ initialActiveTab }) => {
     if (category === "Video Editing") {
       return "video";
     }
+    if (category === "Mobile Apps") {
+      return "mobile-app";
+    }
     return category
       .toLowerCase()
       .replace(/[&]/g, "and") // Replace & with "and" for other categories
@@ -66,11 +69,19 @@ const Pricing = ({ initialActiveTab }) => {
 
   return (
     <div className="min-h-screen p-8">
-      <div className="text-center mb-10">
-        <h1 className="lg:text-6xl font-bold text-gray-900 sm:text-4xl text-3xl text-center">
+      <div className="text-center mb-10 px-4">
+        <h1
+          className="text-gray-900 font-bold text-center 
+                 text-xl sm:text-2xl md:text-3xl lg:text-6xl 
+                 leading-snug md:leading-normal"
+        >
           Discover Our <span className="text-primary">Competitive</span> Rates
         </h1>
-        <p className="text-center text-gray-700 lg:my-8 my-3 md:px-8 max-sm:text-sm">
+
+        <p
+          className="text-gray-700 text-sm sm:text-base md:text-lg 
+                mt-4 md:mt-6 lg:mt-8 md:px-10"
+        >
           Explore our transparent pricing model designed to offer competitive
           rates tailored to meet your needs. We believe in clarity and fairness,
           ensuring you have full visibility into our pricing structure for a

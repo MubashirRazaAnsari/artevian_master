@@ -75,37 +75,34 @@ const TestimonialSlider = () => {
 
   const TestimonialData = [
     {
-      name: "Imran Khan",
+      name: "Michelle McWeldin",
       desc: "Without any doubt I recommend Alcaline Solutions as one of the best web design and digital marketing agencies. One of the best agencies I’ve came across so far. Wouldn’t be hesitated to introduce their work to someone else.",
-    img:testimonial1.src,
-    desig:"Software Engineer",
+      img: testimonial1.src,
+      desig: "Software Engineer",
     },
     {
       name: "Colette Brown",
       desc: "I am the post-production supervisor for Zach King. We worked with Remy's company on VFX for a recent brand deal. Fame Itech did a fantastic job. They handled the client notes quickly and efficiently. I would recommend them.",
-    img:test1.src,
-    desig:"Project Manager",
-
+      img: test1.src,
+      desig: "Project Manager",
     },
     {
       name: "Sydney Stewart",
       desc: "Hakeem did an amazing job with my video even after I had several edits and a lot of the videos quality I had were poor. He made them look super professional with a title page and edit the music. The video definitely exceeded my expectations.",
-    img:test2.src,
-    desig:"Designer",
-
+      img: test2.src,
+      desig: "Designer",
     },
     {
       name: "Amanda Parker",
       desc: "I had an exceptional experience working with Fameitech - a remarkable team of professionals. Austin Weber responsiveness and consistent communication throughout the process were impressive. In the realm of web development and graphic design.",
-    img:test3.src,
-    desig:"Editor",
-
+      img: test3.src,
+      desig: "Editor",
     },
     {
       name: "Patrick Hill",
       desc: "I really had a great experience working with this team. They understand my vision for my first book and they were great with all my questions and requests. They took the time to really understand what I was wanting and were extremely timely with my deadline.",
-    img:test4.src,
-    desig:"Manager",
+      img: test4.src,
+      desig: "Manager",
     },
   ];
 

@@ -29,7 +29,7 @@ const HomeHeroSection = () => {
 
   return (
     <div
-      className="h-screen w-full flex items-center justify-center text-white transition-all duration-1000 ease-in-out "
+      className="min-h-screen flex items-center justify-center text-white transition-all duration-1000 ease-in-out"
       style={{
         backgroundImage: `url(${images[currentIndex]})`,
         backgroundSize: "cover",
@@ -37,15 +37,19 @@ const HomeHeroSection = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="bg-white/80 h-full flex justify-center items-end w-full px-4 mx-auto ">
-        <div className="container h-full lg:w-[100%] text-gray-900 w-full flex lg:px-4 lg:gap-0 gap-0 max-md:flex-col-reverse sm:justify-between items-center py-12 mt-6">
-          <div data-aos="fade-up" data-aos-delay="50">
-            <h1 className="lg:text-[1.8rem] md:text-5xl sm:text-4xl mt-7  text-1xl sm:leading-10 font-bold mb-4">
+      <div className="bg-white/80 min-h-screen flex justify-center items-center w-full px-4 sm:px-6 lg:px-8">
+        <div className="container h-full w-full flex flex-col-reverse lg:flex-row justify-between items-center py-8 sm:py-12 lg:py-16 gap-8 lg:gap-4 lg:ml-[150px]">
+          <div
+            data-aos="fade-up"
+            data-aos-delay="50"
+            className="w-full lg:w-1/2 text-center lg:text-left"
+          >
+            <h1 className="text-2xl sm:text-xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4 leading-tight text-gray-800">
               A digital agency for the future. We create
-              <br />
+              <br className="hidden sm:block" />
               end-to-end
             </h1>
-            <h1 className="text-primary lg:text-7xl md:text-5xl sm:text-4xl text-3xl sm:leading-10 font-bold">
+            <h1 className="text-primary text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6">
               <Typewriter
                 options={{
                   strings: [
@@ -64,29 +68,36 @@ const HomeHeroSection = () => {
               />
             </h1>
 
-            <p className="sm:my-4 my-2 text-lg text-gray-700">
+            <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 sm:mb-8">
               Custom Websites, Branding & Digital Marketing Solutions
             </p>
 
-            <div className="flex gap-6 items-center">
-              <button className="btn" onClick={() => setShowModal(true)}>
+            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center justify-center lg:justify-start">
+              <button
+                className="btn w-full sm:w-auto px-6 py-3 text-base sm:text-lg"
+                onClick={() => setShowModal(true)}
+              >
                 Get A Quote
               </button>
-              <Link href="/contact">
-                <button className=" border-b-[2px] transition-all duration-200 ease-in-out border-transparent hover:border-gray-800 flex gap-1 items-center font-medium">
+              <Link
+                href="/contact"
+                className="w-full sm:w-auto text-black border-gray-500 border rounded-2xl px-5 py-2.5 hover:bg-slate-100 hover:text-gray-900"
+              >
+                <button className="w-full sm:w-auto border-b-[2px] transition-all duration-200 ease-in-out border-transparent hover:border-gray-900 flex gap-1 items-center justify-center font-medium text-base sm:text-lg">
                   Contact Us <GoArrowUpRight />
                 </button>
               </Link>
             </div>
           </div>
 
-          <div className="fadeIn-animation">
+          <div className="w-full lg:w-1/2 flex justify-center items-center">
             <Image
               src={homeRobot}
               alt="hero"
               width={1000}
               height={1000}
-              className="md:h-[44rem] max-sm:h-[30rem] h-full w-full object-contain roboUpAndDown"
+              className="w-full h-auto max-h-[300px] sm:max-h-[400px] md:max-h-[500px] lg:max-h-[600px] xl:max-h-[700px] object-contain roboUpAndDown"
+              priority
             />
           </div>
         </div>

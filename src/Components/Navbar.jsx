@@ -52,8 +52,10 @@ const Navbar = () => {
   }, [menuTimeout, isHoveringMenu]);
 
   const handleSubMenuEnter = useCallback(() => {
+    if (menuTimeout) clearTimeout(menuTimeout);
     setIsHoveringMenu(true);
-  }, []);
+    setShowMenu(true);
+  }, [menuTimeout]);
 
   const handleSubMenuLeave = useCallback(() => {
     setIsHoveringMenu(false);
@@ -207,7 +209,7 @@ const Navbar = () => {
               <span>Services</span>
               {showMenu && (
                 <div
-                  className="absolute top-7 left-1/2 transform -translate-x-1/2 z-[999999]"
+                  className="absolute top-7 left-1/2 transform -translate-x-1/2 z-[999999] transition-all duration-150"
                   onMouseEnter={handleSubMenuEnter}
                   onMouseLeave={handleSubMenuLeave}
                 >
@@ -245,7 +247,7 @@ const Navbar = () => {
             </li>
           </ul>
 
-          <div className="lg:block hidden mt-1">
+          <div className="lg:block hidden mt-3">
             <Link href="/contact">
               <span className="btn">Hire Us Now</span>
             </Link>
