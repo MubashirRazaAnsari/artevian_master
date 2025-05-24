@@ -13,6 +13,7 @@ const Navbar = () => {
   const [show, setShow] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [showMenuMobile, setShowMenuMobile] = useState(false);
+  const [activeCategory, setActiveCategory] = useState(null);
   const [menuTimeout, setMenuTimeout] = useState(null);
   const [expandedCategory, setExpandedCategory] = useState(null);
   const [isHoveringMenu, setIsHoveringMenu] = useState(false);
@@ -34,41 +35,32 @@ const Navbar = () => {
   // Optimized menu handlers
   const handleMenuEnter = useCallback(() => {
     if (menuTimeout) clearTimeout(menuTimeout);
-    setIsHoveringMenu(true);
     setShowMenu(true);
   }, [menuTimeout]);
 
   const handleMenuLeave = useCallback(() => {
     if (menuTimeout) clearTimeout(menuTimeout);
-    setIsHoveringMenu(false);
     setMenuTimeout(
       setTimeout(() => {
-        if (!isHoveringMenu) {
-          setShowMenu(false);
-          setExpandedCategory(null);
-        }
+        setShowMenu(false);
+        setActiveCategory(null);
       }, 100)
     );
-  }, [menuTimeout, isHoveringMenu]);
+  }, [menuTimeout]);
 
   const handleSubMenuEnter = useCallback(() => {
     if (menuTimeout) clearTimeout(menuTimeout);
-    setIsHoveringMenu(true);
     setShowMenu(true);
   }, [menuTimeout]);
 
   const handleSubMenuLeave = useCallback(() => {
-    setIsHoveringMenu(false);
     if (menuTimeout) clearTimeout(menuTimeout);
     setMenuTimeout(
       setTimeout(() => {
-        if (!isHoveringMenu) {
-          setShowMenu(false);
-          setExpandedCategory(null);
-        }
+        setShowMenu(false);
       }, 100)
     );
-  }, [menuTimeout, isHoveringMenu]);
+  }, [menuTimeout]);
 
   const handleClose = (route) => {
     router.push(`/${route}`);
@@ -117,34 +109,21 @@ const Navbar = () => {
 
   const ServiceSubMenu = ({ title, links }) => (
     <div
-      className="group"
-      onMouseEnter={handleSubMenuEnter}
-      onMouseLeave={handleSubMenuLeave}
+      className="group relative"
+      onMouseEnter={() => setActiveCategory(title)}
+      onMouseLeave={() => setActiveCategory(null)}
     >
-      <button
-        onClick={() =>
-          setExpandedCategory(expandedCategory === title ? null : title)
-        }
-        className="w-full text-left flex items-center justify-between py-2 px-4 hover:bg-gray-50 rounded-lg transition-all duration-150"
-      >
+      <button className="w-full text-left flex items-center justify-between py-2 px-4 hover:bg-gray-50 rounded-lg transition-all duration-150">
         <h3 className="text-base font-medium text-gray-800">{title}</h3>
-        <IoIosArrowDown
-          className={`text-sm transition-transform duration-150 ${
-            expandedCategory === title ? "rotate-180" : ""
-          }`}
-        />
+        {/* <IoIosArrowDown className="text-sm transition-transform duration-150 group-hover:rotate-180" /> */}
       </button>
-      <div
-        className={`overflow-hidden transition-all duration-150 ${
-          expandedCategory === title ? "max-h-96" : "max-h-0"
-        }`}
-      >
-        <div className="pl-4 py-2 space-y-2">
+      {activeCategory === title && (
+        <div className="absolute left-full top-0 w-48 bg-white rounded-lg shadow-lg py-2 z-50">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className={`block w-full text-gray-700 py-2 px-4 rounded-lg hover:bg-gray-50 hover:text-primary transition-all duration-150 ${
+              className={`block w-full text-gray-700 py-2 px-4 hover:bg-gray-50 hover:text-primary text-base transition-all duration-150 ${
                 isActiveLink(link.href) ? "text-primary bg-gray-50" : ""
               }`}
             >
@@ -152,7 +131,7 @@ const Navbar = () => {
             </Link>
           ))}
         </div>
-      </div>
+      )}
     </div>
   );
 
@@ -210,8 +189,8 @@ const Navbar = () => {
               {showMenu && (
                 <div
                   className="absolute top-7 left-1/2 transform -translate-x-1/2 z-[999999] transition-all duration-150"
-                  onMouseEnter={handleSubMenuEnter}
-                  onMouseLeave={handleSubMenuLeave}
+                  onMouseEnter={handleMenuEnter}
+                  onMouseLeave={handleMenuLeave}
                 >
                   <div className="bg-white w-72 rounded-lg shadow-lg p-4 space-y-2">
                     {Object.values(serviceLinks).map((section) => (

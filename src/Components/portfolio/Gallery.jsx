@@ -5,14 +5,17 @@ import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { galleryData } from "../../../data/gallery";
 import { categories } from "../../../data/pricing";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
+import { IoClose } from "react-icons/io5";
 
 const Gallery = ({ selectedPortfolio }) => {
   const [selectedCategory, setSelectedCategory] = useState(
     selectedPortfolio || "Website Design"
   );
   const [isHovered, setIsHovered] = useState(null);
+  const [selectedItem, setSelectedItem] = useState(null);
   const pathname = usePathname();
+  const router = useRouter();
 
   // Convert category to URL-friendly format
   const getCategoryPath = (category) => {
@@ -34,6 +37,9 @@ const Gallery = ({ selectedPortfolio }) => {
     }
     if (category === "Mobile Apps") {
       return "mobile-app";
+    }
+    if (category === "2D/3D Animation") {
+      return "2d-3d";
     }
     return category
       .toLowerCase()
@@ -240,6 +246,21 @@ const Gallery = ({ selectedPortfolio }) => {
       : "";
   };
 
+  const handleCardClick = (item) => {
+    // If we're on the home page, redirect to the services page
+    if (pathname === "/") {
+      const categoryPath = getCategoryPath(item.category);
+      router.push(`/${categoryPath}`);
+    } else {
+      // On service or portfolio pages, show the modal
+      setSelectedItem(item);
+    }
+  };
+
+  const closeModal = () => {
+    setSelectedItem(null);
+  };
+
   return (
     <div className="min-h-screen p-8 lg:mt-10">
       <div className="text-center mb-10 sm:mb-16">
@@ -292,9 +313,10 @@ const Gallery = ({ selectedPortfolio }) => {
                       selectedCategory === "Mobile Apps"
                         ? "bg-transparent"
                         : "bg-purple-800/20 backdrop-blur-sm"
-                    } shadow-lg hover:shadow-xl transition-shadow duration-300`}
+                    } shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer`}
                     onHoverStart={() => setIsHovered(item.id)}
                     onHoverEnd={() => setIsHovered(null)}
+                    onClick={() => handleCardClick(item)}
                   >
                     {item.category === "Mobile Apps" ? (
                       // 📱 Multiple Mobile Mockups
@@ -419,6 +441,7 @@ const Gallery = ({ selectedPortfolio }) => {
                             playsInline
                             preload="metadata"
                             autoPlay
+                            muted
                           >
                             <source src={item.videoUrl} type="video/mp4" />
                             Your browser does not support the video tag.
@@ -474,6 +497,74 @@ const Gallery = ({ selectedPortfolio }) => {
           )}
         </AnimatePresence>
       </div>
+
+      {/* Portfolio Modal - Only show on service and portfolio pages */}
+      {pathname !== "/" && (
+        <AnimatePresence>
+          {selectedItem && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+              onClick={closeModal}
+            >
+              <motion.div
+                initial={{ scale: 0.9, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                exit={{ scale: 0.9, opacity: 0 }}
+                className="relative max-w-6xl w-full bg-white rounded-xl overflow-hidden"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  onClick={closeModal}
+                  className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/70 transition-colors z-10"
+                >
+                  <IoClose size={24} />
+                </button>
+
+                <div className="relative w-full aspect-video">
+                  {selectedItem.category === "Video Editing" ? (
+                    <iframe
+                      src={selectedItem.videoUrl}
+                      className="w-full h-full"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                      title={selectedItem.title}
+                    />
+                  ) : selectedItem.category === "2D/3D Animation" ? (
+                    <video
+                      className="w-full h-full object-cover"
+                      controls
+                      playsInline
+                      autoPlay
+                    >
+                      <source src={selectedItem.videoUrl} type="video/mp4" />
+                      Your browser does not support the video tag.
+                    </video>
+                  ) : (
+                    <Image
+                      src={selectedItem.imageUrl}
+                      alt={selectedItem.title}
+                      fill
+                      className="object-contain"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                      priority
+                    />
+                  )}
+                </div>
+
+                <div className="p-6">
+                  <h3 className="text-2xl font-bold mb-2">
+                    {selectedItem.title}
+                  </h3>
+                  <p className="text-gray-600">{selectedItem.description}</p>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+      )}
     </div>
   );
 };

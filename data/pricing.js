@@ -94,7 +94,7 @@ export const pricingData = [
   {
     id: 4,
     category: "E-Commerce",
-    name: "CUSTOM ECOMMERCE MARKETPLACE",
+    name: "CUSTOM MARKETPLACE",
     price: 6699,
     originalPrice: 13398,
     stripePriceId: "price_1RRKg4EETLRAdxommwNIDpWB",
@@ -137,7 +137,7 @@ export const pricingData = [
   {
     id: 5,
     category: "E-Commerce",
-    name: "ELITE E-COMMERCE Automated/Interactive E-Commerce",
+    name: "ELITE Automated",
     price: 11999,
     originalPrice: 23998,
     stripePriceId: "price_1RRKgqEETLRAdxomNrDCE1ng",
@@ -2258,7 +2258,7 @@ export const pricingData = [
   },
   {
     id: 51,
-    name: "Pro App (Hybrid or Native)  ",
+    name: "Pro App (Hybrid/Native)  ",
     category: "Mobile Apps",
     price: 6999.0,
     originalPrice: 8550.0,
@@ -2381,7 +2381,7 @@ export const pricingData = [
   },
   {
     id: 54,
-    name: "Digital Marketing Kickstart",
+    name: "Marketing Kickstarter",
     category: "Digital Marketing",
     price: 499,
     originalPrice: 599,
@@ -2494,7 +2494,7 @@ export const pricingData = [
   },
   {
     id: 56,
-    name: "Full-Stack Digital Marketing Pro",
+    name: "Full-Stack Marketing Pro",
     category: "Digital Marketing",
     price: 3999,
     originalPrice: 2599,
@@ -2538,7 +2538,7 @@ export const pricingData = [
   },
   {
     id: 57,
-    name: "SMM Kickstart Package",
+    name: "SMM Kickstarter",
     category: "SMM",
     price: 499,
     originalPrice: 699,
@@ -2563,7 +2563,7 @@ export const pricingData = [
   },
   {
     id: 58,
-    name: "Content & Engagement Growth Package",
+    name: "Engagement Growth",
     category: "SMM",
     price: 999,
     originalPrice: 1299,
@@ -2589,7 +2589,7 @@ export const pricingData = [
   },
   {
     id: 59,
-    name: "Paid Social & Conversion Package",
+    name: "Paid Social & Conversion",
     category: "SMM",
     price: 1999,
     originalPrice: 2499,
@@ -2626,7 +2626,7 @@ export const pricingData = [
   },
   {
     id: 60,
-    name: "Full-Stack Social Media Pro Package",
+    name: "Full-Stack Social Media",
     category: "SMM",
     price: 3999,
     originalPrice: 4999,

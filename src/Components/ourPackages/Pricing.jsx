@@ -8,7 +8,6 @@ import { usePathname } from "next/navigation";
 import CheckoutButton from "../CheckoutButton";
 import Link from "next/link";
 
-
 const Pricing = ({ initialActiveTab }) => {
   const [selectedCategory, setSelectedCategory] = useState(
     initialActiveTab || "Website Design"
@@ -36,6 +35,9 @@ const Pricing = ({ initialActiveTab }) => {
     }
     if (category === "Mobile Apps") {
       return "mobile-app";
+    }
+    if (category === "2D/3D Animation") {
+      return "2d-3d";
     }
     return category
       .toLowerCase()
@@ -72,6 +74,9 @@ const Pricing = ({ initialActiveTab }) => {
   return (
     <div className="min-h-screen p-8">
       <div className="text-center mb-10 px-4">
+        <div className="inline-block bg-purple-100 text-purple-500 px-3 py-1 sm:px-4 sm:py-2 border rounded-lg mb-3 sm:mb-4 text-sm sm:text-base font-semibold">
+          OUR PACKAGE
+        </div>
         <h1
           className="text-gray-900 font-bold text-center 
                  text-xl sm:text-2xl md:text-3xl lg:text-6xl 
@@ -124,13 +129,14 @@ const Pricing = ({ initialActiveTab }) => {
               .map((pkg) => (
                 <motion.div
                   key={pkg.id}
-                  className="btn rounded-2xl overflow-hidden shadow-xl border border-gray-100 flex flex-col h-[500px]"
+                  className="btn rounded-2xl overflow-hidden shadow-xl border border-gray-100 flex flex-col h-[600px]"
                   whileHover={{ y: -10 }}
                   transition={{ duration: 0.3 }}
                 >
                   <div className="p-8 flex flex-col h-full">
                     <h3 className="text-2xl font-semibold text-center text-gray-100 mb-2">
-                      {pkg.name} <span className="mr-6">PACKAGE</span>
+                      {pkg.name} <br />
+                      <span className="mr-6 text-center">PACKAGE</span>
                     </h3>
                     <div className="text-center mb-6">
                       <span className="text-5xl text-gray-100 font-semibold">
