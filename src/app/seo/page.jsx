@@ -5,6 +5,7 @@ import Portfolio from "@/Components/Portfolio";
 import Pricing from "@/Components/ourPackages/Pricing";
 import Testimonials from "@/Components/Testimonials";
 import React from "react";
+import SEOpg from "@/assets/seopg.jpg";
 
 const page = () => {
   return (
@@ -15,7 +16,16 @@ const page = () => {
         text_two="rates in market compitative prices"
         text_colored="SEO"
       />
-      <Hero hero_title="SEO" />
+      <Hero
+        hero_title="SEO"
+        paragraph1={
+          "Be found by the right people at the right time. Our SEO experts craft smart, data-driven strategies to improve your site’s visibility on Google and other search engines. "
+        }
+        paragraph2={
+          " From keyword research and on-page optimization to backlinks and local SEO, Artevian helps you climb the ranks—and stay there."
+        }
+        img={SEOpg}
+      />
       <BusinessCounter />
       <Portfolio
         text_one="Thinking about"

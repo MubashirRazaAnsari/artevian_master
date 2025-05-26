@@ -10,7 +10,7 @@ const VideoAnimation = () => {
   return (
     <main className=" overflow-hidden">
       <Banner
-        page_title="2D/3D Animation"
+        page_title="Video Editing"
         text_colored="Brands Story"
         text_one="Custom Animated Videos That Speaks Your"
       />

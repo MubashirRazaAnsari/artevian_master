@@ -2,7 +2,11 @@
 import Image from "next/image";
 import React, { useState, useEffect, useCallback } from "react";
 import logo from "../assets/black-logo.png";
-import { IoIosArrowDown } from "react-icons/io";
+import {
+  IoIosArrowDown,
+  IoIosArrowDropright,
+  IoIosArrowRoundUp,
+} from "react-icons/io";
 import { RiMenu3Fill } from "react-icons/ri";
 import { IoCloseSharp } from "react-icons/io5";
 import Link from "next/link";
@@ -17,6 +21,7 @@ const Navbar = () => {
   const [menuTimeout, setMenuTimeout] = useState(null);
   const [expandedCategory, setExpandedCategory] = useState(null);
   const [isHoveringMenu, setIsHoveringMenu] = useState(false);
+  const [isHoveringSubmenu, setIsHoveringSubmenu] = useState(false);
 
   const router = useRouter();
   const pathname = usePathname();
@@ -36,29 +41,35 @@ const Navbar = () => {
   const handleMenuEnter = useCallback(() => {
     if (menuTimeout) clearTimeout(menuTimeout);
     setShowMenu(true);
+    setIsHoveringMenu(true);
   }, [menuTimeout]);
 
   const handleMenuLeave = useCallback(() => {
+    setIsHoveringMenu(false);
+    if (menuTimeout) clearTimeout(menuTimeout);
+    setMenuTimeout(
+      setTimeout(() => {
+        if (!isHoveringSubmenu) {
+          setShowMenu(false);
+          setActiveCategory(null);
+        }
+      }, 200)
+    );
+  }, [menuTimeout, isHoveringSubmenu]);
+
+  const handleSubmenuEnter = useCallback(() => {
+    setIsHoveringSubmenu(true);
+    if (menuTimeout) clearTimeout(menuTimeout);
+  }, [menuTimeout]);
+
+  const handleSubmenuLeave = useCallback(() => {
+    setIsHoveringSubmenu(false);
     if (menuTimeout) clearTimeout(menuTimeout);
     setMenuTimeout(
       setTimeout(() => {
         setShowMenu(false);
         setActiveCategory(null);
-      }, 100)
-    );
-  }, [menuTimeout]);
-
-  const handleSubMenuEnter = useCallback(() => {
-    if (menuTimeout) clearTimeout(menuTimeout);
-    setShowMenu(true);
-  }, [menuTimeout]);
-
-  const handleSubMenuLeave = useCallback(() => {
-    if (menuTimeout) clearTimeout(menuTimeout);
-    setMenuTimeout(
-      setTimeout(() => {
-        setShowMenu(false);
-      }, 100)
+      }, 200)
     );
   }, [menuTimeout]);
 
@@ -110,15 +121,27 @@ const Navbar = () => {
   const ServiceSubMenu = ({ title, links }) => (
     <div
       className="group relative"
-      onMouseEnter={() => setActiveCategory(title)}
-      onMouseLeave={() => setActiveCategory(null)}
+      onMouseEnter={() => {
+        setActiveCategory(title);
+        handleSubmenuEnter();
+      }}
+      onMouseLeave={handleSubmenuLeave}
     >
-      <button className="w-full text-left flex items-center justify-between py-2 px-4 hover:bg-gray-50 rounded-lg transition-all duration-150">
+      <button
+        className="w-full text-left flex items-center justify-between py-2 px-4 hover:bg-gray-50 rounded-lg transition-all duration-150"
+        onClick={() =>
+          setActiveCategory(activeCategory === title ? null : title)
+        }
+      >
         <h3 className="text-base font-medium text-gray-800">{title}</h3>
-        {/* <IoIosArrowDown className="text-sm transition-transform duration-150 group-hover:rotate-180" /> */}
+        <IoIosArrowDropright
+          className={`text-sm transition-transform duration-150 ${
+            activeCategory === title ? "rotate-90" : ""
+          }`}
+        />
       </button>
       {activeCategory === title && (
-        <div className="absolute left-full top-0 w-48 bg-white rounded-lg shadow-lg py-2 z-50">
+        <div className="absolute left-full top-0 w-48 bg-white rounded-lg shadow-lg py-2 z-50 ml-2">
           {links.map((link) => (
             <Link
               key={link.href}
@@ -192,7 +215,7 @@ const Navbar = () => {
                   onMouseEnter={handleMenuEnter}
                   onMouseLeave={handleMenuLeave}
                 >
-                  <div className="bg-white w-72 rounded-lg shadow-lg p-4 space-y-2">
+                  <div className="bg-white w-72 rounded-lg shadow-lg p-2">
                     {Object.values(serviceLinks).map((section) => (
                       <ServiceSubMenu
                         key={section.title}

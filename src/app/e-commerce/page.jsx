@@ -5,6 +5,7 @@ import Portfolio from "@/Components/Portfolio";
 import Pricing from "@/Components/ourPackages/Pricing";
 import Testimonials from "@/Components/Testimonials";
 import React from "react";
+import hero from "@/assets/logo-hero.png";
 
 const page = () => {
   return (
@@ -15,7 +16,16 @@ const page = () => {
         text_two="rates in market compitative prices"
         text_colored="E-Commerce"
       />
-      <Hero hero_title="E-Commerce" />
+      <Hero
+        hero_title="E-Commerce"
+        paragraph1={
+          "Think of Artevian as your e-commerce branding partner, ready to kickstart your brand journey with impactful logo design and fully integrated branding solutions tailored for online success."
+        }
+        paragraph2={
+          "We specialize in crafting logos and developing e-commerce brand identities that resonate with your ideal audience. Our diverse logo design portfolio features everything from mascot logos and abstract symbols to emblem designs, wordmarks, and monograms—ensuring your brand stands out in a competitive digital marketplace. Whether you're launching a new online store or refreshing your brand visuals, Artevian delivers designs that convert and connect."
+        }
+        img={hero}
+      />
       <BusinessCounter />
       <Portfolio
         text_one="Thinking about"

@@ -1,6 +1,6 @@
 "use client";
 import React, { useState, useEffect } from "react";
-
+import { IoClose } from "react-icons/io5";
 const ContactPopUp = ({ onClose }) => {
   const [formData, setFormData] = useState({
     firstName: "",
@@ -78,9 +78,9 @@ const ContactPopUp = ({ onClose }) => {
         className="absolute inset-0 bg-black bg-opacity-50"
         onClick={onClose}
       ></div>
-      <div className="relative bg-my-gradient px-4 lg:py-10 py-5 rounded-2xl w-[95%] sm:w-[90%] md:w-[85%] lg:w-[65%] xl:w-[55%] max-w-3xl mx-auto">
+      <div className="relative h-[90%] sm:h-[90%] md:h-[80%] lg:h-[95%] bg-my-gradient px-4 lg:py-10 py-5 rounded-2xl w-[95%] sm:w-[90%] md:w-[85%] lg:w-[65%] xl:w-[55%] max-w-3xl mx-auto">
         <button onClick={onClose} className="font-bold ml-1">
-          X
+          <IoClose size={24} />
         </button>
         <div className="text-center">
           <h4 className="text-2xl sm:text-3xl font-bold text-white text-center">

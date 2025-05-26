@@ -5,6 +5,7 @@ import Portfolio from "@/Components/Portfolio";
 import Pricing from "@/Components/ourPackages/Pricing";
 import Testimonials from "@/Components/Testimonials";
 import React from "react";
+import Smmpg from "@/assets/Smmpg.jpg";
 
 const page = () => {
   return (
@@ -15,7 +16,16 @@ const page = () => {
         text_two="rates in market"
         text_colored="Social Media Marketing"
       />
-      <Hero hero_title="SMM" />
+      <Hero
+        hero_title="SMM"
+        paragraph1={
+          "We turn your social media into a brand-building engine. Whether you're looking to boost engagement, increase followers, or generate leads, Artevian builds customized strategies that align with your voice and target audience."
+        }
+        paragraph2={
+          "From daily content creation to paid social ads, we’ve got it covered."
+        }
+        img={Smmpg}
+      />
       <BusinessCounter />
       <Portfolio
         text_one="Thinking about"

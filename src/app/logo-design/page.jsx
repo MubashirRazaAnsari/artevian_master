@@ -5,6 +5,7 @@ import Portfolio from "@/Components/Portfolio";
 import Pricing from "@/Components/ourPackages/Pricing";
 import Testimonials from "@/Components/Testimonials";
 import React from "react";
+import img from "@/assets/logodesignpg.png";
 
 const LogoDesign = () => {
   return (
@@ -15,7 +16,16 @@ const LogoDesign = () => {
         text_two="behind every logo we craft"
         text_colored="artistry"
       />
-      <Hero hero_title="Logo" />
+      <Hero
+        hero_title="Logo"
+        paragraph1={
+          "Consider Artevian your dedicated logo design and branding partner, ready to embark with you on a transformative brand identity journey. From concept to creation, we offer comprehensive logo design services that serve as the cornerstone of your brand’s visual presence."
+        }
+        paragraph2={
+          "Our expert designers craft custom logos that resonate with your target audience and reflect your brand’s personality and values. Whether you’re looking for bold mascot logos, modern abstract marks, classic emblems, clean wordmarks, or stylish monograms, our diverse portfolio ensures your brand stands out in any industry. At Artevian, we don’t just design logos—we build memorable, scalable, and impactful brand visuals that help businesses leave a lasting impression."
+        }
+        img={img}
+      />
       <BusinessCounter />
       <Portfolio
         text_colored="Type of Logo"

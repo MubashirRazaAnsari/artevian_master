@@ -25,21 +25,16 @@ const Experience = () => {
               <h1 className="lg:text-2xl text-xl  font-semibold">Our Vision</h1>
 
               <p className="xl:mt-6 lg:mt-4 mt-2 xl:text-base lg:text-sm text-xs">
-                With a decade-long track record of delivering exceptional
-                designs, Artevian is a leading digital branding agency. Our
-                digital services blend with affordability, unparalleled
-                creativity and uniqueness. Our significant work history of
-                digital branding and marketing solutions has boosted various
-                brands, providing steadfast support in inaugrating a strong
-                digital presence.
+                To be a transformative force in digital branding—empowering
+                businesses of all sizes to shine with distinction in a
+                competitive digital world. At Artevian, we envision a future
+                where bold creativity, purposeful strategy, and accessible
+                innovation converge to make digital success achievable for all.
               </p>
               <p className="xl:mt-6 lg:mt-4 mt-2 xl:text-base lg:text-sm text-xs">
-                At Artevian we stand for a promise to democratize the digital
-                revolution. Despite the size of a brand, we strive to provide
-                equal access and empower all digital entities to thrive in the
-                dynamic digital arena. We are enthusiastic about offering
-                important assistance to individuals who possess the will and
-                ability to excel in the constantly expanding digital industry.
+                Our commitment lies in unlocking potential, amplifying voices,
+                and leading the charge in reshaping how brands build presence
+                and influence online.
               </p>
             </div>
 
@@ -53,21 +48,16 @@ const Experience = () => {
               </h1>
 
               <p className="xl:mt-6 lg:mt-4 mt-2 xl:text-base lg:text-sm text-xs">
-                With a decade-long track record of delivering exceptional
-                designs, Artevian is a leading digital branding agency. Our
-                digital services blend with affordability, unparalleled
-                creativity and uniqueness. Our significant work history of
-                digital branding and marketing solutions has boosted various
-                brands, providing steadfast support in inaugrating a strong
-                digital presence.
+                We are dedicated to crafting exceptional digital experiences
+                through creative design, strategic branding, and results-driven
+                marketing. Artevian exists to help businesses establish a
+                powerful digital identity—blending affordability with creativity
+                to deliver scalable, sustainable growth.
               </p>
               <p className="xl:mt-6 lg:mt-4 mt-2 xl:text-base lg:text-sm text-xs">
-                At Artevian we stand for a promise to democratize the digital
-                revolution. Despite the size of a brand, we strive to provide
-                equal access and empower all digital entities to thrive in the
-                dynamic digital arena. We are enthusiastic about offering
-                important assistance to individuals who possess the will and
-                ability to excel in the constantly expanding digital industry.
+                With a client-first mindset, we strive to break barriers,
+                deliver excellence, and drive meaningful impact in every pixel,
+                post, and campaign we create.
               </p>
             </div>
           </div>

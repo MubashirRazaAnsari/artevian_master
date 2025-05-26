@@ -10,6 +10,8 @@ import mediaTune from "@/assets/media-tune.png";
 import kaantech from "@/assets/KaanTech1.jpg";
 import nick_122 from "@/assets/nick_122.png";
 import papajohns from "@/assets/papachjone.webp";
+import Brandingpg from "@/assets/Brandingpg.jpg";
+
 const Branding = () => {
   return (
     <main className=" overflow-hidden">
@@ -19,7 +21,16 @@ const Branding = () => {
         text_two="behind every brand we build"
         text_colored="power "
       />
-      <Hero hero_title="Branding" />
+      <Hero
+        hero_title="Branding"
+        paragraph1={
+          "Your brand is more than a logo—it’s your story, your voice, your identity. At Artevian, we build brands from the ground up or give existing ones a modern refresh"
+        }
+        paragraph2={
+          " From brand strategy and naming to logo design and visual systems, we ensure your brand speaks with clarity, consistency, and confidence."
+        }
+        img={Brandingpg}
+      />
       <BusinessCounter />
       <Portfolio
         text_one="Choose The Right "

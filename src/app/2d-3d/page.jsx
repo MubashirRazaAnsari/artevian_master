@@ -10,7 +10,7 @@ import art5 from "@/assets/2D-Static/art5.jpg";
 import art6 from "@/assets/2D-Static/art6.jpg";
 import art7 from "@/assets/2D-Static/art7.jpg";
 import art8 from "@/assets/2D-Static/art8.jpg";
-
+import Twodpg from "@/assets/2dpg.jpg";
 const page = () => {
   return (
     <main className=" overflow-hidden">
@@ -20,7 +20,14 @@ const page = () => {
         text_two="behind every art we craft"
         text_colored="Magic"
       />
-      <Hero hero_title="2D/3D Animation" />
+      <Hero
+        hero_title="2D/3D Animation"
+        paragraph1={
+          "Bring your ideas to life with our immersive animation services. From explainer videos to product visualizations and character animations, Artevian crafts engaging 2D and 3D content that informs, entertains, and inspires."
+        }
+        paragraph2={""}
+        img={Twodpg}
+      />
       <BusinessCounter />
       <Portfolio
         text_colored="Type of Animation"

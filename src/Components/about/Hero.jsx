@@ -70,10 +70,16 @@ const Hero = () => {
               Infusing Creativity into Your Digital Presences.
             </p>
             <p className="xl:mt-4 mt-2 text-gray-500 max-xl:text-sm xl:leading-10 lg:leading-8">
-              Artevian works as your digital agent with a core ofvaluing client
-              satisfaction. Our expertise lies in various market niches,
-              involving digital marketing, content creation, logo design,
-              branding, and web development.
+              At Artevian, we are masters of digital innovation and creative
+              design, committed to transforming brands through strategic and
+              visually compelling digital solutions. As your trusted digital
+              partner, we prioritize client satisfaction by delivering tailored
+              services that drive visibility, engagement, and growth. Our team
+              specializes in a wide spectrum of services—including digital
+              marketing, content strategy, logo design, brand identity, and
+              responsive web development—all crafted to elevate your online
+              presence and position you competitively in today’s digital
+              landscape.
             </p>
 
             <Link href="/contact">

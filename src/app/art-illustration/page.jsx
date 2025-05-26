@@ -10,6 +10,7 @@ import art2 from "@/assets/2D-Static/art2.jpg";
 import art3 from "@/assets/2D-Static/art3.jpg";
 import art4 from "@/assets/2D-Static/art4.png";
 import CollectionData from "@/Components/CollectionData.jsx";
+import Artpg from "@/assets/Artpg.jpg";
 
 const ArtIllustration = () => {
   return (
@@ -20,7 +21,16 @@ const ArtIllustration = () => {
         text_two="behind every brand we build"
         text_colored="power"
       />
-      <Hero hero_title="Hand-Crafted" />
+      <Hero
+        hero_title="Hand-Crafted"
+        paragraph1={
+          "Custom art and illustration services tailored to your project’s needs—whether for branding, books, campaigns, or digital content. "
+        }
+        paragraph2={
+          "Our illustrators deliver unique, hand-crafted visuals that amplify your creative message and make your brand memorable."
+        }
+        img={Artpg}
+      />
       <BusinessCounter />
       <Portfolio
         text_one="Choose The Right Type Of Video That"

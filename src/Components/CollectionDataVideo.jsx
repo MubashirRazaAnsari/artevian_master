@@ -41,7 +41,7 @@ const CollectionDataVideo = () => {
   };
 
   return (
-    <div>
+    <>
       <div className="w-full collectionSlider lg:py-16 py-8">
         <Slider {...settings}>
           <div className="px-2">
@@ -207,7 +207,7 @@ const CollectionDataVideo = () => {
             muted
             className="object-cover sm:h-96 mx-auto w-full zoom lg:col-span-3 col-span-6"
           >
-            <source src={"/assets/Bins.mp4"} type="video/mp4" />
+            <source src={"/assets/videos/Bins.mp4"} type="video/mp4" />
           </video>
         </div>
       </div>
@@ -220,7 +220,7 @@ const CollectionDataVideo = () => {
             muted
             className="object-cover sm:h-96 mx-auto w-full zoom lg:col-span-3 col-span-6"
           >
-            <source src={"/assets/Cameron.mp4"} type="video/mp4" />
+            <source src={"/assets/videos/Cameron.mp4"} type="video/mp4" />
           </video>
         </div>
         <div className="sm:col-span-2 col-span-0"></div>
@@ -255,7 +255,7 @@ const CollectionDataVideo = () => {
             muted
             className="object-cover sm:h-96 mx-auto w-full zoom lg:col-span-3 col-span-6"
           >
-            <source src={"/assets/eisforevil1.mp4"} type="video/mp4" />
+            <source src={"/assets/videos/eisforevil1.mp4"} type="video/mp4" />
           </video>
         </div>
       </div>
@@ -268,7 +268,7 @@ const CollectionDataVideo = () => {
             muted
             className="object-cover sm:h-96 mx-auto w-full zoom lg:col-span-3 col-span-6"
           >
-            <source src={"/assets/FreezeMaster1.mp4"} type="video/mp4" />
+            <source src={"/assets/videos/FreezeMaster1.mp4"} type="video/mp4" />
           </video>
         </div>
         <div className="sm:col-span-2 col-span-0"></div>
@@ -284,7 +284,7 @@ const CollectionDataVideo = () => {
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
