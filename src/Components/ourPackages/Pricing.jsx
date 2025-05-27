@@ -1,10 +1,10 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Check } from "lucide-react";
 import { categories, pricingData } from "/data/pricing";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import CheckoutButton from "../CheckoutButton";
 import Link from "next/link";
 
@@ -14,6 +14,21 @@ const Pricing = ({ initialActiveTab }) => {
   );
   const [isHovered, setIsHovered] = useState(null);
   const pathname = usePathname();
+  const router = useRouter();
+
+  // Listen for category changes from Gallery component
+  useEffect(() => {
+    const handleCategoryChange = (event) => {
+      if (pathname === "/") {
+        setSelectedCategory(event.detail.category);
+      }
+    };
+
+    window.addEventListener("categoryChange", handleCategoryChange);
+    return () => {
+      window.removeEventListener("categoryChange", handleCategoryChange);
+    };
+  }, [pathname]);
 
   // Convert category to URL-friendly format
   const getCategoryPath = (category) => {
@@ -71,6 +86,16 @@ const Pricing = ({ initialActiveTab }) => {
     ? categories.filter((cat) => cat === getCurrentCategory())
     : categories;
 
+  // Handle category selection
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+    // If on landing page, emit event to sync with Gallery component
+    if (pathname === "/") {
+      const event = new CustomEvent("categoryChange", { detail: { category } });
+      window.dispatchEvent(event);
+    }
+  };
+
   return (
     <div className="min-h-screen p-8">
       <div className="text-center mb-10 px-4">
@@ -87,7 +112,7 @@ const Pricing = ({ initialActiveTab }) => {
 
         <p
           className="text-gray-700 text-sm sm:text-base md:text-lg 
-                mt-4 md:mt-6 lg:mt-8 md:px-10"
+                mt-4 md:mt-6 lg:mt-8 md:px-10 w-[80vw] mx-auto"
         >
           Explore our transparent pricing model designed to offer competitive
           rates tailored to meet your needs. We believe in clarity and fairness,
@@ -97,13 +122,13 @@ const Pricing = ({ initialActiveTab }) => {
       </div>
 
       {/* Category Navigation */}
-      <div className="relative mb-12">
-        <div className="flex justify-center items-center flex-wrap py-2 w-full max-x-6xl mx-3">
+      <div className="relative mb-12 w-full max-w-5xl mx-auto px-4">
+        <div className="flex flex-wrap justify-center items-center gap-3 py-2">
           {filteredCategories.map((category) => (
             <motion.button
               key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-3 py-3 m-2 rounded-full text-white font-semibold whitespace-nowrap
+              onClick={() => handleCategorySelect(category)}
+              className={`px-4 py-2 rounded-full text-white font-semibold whitespace-nowrap text-sm md:text-base
                 ${selectedCategory === category ? "btn" : "btnNonActive"}`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -134,9 +159,9 @@ const Pricing = ({ initialActiveTab }) => {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="p-8 flex flex-col h-full">
-                    <h3 className="text-2xl font-semibold text-center text-gray-100 mb-2">
-                      {pkg.name} <br />
-                      <span className="mr-6 text-center">PACKAGE</span>
+                    <h3 className="text-xl sm:text-lg md:text-xl lg:text-xl font-semibold text-center text-gray-100 mb-2 ">
+                      {pkg.name}
+                      {/* <span className="mr-6 text-center">PACKAGE</span> */}
                     </h3>
                     <div className="text-center mb-6">
                       <span className="text-5xl text-gray-100 font-semibold">

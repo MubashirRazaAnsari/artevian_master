@@ -69,7 +69,7 @@ const Hero = () => {
             <p className="font-semibold max-xl:text-sm">
               Infusing Creativity into Your Digital Presences.
             </p>
-            <p className="xl:mt-4 mt-2 text-gray-500 max-xl:text-sm xl:leading-10 lg:leading-8">
+            <p className="xl:mt-4 mt-2 text-gray-500 max-xl:text-sm xl:leading-5 lg:leading-5">
               At Artevian, we are masters of digital innovation and creative
               design, committed to transforming brands through strategic and
               visually compelling digital solutions. As your trusted digital

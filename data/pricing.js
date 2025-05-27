@@ -94,7 +94,7 @@ export const pricingData = [
   {
     id: 4,
     category: "E-Commerce",
-    name: "CUSTOM MARKETPLACE",
+    name: "CUSTOM DIAMOND",
     price: 6699,
     originalPrice: 13398,
     stripePriceId: "price_1RRKg4EETLRAdxommwNIDpWB",
@@ -137,7 +137,7 @@ export const pricingData = [
   {
     id: 5,
     category: "E-Commerce",
-    name: "ELITE Automated",
+    name: "ELITE PRO",
     price: 11999,
     originalPrice: 23998,
     stripePriceId: "price_1RRKgqEETLRAdxomNrDCE1ng",
@@ -422,7 +422,7 @@ export const pricingData = [
   {
     id: 8,
     category: "Website Design",
-    name: "STARTUP WEBSITE",
+    name: "STARTUP PLUS",
     price: 499,
     originalPrice: 999,
     stripePriceId: "price_1RRKkqEETLRAdxommv99CJSI",
@@ -458,7 +458,7 @@ export const pricingData = [
   {
     id: 9,
     category: "Website Design",
-    name: "PROFESSIONAL WEBSITE",
+    name: "PROFESSIONAL PLUS",
     price: 749,
     originalPrice: 1598,
     stripePriceId: "price_1RRKlMEETLRAdxom1eVFiDLp",
@@ -515,7 +515,7 @@ export const pricingData = [
   {
     id: 10,
     category: "Website Design",
-    name: "ELITE WEBSITE",
+    name: "ELITE PLUS",
     price: 1599,
     originalPrice: 3198,
     stripePriceId: "price_1RRKmyEETLRAdxom6ZVwEvyf",
@@ -575,7 +575,7 @@ export const pricingData = [
   {
     id: 11,
     category: "Website Design",
-    name: "CORPORATE WEBSITE",
+    name: "CORPORATE PLUS",
     price: 2599,
     originalPrice: 5198,
     stripePriceId: "price_1RRKnSEETLRAdxomgQa3XgIm",
@@ -645,7 +645,7 @@ export const pricingData = [
   {
     id: 12,
     category: "Website Design",
-    name: "ENTERPRISE PLUS WEBSITE",
+    name: "ENTERPRISE PLUS",
     price: 2499,
     originalPrice: 4998,
     stripePriceId: "price_1RRKo1EETLRAdxomWdpkvHQ3",
@@ -1214,7 +1214,7 @@ export const pricingData = [
   },
   {
     id: 26,
-    name: "BASIC VIDEO EDITING",
+    name: "BASIC VIDEO",
     category: "Video Editing",
     price: 199.0,
     originalPrice: 399.0,
@@ -1995,7 +1995,7 @@ export const pricingData = [
   },
   {
     id: 41,
-    name: "Premium Brand Story",
+    name: "Premium Brand",
     category: "2D/3D Animation",
     price: 1299.0,
     originalPrice: 1750.0,
@@ -2091,7 +2091,7 @@ export const pricingData = [
   },
   {
     id: 45,
-    name: " Character Design Basic ",
+    name: " Character Design ",
     category: "Art & Illustration",
     price: 199.0,
     originalPrice: 370.0,
@@ -2135,7 +2135,7 @@ export const pricingData = [
   },
   {
     id: 47,
-    name: " Merchandise & Poster Art ",
+    name: " Merch & Poster Art ",
     category: "Art & Illustration",
     price: 799.0,
     originalPrice: 1270.0,
@@ -2160,7 +2160,7 @@ export const pricingData = [
   },
   {
     id: 48,
-    name: "Illustrated Branding Kit ",
+    name: "Illustrated Branding",
     category: "Art & Illustration",
     price: 1499.0,
     originalPrice: 2070.0,
@@ -2192,7 +2192,7 @@ export const pricingData = [
   },
   {
     id: 49,
-    name: "App Lite Web App ",
+    name: "  App Lite (Web - App) ",
     category: "Mobile Apps",
     price: 1499.0,
     originalPrice: 2050.0,
@@ -2381,7 +2381,7 @@ export const pricingData = [
   },
   {
     id: 54,
-    name: "Marketing Kickstarter",
+    name: "Marketing Starter",
     category: "Digital Marketing",
     price: 499,
     originalPrice: 599,
@@ -2415,7 +2415,7 @@ export const pricingData = [
   },
   {
     id: 54,
-    name: "Content & SEO Growth",
+    name: "Content & SEO",
     category: "Digital Marketing",
     price: 999,
     originalPrice: 1299,
@@ -2455,7 +2455,7 @@ export const pricingData = [
   },
   {
     id: 55,
-    name: "PPC & Conversion Funnel",
+    name: "PPC & Conversion",
     category: "Digital Marketing",
     price: 1999,
     originalPrice: 2599,
@@ -2494,7 +2494,7 @@ export const pricingData = [
   },
   {
     id: 56,
-    name: "Full-Stack Marketing Pro",
+    name: "Full-Stack Marketing",
     category: "Digital Marketing",
     price: 3999,
     originalPrice: 2599,
@@ -2538,7 +2538,7 @@ export const pricingData = [
   },
   {
     id: 57,
-    name: "SMM Kickstarter",
+    name: "SMM Starter",
     category: "SMM",
     price: 499,
     originalPrice: 699,
@@ -2589,7 +2589,7 @@ export const pricingData = [
   },
   {
     id: 59,
-    name: "Paid Social & Conversion",
+    name: "Paid Social",
     category: "SMM",
     price: 1999,
     originalPrice: 2499,
@@ -2626,7 +2626,7 @@ export const pricingData = [
   },
   {
     id: 60,
-    name: "Full-Stack Social Media",
+    name: "Full-Stack",
     category: "SMM",
     price: 3999,
     originalPrice: 4999,

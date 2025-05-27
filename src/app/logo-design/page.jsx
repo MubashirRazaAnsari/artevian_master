@@ -5,19 +5,19 @@ import Portfolio from "@/Components/Portfolio";
 import Pricing from "@/Components/ourPackages/Pricing";
 import Testimonials from "@/Components/Testimonials";
 import React from "react";
-import img from "@/assets/logodesignpg.png";
+import img from "@/assets/logodesignpg.webp";
 
 const LogoDesign = () => {
   return (
     <main className=" overflow-hidden">
       <Banner
-        page_title="Logo"
+        page_title="Logo Design"
         text_one="Discover the"
         text_two="behind every logo we craft"
         text_colored="artistry"
       />
       <Hero
-        hero_title="Logo"
+        hero_title="Logo Design"
         paragraph1={
           "Consider Artevian your dedicated logo design and branding partner, ready to embark with you on a transformative brand identity journey. From concept to creation, we offer comprehensive logo design services that serve as the cornerstone of your brand’s visual presence."
         }

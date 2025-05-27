@@ -16,7 +16,7 @@ const ContactPopUp = ({ onClose }) => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 5000);
+    }, 1000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -70,7 +70,7 @@ const ContactPopUp = ({ onClose }) => {
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex items-center justify-center transition-opacity duration-300 ${
+      className={`fixed inset-0 z-50 flex items-center justify-center transition-opacity ${
         isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
       }`}
     >
@@ -78,7 +78,7 @@ const ContactPopUp = ({ onClose }) => {
         className="absolute inset-0 bg-black bg-opacity-50"
         onClick={onClose}
       ></div>
-      <div className="relative h-[90%] sm:h-[90%] md:h-[80%] lg:h-[95%] bg-my-gradient px-4 lg:py-10 py-5 rounded-2xl w-[95%] sm:w-[90%] md:w-[85%] lg:w-[65%] xl:w-[55%] max-w-3xl mx-auto">
+      <div className="relative h-auto max-h-[85vh] bg-my-gradient px-4 lg:py-8 py-4 rounded-2xl w-[95%] sm:w-[90%] md:w-[85%] lg:w-[65%] xl:w-[55%] max-w-3xl mx-auto ">
         <button onClick={onClose} className="font-bold ml-1">
           <IoClose size={24} />
         </button>
@@ -86,7 +86,7 @@ const ContactPopUp = ({ onClose }) => {
           <h4 className="text-2xl sm:text-3xl font-bold text-white text-center">
             Get In Touch
           </h4>
-          <p className="font-light text-white text-center mt-4 sm:mt-6 text-sm sm:text-base">
+          <p className="font-light text-white text-center mt-4 sm:mt-6 text-sm sm:text-sm">
             Ready to elevate your brand with Artevian? Contact us today to
             explore our digital marketing, web development, Mobile App
             development, Logo Design, Branding, Illustration and Animation
@@ -102,7 +102,7 @@ const ContactPopUp = ({ onClose }) => {
           </div>
         )}
         <form onSubmit={handleSubmit}>
-          <div className="text-white grid grid-cols-12 lg:gap-6 gap-3 mt-6 sm:mt-10">
+          <div className="text-white grid grid-cols-12 lg:gap-3 gap-3 mt-4 sm:mt-6">
             <div className="sm:col-span-6 col-span-12 flex flex-col gap-0.5">
               <label
                 htmlFor="firstName"

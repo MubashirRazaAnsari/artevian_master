@@ -17,6 +17,20 @@ const Gallery = ({ selectedPortfolio }) => {
   const pathname = usePathname();
   const router = useRouter();
 
+  // Listen for category changes from Pricing component
+  useEffect(() => {
+    const handleCategoryChange = (event) => {
+      if (pathname === "/") {
+        setSelectedCategory(event.detail.category);
+      }
+    };
+
+    window.addEventListener("categoryChange", handleCategoryChange);
+    return () => {
+      window.removeEventListener("categoryChange", handleCategoryChange);
+    };
+  }, [pathname]);
+
   // Convert category to URL-friendly format
   const getCategoryPath = (category) => {
     // Special case for Art & Illustration
@@ -246,6 +260,16 @@ const Gallery = ({ selectedPortfolio }) => {
       : "";
   };
 
+  // Handle category selection
+  const handleCategorySelect = (category) => {
+    setSelectedCategory(category);
+    // If on landing page, emit event to sync with Pricing component
+    if (pathname === "/") {
+      const event = new CustomEvent("categoryChange", { detail: { category } });
+      window.dispatchEvent(event);
+    }
+  };
+
   const handleCardClick = (item) => {
     // If we're on the home page, redirect to the services page
     if (pathname === "/") {
@@ -273,12 +297,12 @@ const Gallery = ({ selectedPortfolio }) => {
       </div>
 
       {/* Navigation Links */}
-      <nav className="flex justify-center items-center flex-wrap py-2 w-full max-x-6xl mx-3">
+      <nav className="flex flex-wrap justify-center items-center gap-3 py-2 w-full max-w-5xl mx-auto px-4">
         {filteredCategories.map((category) => (
           <motion.button
             key={category}
-            onClick={() => setSelectedCategory(category)}
-            className={`px-3 py-3 m-2 rounded-full text-white font-semibold whitespace-nowrap ${
+            onClick={() => handleCategorySelect(category)}
+            className={`px-4 py-2 rounded-full text-white font-semibold whitespace-nowrap text-sm md:text-base ${
               selectedCategory === category ? "btn" : "btnNonActive"
             }`}
             whileHover={{ scale: 1.05 }}

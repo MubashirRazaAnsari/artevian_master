@@ -7,7 +7,7 @@ import Testimonials from "@/Components/Testimonials";
 import React from "react";
 import CollectionData from "@/Components/CollectionData";
 import art5 from "@/assets/2D-Static/art5.jpg";
-import art6 from "@/assets/2D-Static/art6.jpg";
+import art18 from "@/assets/2D-Static/art18.jpg";
 import art7 from "@/assets/2D-Static/art7.jpg";
 import art8 from "@/assets/2D-Static/art8.jpg";
 import Twodpg from "@/assets/2dpg.jpg";
@@ -37,7 +37,7 @@ const page = () => {
       />
       <CollectionData
         image_one={art5}
-        image_two={art6}
+        image_two={art18}
         image_three={art7}
         image_four={art8}
       />

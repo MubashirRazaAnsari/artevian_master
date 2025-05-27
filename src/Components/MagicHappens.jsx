@@ -7,7 +7,7 @@ import magic3 from "../assets/magic-happens-3.png";
 const MagicHappens = () => {
   return (
     <div className="flex justify-center items-center my-12">
-      <div className="container xl:w-[90%] px-4">
+      <div className="container xl:w-[80%] px-4">
         <h1
           className="text-gray-900 font-bold text-center 
                  text-xl sm:text-2xl md:text-3xl lg:text-6xl 

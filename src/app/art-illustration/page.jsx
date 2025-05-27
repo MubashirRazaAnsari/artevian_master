@@ -5,10 +5,10 @@ import Banner from "@/Components/Banner";
 import Hero from "@/Components/Hero";
 import Portfolio from "@/Components/Portfolio";
 import React from "react";
-import art1 from "@/assets/2D-Static/art1.jpg";
+import art8 from "@/assets/2D-Static/art8.jpg";
 import art2 from "@/assets/2D-Static/art2.jpg";
-import art3 from "@/assets/2D-Static/art3.jpg";
-import art4 from "@/assets/2D-Static/art4.png";
+import art11 from "@/assets/2D-Static/art11.jpg";
+import art15 from "@/assets/2D-Static/art15.jpg";
 import CollectionData from "@/Components/CollectionData.jsx";
 import Artpg from "@/assets/Artpg.jpg";
 
@@ -39,10 +39,10 @@ const ArtIllustration = () => {
         selectedPortfolio="Art & Illustration"
       />
       <CollectionData
-        image_one={art1}
+        image_one={art8}
         image_two={art2}
-        image_three={art3}
-        image_four={art4}
+        image_three={art11}
+        image_four={art15}
       />
       <Pricing initialActiveTab="Art & Illustration" />
       <Testimonials />

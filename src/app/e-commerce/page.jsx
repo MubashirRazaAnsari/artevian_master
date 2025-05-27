@@ -5,7 +5,7 @@ import Portfolio from "@/Components/Portfolio";
 import Pricing from "@/Components/ourPackages/Pricing";
 import Testimonials from "@/Components/Testimonials";
 import React from "react";
-import hero from "@/assets/logo-hero.png";
+import hero from "@/assets/ecommercepg.jpg";
 
 const page = () => {
   return (
