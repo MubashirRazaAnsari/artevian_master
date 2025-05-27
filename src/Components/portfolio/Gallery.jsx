@@ -348,8 +348,8 @@ const Gallery = ({ selectedPortfolio }) => {
                         {[0, 1, 2].map((index) => (
                           <div
                             key={index}
-                            className={`relative w-24 sm:w-28 md:w-32 h-[220px] sm:h-[280px] md:h-[320px] bg-black rounded-[1.5rem] sm:rounded-[2rem] border-[4px] sm:border-[6px] md:border-[8px] border-gray-800 overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 ${
-                              index === 2 ? "hidden sm:block" : ""
+                            className={`relative w-28 sm:w-28 md:w-40 h-[220px] sm:h-[280px] md:h-[320px] bg-black rounded-[1.5rem] sm:rounded-[2rem] border-[4px] sm:border-[6px] md:border-[8px] border-gray-800 overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 ${
+                              index === 2 ? "hidden md:hidden lg:block" : ""
                             }`}
                           >
                             <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-8 sm:w-10 md:w-12 h-1 sm:h-1.5 md:h-2 bg-gray-700 rounded-b-lg z-10" />
@@ -487,8 +487,8 @@ const Gallery = ({ selectedPortfolio }) => {
                           fill
                           className="object-cover"
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                          loading="eager"
-                          priority
+                          loading="lazy"
+                          // priority
                           quality={75}
                         />
                       </motion.div>
