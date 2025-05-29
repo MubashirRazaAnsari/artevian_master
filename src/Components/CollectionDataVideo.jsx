@@ -56,7 +56,7 @@ const CollectionDataVideo = ({ category }) => {
           videoId: "YkVbyWJO-sc",
           title: "Creative Animation",
           description:
-            "Our animators build immersive scenes with emotion and energy. Whether it’s a character-driven story or sleek explainer, your vision becomes engaging reality.",
+            "Our animators build immersive scenes with emotion and energy. Whether it's a character-driven story or sleek explainer, your vision becomes engaging reality.",
         },
         {
           videoId: "qOHBq8FAAbk",
@@ -110,13 +110,13 @@ const CollectionDataVideo = ({ category }) => {
           videoId: "zvBu_S2-cMI",
           title: "Editing That Speaks",
           description:
-            "We don’t just trim clips—we shape stories. With rhythmic pacing, layered audio, and scene-enhancing transitions, every second is designed to keep your audience engaged.",
+            "We don't just trim clips—we shape stories. With rhythmic pacing, layered audio, and scene-enhancing transitions, every second is designed to keep your audience engaged.",
         },
         {
           videoId: "QD_C-M0mfIo",
           title: "Dynamic Story Cuts",
           description:
-            "Our editors breathe life into raw footage—building emotion, energy, and clarity. Whether it’s a product showcase, a brand video, or a full-length feature, we bring your footage to life.",
+            "Our editors breathe life into raw footage—building emotion, energy, and clarity. Whether it's a product showcase, a brand video, or a full-length feature, we bring your footage to life.",
         },
         {
           videoId: "AhApbhV_tEU",
@@ -127,6 +127,14 @@ const CollectionDataVideo = ({ category }) => {
       ],
     },
   };
+
+  // Add validation for category
+  if (!videoData[activeCategory]) {
+    console.warn(
+      `Invalid category "${activeCategory}" provided to CollectionDataVideo. Defaulting to "2d-3d".`
+    );
+    return <CollectionDataVideo category="2d-3d" />;
+  }
 
   const settings = {
     dots: true,

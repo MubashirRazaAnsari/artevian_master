@@ -25,7 +25,7 @@ const page = () => {
             Infusing Creativity into Your Digital Presences.
           </p>
         </div>
-        <CollectionDataVideo />
+        <CollectionDataVideo category="2d-3d" />
       </div>
     </main>
   );
