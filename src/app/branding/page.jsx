@@ -7,10 +7,10 @@ import CollectionData from "@/Components/CollectionData.jsx";
 import Testimonials from "@/Components/Testimonials";
 import React from "react";
 import mediaTune from "@/assets/media-tune.png";
-import kaantech from "@/assets/KaanTech1.jpg";
-import nick_122 from "@/assets/nick_122.png";
-import papajohns from "@/assets/papachjone.webp";
-import Brandingpg from "@/assets/Brandingpg.jpg";
+import kaantech from "@/assets/Charli.png";
+import nick_122 from "@/assets/Torado.png";
+import papajohns from "@/assets/Fr0sty1.jpg";
+import Brandingpg from "@/assets/mouse2.jpg";
 
 const Branding = () => {
   return (
