@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import Slider from "react-slick";
-
+import LazyYoutubeEmbed from "./video/LazyYoutubeEmbed";
 const CollectionDataVideo = ({ category }) => {
   const [activeCategory] = useState(category);
 
@@ -184,13 +184,17 @@ const CollectionDataVideo = ({ category }) => {
             <div key={index} className="px-2">
               <div className="relative overflow-hidden rounded-xl bg-purple-800/20 backdrop-blur-sm shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="aspect-video">
-                  <iframe
+                  {/* <iframe
                     src={`https://www.youtube.com/embed/${video.videoId}?autoplay=1&mute=1&loop=1&playlist=${video.videoId}&controls=0&showinfo=0&modestbranding=1&rel=0}`}
                     frameBorder="0"
                     className="w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     autoPlay
+                    title={video.title}
+                  /> */}
+                  <LazyYoutubeEmbed
+                    videoId={video.videoId}
                     title={video.title}
                   />
                 </div>
@@ -215,12 +219,16 @@ const CollectionDataVideo = ({ category }) => {
             >
               <div className="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="aspect-video">
-                  <iframe
+                  {/* <iframe
                     src={`https://www.youtube.com/embed/${video.videoId}?autoplay=1&mute=1&loop=1&playlist=${video.videoId}&controls=0&showinfo=0&modestbranding=1&rel=0`}
                     frameBorder="0"
                     className="w-full h-full"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
+                    title={video.title}
+                  /> */}
+                  <LazyYoutubeEmbed
+                    videoId={video.videoId}
                     title={video.title}
                   />
                 </div>

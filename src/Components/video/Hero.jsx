@@ -6,6 +6,7 @@ const Hero = ({
   hero_title_colored,
   paragraph1,
   paragraph2,
+  cn,
 }) => {
   return (
     <div className="w-full flex justify-center items-center lg:py-10 py-5 px-4 max-h-screen max-sm:mt-5 mb-10">
@@ -16,12 +17,14 @@ const Hero = ({
             data-aos-delay="100"
             data-aos="fade-right"
           >
-            <h4 className="lg:text-6xl sm:text-4xl text-3xl font-bold text-gray-800 lg:mb-8 mb-3">
+            <h4
+              className={`lg:text-6xl sm:text-4xl text-3xl font-bold text-gray-800 lg:mb-8 mb-3 ${cn}`}
+            >
               <span className="text-primary">{hero_title_colored}</span>{" "}
               {hero_title}
             </h4>
-            <p className="text-gray-800 lg:my-4 my-2">{paragraph1}</p>
-            <p className="text-gray-800 lg:my-4 my-2">{paragraph2}</p>
+            <p className={`lg:my-4 my-2 ${cn}`}>{paragraph1}</p>
+            <p className={`lg:my-4 my-2 ${cn}`}>{paragraph2}</p>
             <Link href="/contact">
               <button className="btn lg:mt-8 mt-4">Contact Us</button>
             </Link>

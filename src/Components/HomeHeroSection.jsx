@@ -37,14 +37,14 @@ const HomeHeroSection = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="bg-white/80 min-h-screen flex justify-center items-center w-full px-4 sm:px-6 lg:px-8">
+      <div className="bg-white/20 min-h-screen flex justify-center items-center w-full px-4 sm:px-6 lg:px-8">
         <div className="container h-full w-full flex flex-col-reverse lg:flex-row justify-between items-center py-8 sm:py-12 lg:py-16 gap-8 lg:gap-4 lg:ml-[150px]">
           <div
             data-aos="fade-up"
             data-aos-delay="50"
             className="w-full lg:w-1/2 text-center lg:text-left"
           >
-            <h1 className="text-2xl sm:text-xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4 leading-tight text-gray-800">
+            <h1 className="text-2xl sm:text-xl md:text-4xl lg:text-5xl font-bold mb-2 sm:mb-4 leading-tight text-white">
               A digital agency for the future. We create
               <br className="hidden sm:block" />
               end-to-end
@@ -68,7 +68,7 @@ const HomeHeroSection = () => {
               />
             </h1>
 
-            <p className="text-base sm:text-lg md:text-xl text-gray-700 mb-6 sm:mb-8">
+            <p className="text-base sm:text-lg md:text-xl text-white mb-6 sm:mb-8">
               Custom Websites, Branding & Digital Marketing Solutions
             </p>
 
@@ -81,7 +81,7 @@ const HomeHeroSection = () => {
               </button>
               <Link
                 href="/contact"
-                className="w-full sm:w-auto text-black border-gray-500 border rounded-2xl px-5 py-2.5 hover:bg-slate-100 hover:text-gray-900"
+                className="w-full sm:w-auto text-white border-gray-500 border rounded-2xl px-5 py-2.5 hover:bg-slate-100 hover:text-gray-900"
               >
                 <button className="w-full sm:w-auto border-b-[2px] transition-all duration-200 ease-in-out border-transparent hover:border-gray-900 flex gap-1 items-center justify-center font-medium text-base sm:text-lg">
                   Contact Us <GoArrowUpRight />

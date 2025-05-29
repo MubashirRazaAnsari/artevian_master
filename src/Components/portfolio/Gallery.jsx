@@ -143,13 +143,23 @@ const Gallery = ({ selectedPortfolio, portfolio_title }) => {
   };
 
   // Function to convert YouTube URL to embed URL
-  const getYouTubeEmbedUrl = (url) => {
-    if (!url) return "";
+  const getYouTubeEmbedUrl = (urlOrId) => {
+    if (!urlOrId) return "";
+
+    // If only video ID is passed (like "qOHBq8FAAbk"), just return the embed URL directly
+    if (urlOrId.length === 11 && /^[a-zA-Z0-9_-]{11}$/.test(urlOrId)) {
+      return `https://www.youtube.com/embed/${urlOrId}?autoplay=1&mute=1&loop=1&playlist=${urlOrId}&controls=0&showinfo=0&modestbranding=1&rel=0`;
+    }
+
+    // Otherwise, try to extract from full URL
     const regExp =
-      /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
-    const match = url.match(regExp);
-    return match && match[2].length === 11
-      ? `https://www.youtube.com/embed/${match[2]}`
+      /^.*(?:youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]{11}).*/;
+    const match = urlOrId.match(regExp);
+
+    const videoId = match ? match[1] : null;
+
+    return videoId
+      ? `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&modestbranding=1&rel=0`
       : "";
   };
 
@@ -336,11 +346,18 @@ const Gallery = ({ selectedPortfolio, portfolio_title }) => {
                         animate={isHovered === item.id ? "hover" : "initial"}
                         variants={getCategoryAnimation(item.category)}
                       >
-                        <iframe
+                        {/* <iframe
                           src={`https://www.youtube.com/embed/${item.videoUrl}?autoplay=1&mute=1&loop=1&playlist=${item.videoUrl}&controls=0&showinfo=0&modestbranding=1&rel=0`}
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           className="w-full h-full rounded-lg"
                           allowFullScreen
+                        /> */}
+                        <iframe
+                          src={getYouTubeEmbedUrl(item.videoUrl)} // Use your utility
+                          className="w-full h-full"
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          allowFullScreen
+                          title={item.title}
                         />
                       </motion.div>
                     </div>

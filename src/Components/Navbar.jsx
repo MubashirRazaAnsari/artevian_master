@@ -1,12 +1,9 @@
 "use client";
 import Image from "next/image";
 import React, { useState, useEffect, useCallback } from "react";
-import logo from "../assets/black-logo.png";
-import {
-  IoIosArrowDown,
-  IoIosArrowDropright,
-  IoIosArrowRoundUp,
-} from "react-icons/io";
+import logo from "../assets/logo.webp";
+import logo2 from "../assets/black-logo.png";
+import { IoIosArrowDropright } from "react-icons/io";
 import { RiMenu3Fill } from "react-icons/ri";
 import { IoCloseSharp } from "react-icons/io5";
 import Link from "next/link";
@@ -166,22 +163,44 @@ const Navbar = () => {
         } transition-colors duration-300 ease-in-out w-full fixed z-30 top-0 py-3 px-4 flex justify-center items-center`}
       >
         <nav className="container flex justify-between gap-3 text-base lg:w-[90%]">
-          <Image
-            src={logo}
-            alt="logo"
-            width={1000}
-            height={1000}
-            priority
-            className="cursor-pointer lg:w-52 md:w-48 w-40 object-contain"
-            onClick={() => router.push("/")}
-          />
-
-          <ul className="lg:flex lg:gap-8 gap-4 font-medium justify-center items-center text-gray-800 hidden xl:text-xl text-lg">
+          {isScrolled ||
+          isActiveLink("/") ||
+          isActiveLink("/2d-3d") ||
+          isActiveLink("/video-editing") ? (
+            <Image
+              src={logo}
+              alt="logo"
+              width={1000}
+              height={1000}
+              priority
+              className="cursor-pointer lg:w-52 md:w-48 w-40 object-contain"
+              onClick={() => router.push("/")}
+            />
+          ) : (
+            <Image
+              src={logo2}
+              alt="logo"
+              width={1000}
+              height={1000}
+              priority
+              className="cursor-pointer lg:w-52 md:w-48 w-40 object-contain"
+              onClick={() => router.push("/")}
+            />
+          )}
+          <ul
+            className={`lg:flex lg:gap-8 gap-4 font-medium justify-center items-center text-gray-800 hidden xl:text-xl text-lg ${
+              isActiveLink("/") ||
+              isActiveLink("/2d-3d") ||
+              isActiveLink("/video-editing")
+                ? "text-white/80"
+                : "text-gray-800"
+            }`}
+          >
             <li>
               <Link
                 href="/"
                 className={`hover:text-primary transition-all duration-150 ease-in-out cursor-pointer ${
-                  isActiveLink("/") ? "text-primary" : "text-gray-800"
+                  isActiveLink("/") ? "text-primary" : ""
                 }`}
               >
                 <span className="block">Home</span>
@@ -191,7 +210,7 @@ const Navbar = () => {
               <Link
                 href="/about"
                 className={`hover:text-primary transition-all duration-150 ease-in-out cursor-pointer ${
-                  isActiveLink("/about") ? "text-primary" : "text-gray-800"
+                  isActiveLink("/about") ? "text-primary" : ""
                 }`}
               >
                 <span className="block">About</span>
@@ -205,7 +224,7 @@ const Navbar = () => {
                   section.links.some((link) => isActiveLink(link.href))
                 )
                   ? "text-primary"
-                  : "text-gray-800"
+                  : ""
               }`}
             >
               <span>Services</span>
@@ -231,7 +250,7 @@ const Navbar = () => {
               <Link
                 href="/portfolio"
                 className={`hover:text-primary transition-all duration-150 ease-in-out cursor-pointer ${
-                  isActiveLink("/portfolio") ? "text-primary" : "text-gray-800"
+                  isActiveLink("/portfolio") ? "text-primary" : ""
                 }`}
               >
                 <span className="block">Portfolio</span>
@@ -241,7 +260,7 @@ const Navbar = () => {
               <Link
                 href="/contact"
                 className={`hover:text-primary transition-all duration-150 ease-in-out cursor-pointer ${
-                  isActiveLink("/contact") ? "text-primary" : "text-gray-800"
+                  isActiveLink("/contact") ? "text-primary" : ""
                 }`}
               >
                 <span className="block">Contact</span>

@@ -2,7 +2,7 @@
 import BusinessCounter from "@/Components/BusinessCounter";
 import Pricing from "@/Components/ourPackages/Pricing";
 import Testimonials from "@/Components/Testimonials";
-import Banner from "@/Components/Banner";
+import Banner from "@/Components/video/Banner";
 import Hero from "@/Components/video/Hero";
 import Portfolio from "@/Components/Portfolio";
 import CollectionDataVideo from "@/Components/CollectionDataVideo";
@@ -32,13 +32,15 @@ const VideoAnimation = () => {
             />
           </video>
         </div>
-        <div className="absolute inset-0 bg-white/50 top-[-40px]" />
-        <div className="relative z-10 text-white">
+        {/* <div className="absolute inset-0 bg-white/50 top-[-40px]" /> */}
+        <div className="relative z-10 text-white flex flex-col justify-center h-full">
           <Banner
             page_title="Video Editing"
             text_colored="Brands Story"
             text_one="Custom Animated Videos That Speaks Your"
+            cn="text-white"
           />
+
           <Hero
             hero_title="Custom Crafted for Your Vision"
             hero_title_colored="Video Editings"
@@ -49,11 +51,12 @@ const VideoAnimation = () => {
               "Expect polished transitions, dynamic effects, and on-brand visuals—all designed to captivate."
             }
             videoID="a2_TLJFUEnc"
+            cn="text-white"
           />
         </div>
       </div>
 
-      <div className="relative top-[-73px]">
+      <div className="relative top-[-32px]">
         <BusinessCounter />
       </div>
       <Portfolio

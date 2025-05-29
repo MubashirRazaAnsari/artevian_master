@@ -1,6 +1,6 @@
 "use client";
 import BusinessCounter from "@/Components/BusinessCounter";
-import Banner from "@/Components//Banner";
+import Banner from "@/Components/video/Banner";
 import Hero from "@/Components/video/Hero";
 import Portfolio from "@/Components/Portfolio";
 import Pricing from "@/Components/ourPackages/Pricing";
@@ -29,13 +29,14 @@ const AnimationPage = () => {
             <source src="/assets/videos/2d-3d-bg.mp4" type="video/mp4" />
           </video>
         </div>
-        <div className="absolute inset-0 bg-white/60 top-[-40px]" />
+        {/* <div className="absolute inset-0 bg-white/10 top-[-40px]" /> */}
         <div className="relative z-10 text-white flex flex-col justify-center h-full">
           <Banner
             page_title="2D/3D Animation"
             text_one="Discover the"
             text_two="behind every art we craft"
             text_colored="Magic"
+            cn="text-white"
           />
           <Hero
             hero_title=" Animation"
@@ -45,6 +46,7 @@ const AnimationPage = () => {
             }
             paragraph2={""}
             videoID={"EmNM2PbGXgc"}
+            cn="text-white"
           />
         </div>
       </div>
