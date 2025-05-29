@@ -6,6 +6,7 @@ const Portfolio = ({
   text_one,
   text_two,
   selectedPortfolio,
+  portfolio_title,
   parag,
 }) => {
   return (
@@ -31,7 +32,10 @@ const Portfolio = ({
             </>
           )}
         </p>
-        <Gallery selectedPortfolio={selectedPortfolio} />
+        <Gallery
+          selectedPortfolio={selectedPortfolio}
+          portfolio_title={portfolio_title}
+        />
       </div>
     </div>
   );

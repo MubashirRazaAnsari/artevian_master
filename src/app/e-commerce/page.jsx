@@ -32,6 +32,9 @@ const page = () => {
         text_two=", Hire us to get you dream fulfilled"
         text_colored="E-Commerce Startup"
         selectedPortfolio="E-Commerce"
+        portfolio_title={
+          "Empower Your Brand with Seamless, Scalable Online Stores"
+        }
       />
       <Pricing initialActiveTab="E-Commerce" />
       <Testimonials />

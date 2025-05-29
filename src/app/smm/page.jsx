@@ -32,6 +32,9 @@ const page = () => {
         text_two=", Hire us to get you dream fulfilled"
         text_colored="SMM"
         selectedPortfolio="SMM"
+        portfolio_title={
+          "Elevate Your Brand’s Voice with Powerful Social Campaigns"
+        }
       />
       <Pricing initialActiveTab="SMM" />
       <Testimonials />

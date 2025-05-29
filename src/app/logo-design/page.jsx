@@ -32,6 +32,9 @@ const LogoDesign = () => {
         text_one="Choose the right"
         text_two="That Shows Your Business"
         selectedPortfolio="Logo"
+        portfolio_title={
+          "Designing Timeless Logos That Speak Your Brand’s Identity"
+        }
       />
       <Pricing initialActiveTab="Logo" />
       <Testimonials />

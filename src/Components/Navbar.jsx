@@ -112,7 +112,7 @@ const Navbar = () => {
     video: {
       title: "Video & Animation",
       links: [
-        { href: "/video-animation", label: "Video Editing" },
+        { href: "/video-editing", label: "Video Editing" },
         { href: "/2d-3d", label: "2D/3D Animation" },
       ],
     },
@@ -264,13 +264,13 @@ const Navbar = () => {
       {show && (
         <div className="fixed z-50">
           <div
-            className="fixed z-40 bg-gray-950 top-0 left-0 w-full h-screen opacity-35"
+            className="fixed z-40 top-0 left-0 w-full h-screen opacity-35 "
             onClick={() => setShow(false)}
           ></div>
           <div
             className={`fixed z-50 right-0 top-0 ${
               show ? "swipeToLeft" : "swipeToRight"
-            } w-3/4 h-screen bg-gray-900 p-3`}
+            } w-3/4 h-screen from-blue-900 bg-gradient-to-t bg-purple-900 p-3 `}
           >
             <div className="flex justify-end">
               <button
@@ -312,7 +312,7 @@ const Navbar = () => {
                 </li>
 
                 {showMenuMobile && (
-                  <ul className="flex flex-col gap-4 text-xl font-[600] bg-gray-800 mx-2 rounded-lg text-gray-200 p-3 m-0">
+                  <ul className="flex flex-col gap-4 text-xl font-[600]  mx-2 rounded-lg text-gray-200 p-3 m-0">
                     {Object.values(serviceLinks).map((section) => (
                       <li key={section.title} className="space-y-2">
                         <h3 className="text-primary font-semibold">

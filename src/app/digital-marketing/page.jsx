@@ -37,6 +37,9 @@ const page = () => {
         text_two="to get the Best results"
         text_colored="Digital Marketing"
         selectedPortfolio="Digital Marketing"
+        portfolio_title={
+          "Drive Growth with Data-Driven Digital Marketing Strategies"
+        }
       />
       <CollectionData
         image_one={chart1}

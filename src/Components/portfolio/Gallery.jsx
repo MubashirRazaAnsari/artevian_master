@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { galleryData } from "../../../data/gallery";
@@ -8,7 +8,7 @@ import { categories } from "../../../data/pricing";
 import { usePathname, useRouter } from "next/navigation";
 import { IoClose } from "react-icons/io5";
 
-const Gallery = ({ selectedPortfolio }) => {
+const Gallery = ({ selectedPortfolio, portfolio_title }) => {
   const [selectedCategory, setSelectedCategory] = useState(
     selectedPortfolio || "Website Design"
   );
@@ -47,7 +47,7 @@ const Gallery = ({ selectedPortfolio }) => {
       return "maintenance";
     }
     if (category === "Video Editing") {
-      return "video";
+      return "video-editing";
     }
     if (category === "Mobile Apps") {
       return "mobile-app";
@@ -90,146 +90,39 @@ const Gallery = ({ selectedPortfolio }) => {
   const getCategoryAnimation = (category) => {
     switch (category) {
       case "Website Design":
-        return {
-          initial: { y: 0 },
-          hover: {
-            y: -400,
-            transition: {
-              duration: 4,
-              ease: "linear",
-            },
-          },
-        };
-
       case "E-Commerce":
         return {
           initial: { y: 0 },
           hover: {
-            y: -400,
+            y: -200,
             transition: {
-              duration: 4,
+              duration: 2,
               ease: "linear",
             },
           },
         };
 
       case "Mobile Apps":
-        return {
-          initial: { scale: 1 },
-          hover: {
-            scale: 1.1,
-            rotate: [0, 2, -2, 0],
-            transition: {
-              duration: 0.5,
-              ease: "easeInOut",
-            },
-          },
-        };
-
       case "Branding":
         return {
           initial: { scale: 1 },
           hover: {
-            scale: 1.08,
-            filter: ["brightness(1)", "brightness(1.2)"],
+            scale: 1.05,
             transition: {
-              duration: 0.4,
+              duration: 0.3,
               ease: "easeInOut",
             },
           },
         };
 
       case "Video Editing":
-        return {
-          initial: { scale: 1 },
-          hover: {
-            scale: 1.05,
-            transition: {
-              duration: 0.3,
-              ease: "easeOut",
-            },
-          },
-        };
-
       case "2D/3D Animation":
         return {
           initial: { scale: 1 },
           hover: {
-            scale: 1.05,
+            scale: 1.03,
             transition: {
-              duration: 0.3,
-              ease: "easeOut",
-            },
-          },
-        };
-
-      case "Logo":
-        return {
-          initial: { scale: 1 },
-          hover: {
-            scale: 1.1,
-            transition: {
-              duration: 0.4,
-              ease: "easeOut",
-            },
-          },
-        };
-
-      case "SEO":
-        return {
-          initial: { scale: 1 },
-          hover: {
-            scale: 1.05,
-            transition: {
-              duration: 0.3,
-              ease: "easeOut",
-            },
-          },
-        };
-
-      case "Art & Illustration":
-        return {
-          initial: { scale: 1 },
-          hover: {
-            scale: 1.08,
-            transition: {
-              duration: 0.4,
-              ease: "easeOut",
-            },
-          },
-        };
-
-      case "Digital Marketing":
-        return {
-          initial: { scale: 1 },
-          hover: {
-            scale: 1.05,
-            transition: {
-              duration: 0.3,
-              ease: "easeOut",
-            },
-          },
-        };
-
-      case "SMM":
-        return {
-          initial: { scale: 1 },
-          hover: {
-            scale: 1.08,
-            transition: {
-              duration: 0.4,
-              ease: "easeOut",
-            },
-          },
-        };
-
-      case "Website Maintenance":
-        return {
-          initial: { scale: 1 },
-          hover: {
-            scale: 1.05,
-            transition: {
-              duration: 0.3,
+              duration: 0.2,
               ease: "easeOut",
             },
           },
@@ -239,9 +132,9 @@ const Gallery = ({ selectedPortfolio }) => {
         return {
           initial: { scale: 1 },
           hover: {
-            scale: 1.05,
+            scale: 1.03,
             transition: {
-              duration: 0.3,
+              duration: 0.2,
               ease: "easeOut",
             },
           },
@@ -285,6 +178,11 @@ const Gallery = ({ selectedPortfolio }) => {
     setSelectedItem(null);
   };
 
+  // Memoize filtered gallery items
+  const filteredGalleryItems = useMemo(() => {
+    return galleryData.filter((item) => item.category === selectedCategory);
+  }, [selectedCategory]);
+
   return (
     <div className="min-h-screen p-8 lg:mt-10">
       <div className="text-center mb-10 sm:mb-16">
@@ -292,7 +190,7 @@ const Gallery = ({ selectedPortfolio }) => {
           OUR PORTFOLIO
         </div>
         <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 sm:mb-6 text-black px-4">
-          Elevate Your Brand with Expert Web Design and Development
+          {portfolio_title}
         </h2>
       </div>
 
@@ -328,156 +226,130 @@ const Gallery = ({ selectedPortfolio }) => {
                   : "grid-cols-1 md:grid-cols-2 lg:grid-cols-3"
               } gap-6 md:gap-8`}
             >
-              {galleryData
-                .filter((item) => item.category === selectedCategory)
-                .map((item) => (
-                  <motion.div
-                    key={item.id}
-                    className={`relative overflow-hidden rounded-xl ${
-                      selectedCategory === "Mobile Apps"
-                        ? "bg-transparent"
-                        : "bg-purple-800/20 backdrop-blur-sm"
-                    } shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer`}
-                    onHoverStart={() => setIsHovered(item.id)}
-                    onHoverEnd={() => setIsHovered(null)}
-                    onClick={() => handleCardClick(item)}
-                  >
-                    {item.category === "Mobile Apps" ? (
-                      // 📱 Multiple Mobile Mockups
-                      <div className="flex flex-row items-center justify-center gap-1 sm:gap-3 p-2 sm:p-4">
-                        {[0, 1, 2].map((index) => (
-                          <div
-                            key={index}
-                            className={`relative w-28 sm:w-28 md:w-40 h-[220px] sm:h-[280px] md:h-[320px] bg-black rounded-[1.5rem] sm:rounded-[2rem] border-[4px] sm:border-[6px] md:border-[8px] border-gray-800 overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 ${
-                              index === 2 ? "hidden md:hidden lg:block" : ""
-                            }`}
-                          >
-                            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-8 sm:w-10 md:w-12 h-1 sm:h-1.5 md:h-2 bg-gray-700 rounded-b-lg z-10" />
-                            <div className="relative w-full h-full">
-                              <Image
-                                src={
-                                  item.mockupImages?.[index] || item.imageUrl
-                                }
-                                alt={`${item.title} - Mockup ${index + 1}`}
-                                fill
-                                className="object-cover w-full h-full"
-                                sizes="(max-width: 640px) 40vw, (max-width: 768px) 30vw, 20vw"
-                                loading="eager"
-                                priority={index === 0}
-                                quality={75}
-                              />
-                            </div>
+              {filteredGalleryItems.map((item) => (
+                <motion.div
+                  key={item.id}
+                  className={`relative overflow-hidden rounded-xl ${
+                    selectedCategory === "Mobile Apps"
+                      ? "bg-transparent"
+                      : "bg-purple-800/20 backdrop-blur-sm"
+                  } shadow-lg hover:shadow-xl transition-shadow duration-300 cursor-pointer`}
+                  onHoverStart={() => setIsHovered(item.id)}
+                  onHoverEnd={() => setIsHovered(null)}
+                  onClick={() => handleCardClick(item)}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  {item.category === "Mobile Apps" ? (
+                    // 📱 Multiple Mobile Mockups
+                    <div className="flex flex-row items-center justify-center gap-1 sm:gap-3 p-2 sm:p-4">
+                      {[0, 1, 2].map((index) => (
+                        <div
+                          key={index}
+                          className={`relative w-28 sm:w-28 md:w-40 h-[220px] sm:h-[280px] md:h-[320px] bg-black rounded-[1.5rem] sm:rounded-[2rem] border-[4px] sm:border-[6px] md:border-[8px] border-gray-800 overflow-hidden shadow-lg transform hover:scale-105 transition-transform duration-300 ${
+                            index === 2 ? "hidden md:hidden lg:block" : ""
+                          }`}
+                        >
+                          <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-8 sm:w-10 md:w-12 h-1 sm:h-1.5 md:h-2 bg-gray-700 rounded-b-lg z-10" />
+                          <div className="relative w-full h-full">
+                            <Image
+                              src={item.mockupImages?.[index] || item.imageUrl}
+                              alt={`${item.title} - Mockup ${index + 1}`}
+                              fill
+                              className="object-cover w-full h-full"
+                              sizes="(max-width: 640px) 112px, (max-width: 768px) 112px, 160px"
+                              loading="lazy"
+                              quality={60}
+                            />
                           </div>
-                        ))}
-                        <motion.div
-                          initial={{ opacity: 0, y: 20 }}
-                          animate={{
-                            opacity: isHovered === item.id ? 1 : 0,
-                            y: isHovered === item.id ? 0 : 20,
-                          }}
-                          transition={{ duration: 0.3 }}
-                          className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
-                        >
-                          {item.title && (
-                            <h3 className="text-xl font-bold text-white mb-2">
-                              {item.title}
-                            </h3>
-                          )}
-                          {item.description && (
-                            <p className="text-gray-200 text-sm">
-                              {item.description}
-                            </p>
-                          )}
-                        </motion.div>
-                      </div>
-                    ) : item.category === "Website Design" ? (
-                      // 🖥️ Website Scroll-Up Image
-                      <div className="relative w-full h-[400px] overflow-hidden">
-                        <motion.div
-                          className="relative w-full h-[800px]"
-                          initial="initial"
-                          animate={isHovered === item.id ? "hover" : "initial"}
-                          variants={getCategoryAnimation(item.category)}
-                        >
-                          <Image
-                            src={item.imageUrl}
-                            alt={item.title}
-                            fill
-                            className="object-cover object-top"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            loading="eager"
-                            priority
-                            quality={75}
-                          />
-                        </motion.div>
-                      </div>
-                    ) : item.category === "E-Commerce" ? (
-                      // 🖥️ E-commerce Scroll-Up Image
-                      <div className="relative w-full h-[400px] overflow-hidden">
-                        <motion.div
-                          className="relative w-full h-[800px]"
-                          initial="initial"
-                          animate={isHovered === item.id ? "hover" : "initial"}
-                          variants={getCategoryAnimation(item.category)}
-                        >
-                          <Image
-                            src={item.imageUrl}
-                            alt={item.title}
-                            fill
-                            className="object-cover object-top"
-                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                            loading="eager"
-                            priority
-                            quality={75}
-                          />
-                        </motion.div>
-                      </div>
-                    ) : item.category === "Video Editing" ? (
-                      // 🎥 YouTube Video Embed
-                      <div className="relative w-full aspect-video overflow-hidden rounded-xl">
-                        <motion.div
-                          className="relative w-full h-full"
-                          initial="initial"
-                          animate={isHovered === item.id ? "hover" : "initial"}
-                          variants={getCategoryAnimation(item.category)}
-                        >
-                          <iframe
-                            src={item.videoUrl}
-                            className="w-full h-full"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                            title={item.title}
-                          />
-                        </motion.div>
-                      </div>
-                    ) : item.category === "2D/3D Animation" ? (
-                      // 🎬 Local Video Player
-                      <div className="relative w-full aspect-video overflow-hidden rounded-xl">
-                        <motion.div
-                          className="relative w-full h-full"
-                          initial="initial"
-                          animate={isHovered === item.id ? "hover" : "initial"}
-                          variants={getCategoryAnimation(item.category)}
-                        >
-                          <video
-                            className="w-full h-full object-cover"
-                            controls
-                            playsInline
-                            preload="metadata"
-                            autoPlay
-                            muted
-                          >
-                            <source src={item.videoUrl} type="video/mp4" />
-                            Your browser does not support the video tag.
-                          </video>
-                        </motion.div>
-                      </div>
-                    ) : (
-                      // Default Image Display
+                        </div>
+                      ))}
                       <motion.div
-                        className="relative w-full h-[300px] overflow-hidden"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{
+                          opacity: isHovered === item.id ? 1 : 0,
+                          y: isHovered === item.id ? 0 : 20,
+                        }}
+                        transition={{ duration: 0.3 }}
+                        className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
+                      >
+                        {item.title && (
+                          <h3 className="text-xl font-bold text-white mb-2">
+                            {item.title}
+                          </h3>
+                        )}
+                        {item.description && (
+                          <p className="text-gray-200 text-sm">
+                            {item.description}
+                          </p>
+                        )}
+                      </motion.div>
+                    </div>
+                  ) : item.category === "Website Design" ? (
+                    // 🖥️ Website Scroll-Up Image
+                    <div className="relative w-full h-[400px] overflow-hidden">
+                      <motion.div
+                        className="relative w-full h-[800px]"
                         initial="initial"
-                        loading="lazy"
+                        animate={isHovered === item.id ? "hover" : "initial"}
+                        variants={getCategoryAnimation(item.category)}
+                      >
+                        <Image
+                          src={item.imageUrl}
+                          alt={item.title}
+                          fill
+                          className="object-cover object-top"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          loading="lazy"
+                          quality={60}
+                        />
+                      </motion.div>
+                    </div>
+                  ) : item.category === "E-Commerce" ? (
+                    // 🖥️ E-commerce Scroll-Up Image
+                    <div className="relative w-full h-[400px] overflow-hidden">
+                      <motion.div
+                        className="relative w-full h-[800px]"
+                        initial="initial"
+                        animate={isHovered === item.id ? "hover" : "initial"}
+                        variants={getCategoryAnimation(item.category)}
+                      >
+                        <Image
+                          src={item.imageUrl}
+                          alt={item.title}
+                          fill
+                          className="object-cover object-top"
+                          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                          loading="lazy"
+                          quality={60}
+                        />
+                      </motion.div>
+                    </div>
+                  ) : item.category === "Video Editing" ||
+                    item.category === "2D/3D Animation" ? (
+                    // 🎥 YouTube Video Embed
+                    <div className="relative w-full aspect-video overflow-hidden rounded-xl">
+                      <motion.div
+                        className="relative w-full h-full rounded-lg"
+                        initial="initial"
+                        animate={isHovered === item.id ? "hover" : "initial"}
+                        variants={getCategoryAnimation(item.category)}
+                      >
+                        <iframe
+                          src={`https://www.youtube.com/embed/${item.videoUrl}?autoplay=1&mute=1&loop=1&playlist=${item.videoUrl}&controls=0&showinfo=0&modestbranding=1&rel=0`}
+                          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                          className="w-full h-full rounded-lg"
+                          allowFullScreen
+                        />
+                      </motion.div>
+                    </div>
+                  ) : (
+                    // Default Image Display
+                    <div className="relative w-full h-[300px] overflow-hidden">
+                      <motion.div
+                        className="relative w-full h-full"
+                        initial="initial"
                         animate={isHovered === item.id ? "hover" : "initial"}
                         variants={getCategoryAnimation(item.category)}
                       >
@@ -488,35 +360,35 @@ const Gallery = ({ selectedPortfolio }) => {
                           className="object-cover"
                           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                           loading="lazy"
-                          // priority
-                          quality={75}
+                          quality={60}
                         />
                       </motion.div>
-                    )}
+                    </div>
+                  )}
 
-                    {/* Shared Overlay */}
-                    <motion.div
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{
-                        opacity: isHovered === item.id ? 1 : 0,
-                        y: isHovered === item.id ? 0 : 20,
-                      }}
-                      transition={{ duration: 0.3 }}
-                      className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
-                    >
-                      {item.title && (
-                        <h3 className="text-xl font-bold text-white mb-2">
-                          {item.title}
-                        </h3>
-                      )}
-                      {item.description && (
-                        <p className="text-gray-200 text-sm">
-                          {item.description}
-                        </p>
-                      )}
-                    </motion.div>
+                  {/* Overlay */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{
+                      opacity: isHovered === item.id ? 1 : 0,
+                      y: isHovered === item.id ? 0 : 20,
+                    }}
+                    transition={{ duration: 0.3 }}
+                    className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent"
+                  >
+                    {item.title && (
+                      <h3 className="text-xl font-bold text-white mb-2">
+                        {item.title}
+                      </h3>
+                    )}
+                    {item.description && (
+                      <p className="text-gray-200 text-sm">
+                        {item.description}
+                      </p>
+                    )}
                   </motion.div>
-                ))}
+                </motion.div>
+              ))}
             </motion.div>
           )}
         </AnimatePresence>
@@ -548,7 +420,8 @@ const Gallery = ({ selectedPortfolio }) => {
                 </button>
 
                 <div className="relative w-full aspect-video">
-                  {selectedItem.category === "Video Editing" ? (
+                  {selectedItem.category === "Video Editing" ||
+                  selectedItem.category === "2D/3D Animation" ? (
                     <iframe
                       src={selectedItem.videoUrl}
                       className="w-full h-full"
@@ -556,16 +429,6 @@ const Gallery = ({ selectedPortfolio }) => {
                       allowFullScreen
                       title={selectedItem.title}
                     />
-                  ) : selectedItem.category === "2D/3D Animation" ? (
-                    <video
-                      className="w-full h-full object-cover"
-                      controls
-                      playsInline
-                      autoPlay
-                    >
-                      <source src={selectedItem.videoUrl} type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
                   ) : (
                     <Image
                       src={selectedItem.imageUrl}
@@ -573,7 +436,8 @@ const Gallery = ({ selectedPortfolio }) => {
                       fill
                       className="object-contain"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-                      priority
+                      loading="lazy"
+                      quality={75}
                     />
                   )}
                 </div>

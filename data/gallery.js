@@ -324,32 +324,72 @@ export const galleryData = [
   {
     id: 43,
     category: "Video Editing",
-    videoUrl: "https://www.youtube.com/embed/bmkvlSVPecc?si=ENvq-igwCZRG5VX7",
+    videoUrl: "dK6DSFGBRhA",
   },
   {
     id: 44,
     category: "Video Editing",
-    videoUrl: "https://www.youtube.com/embed/PCaHueOwhdo?si=OEATq2kLXEf2l64Q",
+    videoUrl: "1_hKTGvo2A4",
   },
   {
     id: 45,
     category: "Video Editing",
-    videoUrl: "https://www.youtube.com/embed/PhPyEVzhu5Q?si=h12IONKJmsLWwqPA",
+    videoUrl: "QD_C-M0mfIo",
   },
+  {
+    id: 94,
+    category: "Video Editing",
+    videoUrl: "zvBu_S2-cMI",
+  },
+  {
+    id: 95,
+    category: "Video Editing",
+    videoUrl: "a2_TLJFUEnc",
+  },
+  {
+    id: 96,
+    category: "Video Editing",
+    videoUrl: "5SxZ90dB2n4",
+  },
+  // {
+  //   id: 97,
+  //   category: "Video Editing",
+  //   videoUrl: "RGNoDy5s83g",
+  // },
+  // {
+  //   id: 98,
+  //   category: "Video Editing",
+  //   videoUrl: "RGNoDy5s83g",
+  // },
   {
     id: 46,
     category: "2D/3D Animation",
-    videoUrl: "/assets/videos/Bins.mp4",
+    videoUrl: "qOHBq8FAAbk",
   },
   {
     id: 47,
     category: "2D/3D Animation",
-    videoUrl: "/assets/videos/Cameron.mp4",
+    videoUrl: "YkVbyWJO-sc",
   },
   {
     id: 48,
     category: "2D/3D Animation",
-    videoUrl: "/assets/videos/FreezeMaster1.mp4",
+    videoUrl: "RGNoDy5s83g",
+  },
+  {
+    id: 91,
+    category: "2D/3D Animation",
+    videoUrl: "4UHw3L3LPuc",
+  },
+  {
+    id: 92,
+    category: "2D/3D Animation",
+    videoUrl: "5RKcyOr7le0",
+  },
+  {
+    id: 93,
+    category: "2D/3D Animation",
+    videoUrl: "VwoaAIqG29E",
   },
   {
     id: 49,
@@ -566,3 +606,4 @@ export const galleryData = [
     imageUrl: WebSiteM6,
   },
 ];
+//id94 taken

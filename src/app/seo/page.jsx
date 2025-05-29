@@ -32,6 +32,9 @@ const page = () => {
         text_two=", Hire us to get you dream fulfilled"
         text_colored="SEO"
         selectedPortfolio="SEO"
+        portfolio_title={
+          "Boost Visibility and Rankings with Strategic Search Optimization"
+        }
       />
       <Pricing initialActiveTab="SEO" />
       <Testimonials />

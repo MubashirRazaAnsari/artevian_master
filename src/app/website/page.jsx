@@ -31,6 +31,9 @@ const Website = () => {
         text_two=", Hire us to get you dream fulfilled"
         text_colored="E-Commerce Startup"
         selectedPortfolio="Website Design"
+        portfolio_title={
+          "Build a Bold Digital Presence with Stunning Video & Design"
+        }
       />
       <Pricing initialActiveTab="Website Design" />
       <Testimonials />

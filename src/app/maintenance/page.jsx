@@ -32,6 +32,9 @@ const page = () => {
         text_two=", Hire us to get you dream fulfilled"
         text_colored="Website Maintenance"
         selectedPortfolio="Website Maintenance"
+        portfolio_title={
+          "Keep Your Website Secure, Updated, and Running Smoothly"
+        }
       />
       <Pricing initialActiveTab="Website Maintenance" />
       <Testimonials />

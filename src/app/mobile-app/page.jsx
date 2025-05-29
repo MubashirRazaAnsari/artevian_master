@@ -27,6 +27,9 @@ const page = () => {
         text_two=", Hire us to get you dream fulfilled"
         text_colored="Mobile App"
         selectedPortfolio="Mobile Apps"
+        portfolio_title={
+          "Innovative Mobile Solutions for a Seamless User Experience"
+        }
       />
       <Pricing initialActiveTab="Mobile Apps" />
       <Testimonials />

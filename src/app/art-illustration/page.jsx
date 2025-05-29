@@ -37,6 +37,9 @@ const ArtIllustration = () => {
         text_two="."
         text_colored="Fits Your Brand"
         selectedPortfolio="Art & Illustration"
+        portfolio_title={
+          "Custom Artworks That Add Personality and Visual Impact"
+        }
       />
       <CollectionData
         image_one={art8}

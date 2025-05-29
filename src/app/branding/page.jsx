@@ -37,6 +37,9 @@ const Branding = () => {
         text_two="That Shows Your Business"
         text_colored="Type of Branding"
         selectedPortfolio="Branding"
+        portfolio_title={
+          "Shaping Strong Brand Identities That Resonate and Last"
+        }
       />
 
       <CollectionData
