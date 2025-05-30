@@ -76,7 +76,7 @@ const TestimonialSlider = () => {
   const TestimonialData = [
     {
       name: "Michelle McWeldin",
-      desc: "Without any doubt I recommend Alcaline Solutions as one of the best web design and digital marketing agencies. One of the best agencies I’ve came across so far. Wouldn’t be hesitated to introduce their work to someone else.",
+      desc: "Without any doubt I recommend Alcaline Solutions as one of the best web design and digital marketing agencies. One of the best agencies I've came across so far. Wouldn't be hesitated to introduce their work to someone else.",
       img: testimonial1.src,
       desig: "Software Engineer",
     },
@@ -113,10 +113,11 @@ const TestimonialSlider = () => {
           {TestimonialData?.map((data, i) => (
             <div
               key={i}
-              className="p-4 flex justify-center items-center md:max-w-[25rem] sm:max-w-[20rem] max-w-[18rem] sm:h-[32rem]"
+              className="p-4 flex justify-center items-stretch md:max-w-[25rem] sm:max-w-[20rem] max-w-[18rem] h-full"
+              style={{ height: "100%" }}
             >
-              <div className="rounded-xl border-[1px] border-gray-300 md:p-6 p-4 shadow-lg w-full h-full">
-                <div className="p-3 relative">
+              <div className="rounded-xl border-[1px] border-gray-300 md:p-6 p-4 shadow-lg w-full h-full flex flex-col justify-between">
+                <div className="p-3 relative flex-1 flex flex-col justify-between">
                   <Image
                     src={quoteT}
                     width={1000}
@@ -124,7 +125,7 @@ const TestimonialSlider = () => {
                     alt="STAR"
                     className="sm:w-4 w-3 object-contain absolute top-0 left-[-5px]"
                   />
-                  <p className="text-gray-700 text-center max-sm:text-xs ml-1">
+                  <p className="text-gray-700 text-center max-sm:text-xs text-sm ml-1 md:line-clamp-4 lg:line-clamp-6 w-full">
                     {data.desc}
                   </p>
                   <Image
@@ -135,15 +136,15 @@ const TestimonialSlider = () => {
                     className="sm:w-4 w-3 object-contain absolute bottom-0 right-0"
                   />
                 </div>
-                <div className="flex justify-center items-center w-full flex-col">
+                <div className="flex justify-center items-center w-full flex-col mt-4">
                   <Image
                     src={data.img}
                     width={1000}
                     height={1000}
-                    className="sm:w-20 w-16 mt-6 mb-4 rounded-full object-contain"
+                    className="sm:w-20 w-16 mt-4 mb-2 rounded-full object-contain"
                     alt=""
                   />
-                  <div className="flex gap-1 justify-center items-center mb-4">
+                  <div className="flex gap-1 justify-center items-center mb-2">
                     {Array(5)
                       .fill(0)
                       .map((_, j) => (

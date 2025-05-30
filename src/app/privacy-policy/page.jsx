@@ -1,11 +1,13 @@
 import React from "react";
 import Link from "next/link";
+
 const page = () => {
+  const banner = "/assets/banner.png";
   return (
     <main className="overflow-hidden w-[80%] mx-auto">
       <section className="bg-white py-16 my-6">
         <div className="container mx-auto px-4">
-          <h1 className="text-center font-bold text-4xl md:text-5xl lg:text-6xl p-4">
+          {/* <h1 className="text-center font-bold text-4xl md:text-5xl lg:text-6xl p-4">
             Privacy Policy
           </h1>
           <p className="text-center text-gray-500 mx-auto text-sm md:text-lg lg:text-lg">
@@ -14,11 +16,38 @@ const page = () => {
             information when you interact with our website and services. We are
             committed to transparency, responsible data handling, and delivering
             high-quality work with integrity.
-          </p>
+          </p> */}
+          <div className="w-full flex justify-center items-center px-4 mt-8 lg:py-16 py-8 ">
+            <div
+              className="lg:py-16 py-8 w-full flex justify-center items-center rounded-lg backdrop-blur-sm"
+              style={{
+                backgroundImage: `url(${banner})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundRepeat: "no-repeat",
+              }}
+            >
+              <div className="container lg:w-[90%]">
+                <h1 className="lg:text-6xl sm:text-4xl text-3xl font-bold text-white text-center lg:py-10 py-5">
+                  Privacy
+                  <span className="text-primary"> Policy </span>
+                </h1>
+
+                <p className="text-center text-white mx-auto text-sm md:text-lg lg:text-lg">
+                  At Artevian, your privacy and satisfaction are our top
+                  priorities. This Privacy Policy outlines how we collect, use,
+                  and protect your information when you interact with our
+                  website and services. We are committed to transparency,
+                  responsible data handling, and delivering high-quality work
+                  with integrity.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
         <div className="container mx-auto mt-8 ">
           <h2 className="font-bold text-xl md:text-2xl lg:text-3xl">
-            Information We Collect
+            Information We <span className="text-primary"> Collect </span>
           </h2>
           <p className="text-gray-600 text-sm md:text-lg lg:text-lg mt-4">
             We collect personal information you voluntarily provide, including:
@@ -28,7 +57,10 @@ const page = () => {
             <li>Email address</li>
             <li>Phone number</li>
             <li>Project details and requirements</li>
-            <li>Payment information (if applicable)</li>
+            <li>
+              Payment information{" "}
+              <span className="text-primary">(if applicable)</span>
+            </li>
             <li>Mailing Address</li>
           </ul>
           <p className="text-gray-600 font-medium text-sm md:text-lg lg:text-lg mt-4">
@@ -48,10 +80,10 @@ const page = () => {
         </div>
         <div className="container mx-auto mt-8">
           <h2 className="font-bold text-xl md:text-2xl lg:text-3xl">
-            How We Use Your Information
+            How We Use Your <span className="text-primary"> Information </span>
           </h2>
           <p className="text-gray-600 text-sm md:text-lg lg:text-lg mt-4">
-            We use your information to:
+            We use your <span className="text-primary"> information </span> to:
           </p>
           <ul className="list-disc list-inside text-gray-500 text-sm md:text-lg lg:text-lg mt-4 ml-5">
             <li>Process orders and deliver services</li>
@@ -59,14 +91,16 @@ const page = () => {
             <li>Respond to inquiries or feedback</li>
             <li>Send order confirmations and account updates</li>
             <li>
-              Share newsletters and promotional content (only if you opt-in)
+              Share newsletters and promotional content{" "}
+              <span className="text-primary">(only if you opt-in)</span>
             </li>
             <li>Improve our services and website functionality</li>
           </ul>
         </div>
         <div className="container mx-auto mt-8">
           <h2 className="font-bold text-xl md:text-2xl lg:text-3xl">
-            Cookies & Tracking Technologies
+            Cookies & Tracking{" "}
+            <span className="text-primary"> Technologies </span>
           </h2>
           <p className="text-gray-600 text-sm md:text-lg lg:text-lg mt-4 text-wrap">
             We use cookies to recognize your browser, improve your experience,
@@ -77,7 +111,7 @@ const page = () => {
         </div>
         <div className="container mx-auto mt-8">
           <h2 className="font-bold text-xl md:text-2xl lg:text-3xl">
-            Third-Party Services
+            Third-Party <span className="text-primary"> Services </span>
           </h2>
           <p className="text-gray-600 text-sm md:text-lg lg:text-lg mt-4">
             We do not sell or rent your personal information. However, we may
@@ -96,18 +130,18 @@ const page = () => {
         </div>
         <div className="container mx-auto mt-8">
           <h2 className="font-bold text-xl md:text-2xl lg:text-3xl">
-            Security of Your Data
+            Security of Your <span className="text-primary"> Data </span>
           </h2>
           <p className="text-gray-600 text-sm md:text-lg lg:text-lg mt-4">
-            We use <strong>SSL encryption</strong> and follow industry best
-            practices to protect your personal data during transmission and
-            storage. While no system is entirely immune to risk, we take every
-            reasonable step to ensure data security.
+            We use <strong className="text-primary"> SSL encryption </strong>{" "}
+            and follow industry best practices to protect your personal data
+            during transmission and storage. While no system is entirely immune
+            to risk, we take every reasonable step to ensure data security.
           </p>
         </div>
         <div className="container mx-auto mt-8">
           <h2 className="font-bold text-xl md:text-2xl lg:text-3xl">
-            Account Access & Management
+            Account Access & <span className="text-primary"> Management </span>
           </h2>
           <p className="text-gray-600 text-sm md:text-lg lg:text-lg mt-4">
             You may log into your registered account on our website to:
@@ -129,7 +163,7 @@ const page = () => {
         </div>
         <div className="container mx-auto mt-8">
           <h2 className="font-bold text-xl md:text-2xl lg:text-3xl">
-            Data Retention
+            Data <span className="text-primary"> Retention </span>
           </h2>
           <p className="text-gray-600 text-sm md:text-lg lg:text-lg mt-4">
             We retain your personal data as long as needed to fulfill the
@@ -140,7 +174,7 @@ const page = () => {
         </div>
         <div className="container mx-auto mt-8">
           <h2 className="font-bold text-xl md:text-2xl lg:text-3xl">
-            Children’s Privacy
+            Children’s <span className="text-primary"> Privacy </span>
           </h2>
           <p className="text-gray-600 text-sm md:text-lg lg:text-lg mt-4">
             Our services are not directed toward individuals under the age of
@@ -149,7 +183,7 @@ const page = () => {
         </div>
         <div className="container mx-auto mt-8">
           <h2 className="font-bold text-xl md:text-2xl lg:text-3xl">
-            Links to Other Websites
+            Links to Other <span className="text-primary"> Websites </span>
           </h2>
           <p className="text-gray-600 text-sm md:text-lg lg:text-lg mt-4">
             Our site may contain external links. Artevian is not responsible for
@@ -160,7 +194,7 @@ const page = () => {
         </div>
         <div className="container mx-auto mt-8">
           <h2 className="font-bold text-xl md:text-2xl lg:text-3xl">
-            Your Rights & Choices
+            Your Rights & <span className="text-primary"> Choices </span>
           </h2>
           <p className="text-gray-600 text-sm md:text-lg lg:text-lg mt-4">
             You have the right to:
@@ -184,7 +218,7 @@ const page = () => {
         </div>
         <div className="container mx-auto mt-8">
           <h2 className="font-bold text-xl md:text-2xl lg:text-3xl">
-            Refund & Revision Policy
+            Refund & <span className="text-primary"> Revision </span> Policy
           </h2>
           <p className="text-gray-600 text-sm md:text-lg lg:text-lg mt-4">
             You may log into your registered account on our website to:
@@ -192,38 +226,54 @@ const page = () => {
           <ul className="list-decimal list-inside text-gray-500 text-sm md:text-lg lg:text-lg mt-4 ml-5">
             <li className="text-gray-600 text-sm md:text-lg lg:text-lg mt-2">
               {" "}
-              <strong>No Refund After Revisions:</strong> Once any revision or
-              modification has been initiated or implemented in your project,
-              <strong> no refund</strong> will be applicable for that specific
-              project.
+              <strong className="text-primary">
+                No Refund After Revisions:
+              </strong>{" "}
+              Once any revision or modification has been initiated or
+              implemented in your project, <strong> no refund</strong> will be
+              applicable for that specific project.
             </li>
             <li className="text-gray-600 text-sm md:text-lg lg:text-lg mt-2">
-              <strong>No Refund for Preference or Change of Mind:</strong>{" "}
+              <strong className="text-primary">
+                No Refund for Preference or Change of Mind:
+              </strong>{" "}
               Refunds are{" "}
-              <strong>
+              <strong className="text-primary">
                 {" "}
                 not issued based on personal dislike of the final product or a
                 change of mind.
               </strong>{" "}
               If you are dissatisfied, you must
-              <strong>provide a clear explanation</strong> of your concerns. Our{" "}
-              <strong>Resolution Department</strong> will assess the matter and
-              respond with a final decision, along with a specific resolution
-              timeline.
+              <strong className="text-primary">
+                provide a clear explanation
+              </strong>{" "}
+              of your concerns. Our{" "}
+              <strong className="text-primary">Resolution Department</strong>{" "}
+              will assess the matter and respond with a final decision, along
+              with a specific resolution timeline.
             </li>
             <li className="text-gray-600 text-sm md:text-lg lg:text-lg mt-2">
-              <strong>Compliance Review Before Go-Live:</strong> Upon completion
-              of your <strong> logo, graphic, or website project</strong>, and
-              before the project goes live,
-              <strong> Artevian will provide a compliance report.</strong> This
-              document includes all technical, branding, and legal checklist
-              items to ensure your project is optimized and ready for launch.
+              <strong className="text-primary">
+                Compliance Review Before Go-Live:
+              </strong>{" "}
+              Upon completion of your{" "}
+              <strong className="text-primary">
+                logo, graphic, or website project
+              </strong>
+              , and before the project goes live,
+              <strong className="text-primary">
+                {" "}
+                Artevian will provide a compliance report.
+              </strong>{" "}
+              This document includes all technical, branding, and legal
+              checklist items to ensure your project is optimized and ready for
+              launch.
             </li>
           </ul>
         </div>
         <div className="container mx-auto mt-8">
           <h2 className="font-bold text-xl md:text-2xl lg:text-3xl">
-            Policy Changes
+            Policy <span className="text-primary"> Changes </span>
           </h2>
           <p className="text-gray-600 text-sm md:text-lg lg:text-lg mt-4">
             We may update this Privacy Policy from time to time. Any changes
@@ -234,7 +284,7 @@ const page = () => {
         </div>
         <div className="container mx-auto mt-8">
           <h2 className="font-bold text-xl md:text-2xl lg:text-3xl">
-            Legal Disclosure
+            Legal <span className="text-primary"> Disclosure </span>
           </h2>
           <p className="text-gray-600 text-sm md:text-lg lg:text-lg mt-4">
             Comply with legal obligations Enforce our agreements Protect the
