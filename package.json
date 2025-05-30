@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "ANALYZE=true next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -28,6 +28,7 @@
     "typewriter-effect": "^2.21.0"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^14.2.5",
     "@types/node": "22.15.18",
     "@types/react": "19.1.4",
     "postcss": "^8",

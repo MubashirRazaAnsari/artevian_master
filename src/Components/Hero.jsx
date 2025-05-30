@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import hero from "@/assets/logo-hero.png";
 import Link from "next/link";
+
 const Hero = ({ hero_title, paragraph1, paragraph2, img }) => {
   return (
     <div className="w-full flex justify-center items-center lg:py-16 py-8 px-4 max-h-screen">
@@ -19,7 +20,7 @@ const Hero = ({ hero_title, paragraph1, paragraph2, img }) => {
               <p className="text-gray-500 lg:my-4 my-2">{paragraph1}</p>
             ) : (
               <p className="text-gray-500 lg:my-4 my-2">
-                At Artevian, we’re more than just a creative service—we're your
+                At Artevian, we're more than just a creative service—we're your
                 strategic design ally. Whether you're launching a new venture or
                 refining your existing brand, we bring clarity, creativity, and
                 consistency to every project.
@@ -30,11 +31,10 @@ const Hero = ({ hero_title, paragraph1, paragraph2, img }) => {
               <p className="text-gray-500">{paragraph2}</p>
             ) : (
               <p className="text-gray-500 lg:my-4 my-2">
-                {" "}
                 Our tailored solutions are crafted to align with your goals,
                 speak to your audience, and elevate your digital presence. From
                 concept to execution, Artevian ensures every visual element
-                tells your brand’s story with precision, purpose, and style.
+                tells your brand's story with precision, purpose, and style.
               </p>
             )}
             <Link href="/contact">
@@ -47,23 +47,18 @@ const Hero = ({ hero_title, paragraph1, paragraph2, img }) => {
             data-aos-delay="100"
             data-aos="fade-left"
           >
-            {img ? (
+            <div className="relative xl:w-[70%] lg:w-[90%] max-sm:w-[75%] aspect-square">
               <Image
-                src={img}
-                alt="hero"
-                width={1000}
-                height={1000}
-                className="xl:w-[70%] lg:w-[90%] max-sm:w-[75%] object-contain"
+                src={img || hero}
+                alt={`${hero_title || "Hero"} image`}
+                fill
+                className="object-contain"
+                sizes="(max-width: 768px) 75vw, (max-width: 1200px) 90vw, 70vw"
+                priority={true}
+                quality={85}
+                loading="eager"
               />
-            ) : (
-              <Image
-                src={hero}
-                alt="hero"
-                width={1000}
-                height={1000}
-                className="xl:w-[70%] lg:w-[90%] max-sm:w-[75%] object-contain"
-              />
-            )}
+            </div>
           </div>
         </div>
       </div>

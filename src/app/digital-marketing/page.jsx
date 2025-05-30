@@ -1,51 +1,102 @@
-import BusinessCounter from "@/Components/BusinessCounter";
-import Banner from "@/Components/Banner";
-import Hero from "@/Components/Hero";
-import Portfolio from "@/Components/Portfolio";
-import Pricing from "@/Components/ourPackages/Pricing";
-import Testimonials from "@/Components/Testimonials";
+"use client";
 import React from "react";
-import CollectionData from "@/Components/CollectionData.jsx";
-import chart1 from "@/assets/chart1.webp";
-import chart2 from "@/assets/chart2.webp";
-import chart3 from "@/assets/chart3.webp";
-import chart4 from "@/assets/chart4.webp";
-import Digitalpg from "@/assets/digitalpg.jpg";
+import dynamic from "next/dynamic";
+import digital from "@/assets/chart1.webp";
+import digital1 from "@/assets/chart2.webp";
+import digital2 from "@/assets/chart3.webp";
+import digital3 from "@/assets/chart6.webp";
 
-const page = () => {
+// Dynamically import components
+const BusinessCounter = dynamic(() => import("@/Components/BusinessCounter"), {
+  loading: () => (
+    <div className="h-32 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+    </div>
+  ),
+});
+
+const Banner = dynamic(() => import("@/Components/Banner"), {
+  loading: () => (
+    <div className="h-32 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+    </div>
+  ),
+});
+
+const Hero = dynamic(() => import("@/Components/Hero"), {
+  loading: () => (
+    <div className="h-32 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+    </div>
+  ),
+});
+
+const Portfolio = dynamic(() => import("@/Components/Portfolio"), {
+  loading: () => (
+    <div className="h-32 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+    </div>
+  ),
+});
+
+const Pricing = dynamic(() => import("@/Components/ourPackages/Pricing"), {
+  loading: () => (
+    <div className="h-32 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+    </div>
+  ),
+});
+
+const CollectionData = dynamic(() => import("@/Components/CollectionData"), {
+  loading: () => (
+    <div className="h-32 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+    </div>
+  ),
+});
+
+const Testimonials = dynamic(() => import("@/Components/Testimonials"), {
+  loading: () => (
+    <div className="h-32 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+    </div>
+  ),
+});
+
+const DigitalMarketing = () => {
   return (
-    <main className=" overflow-hidden">
+    <main className="overflow-hidden">
       <Banner
         page_title="Digital Marketing"
-        text_one="Unleash the power of "
-        text_two="with US"
-        text_colored="Digital Marketing "
+        text_one="Unleash the "
+        text_two="behind every brand we build"
+        text_colored="power "
       />
       <Hero
         hero_title="Digital Marketing"
         paragraph1={
-          "Grow faster with Artevian’s full-service digital marketing. From strategy to execution, we help brands succeed online through targeted ad campaigns, content creation, email marketing, SEO, and conversion optimization."
+          "Your brand is more than a logo—it's your story, your voice, your identity. At Artevian, we build brands from the ground up or give existing ones a modern refresh"
         }
         paragraph2={
-          " Every move we make is aimed at one goal—driving measurable results."
+          " From brand strategy and naming to logo design and visual systems, we ensure your brand speaks with clarity, consistency, and confidence."
         }
-        img={Digitalpg}
+        img={digital}
       />
       <BusinessCounter />
       <Portfolio
-        text_one="Choose Our Service of "
-        text_two="to get the Best results"
-        text_colored="Digital Marketing"
+        text_one="Choose The Right "
+        text_two="That Shows Your Business"
+        text_colored="Type of Branding"
         selectedPortfolio="Digital Marketing"
         portfolio_title={
-          "Drive Growth with Data-Driven Digital Marketing Strategies"
+          "Shaping Strong Brand Identities That Resonate and Last"
         }
       />
       <CollectionData
-        image_one={chart1}
-        image_two={chart2}
-        image_three={chart3}
-        image_four={chart4}
+        image_one={digital1}
+        image_two={digital2}
+        image_three={digital3}
+        image_four={digital}
       />
       <Pricing initialActiveTab="Digital Marketing" />
       <Testimonials />
@@ -53,4 +104,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default DigitalMarketing;

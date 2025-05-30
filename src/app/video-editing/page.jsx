@@ -1,13 +1,67 @@
 "use client";
-import BusinessCounter from "@/Components/BusinessCounter";
-import Pricing from "@/Components/ourPackages/Pricing";
-import Testimonials from "@/Components/Testimonials";
-import Banner from "@/Components/video/Banner";
-import Hero from "@/Components/video/Hero";
-import Portfolio from "@/Components/Portfolio";
-import CollectionDataVideo from "@/Components/CollectionDataVideo";
 import React from "react";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
+
+// Dynamically import heavy components
+const BusinessCounter = dynamic(() => import("@/Components/BusinessCounter"), {
+  loading: () => (
+    <div className="h-32 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+    </div>
+  ),
+});
+
+const Pricing = dynamic(() => import("@/Components/ourPackages/Pricing"), {
+  loading: () => (
+    <div className="h-32 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+    </div>
+  ),
+});
+
+const Testimonials = dynamic(() => import("@/Components/Testimonials"), {
+  loading: () => (
+    <div className="h-32 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+    </div>
+  ),
+});
+
+const Banner = dynamic(() => import("@/Components/video/Banner"), {
+  loading: () => (
+    <div className="h-32 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+    </div>
+  ),
+});
+
+const Hero = dynamic(() => import("@/Components/video/Hero"), {
+  loading: () => (
+    <div className="h-32 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+    </div>
+  ),
+});
+
+const Portfolio = dynamic(() => import("@/Components/Portfolio"), {
+  loading: () => (
+    <div className="h-32 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+    </div>
+  ),
+});
+
+const CollectionDataVideo = dynamic(
+  () => import("@/Components/CollectionDataVideo"),
+  {
+    loading: () => (
+      <div className="h-32 flex items-center justify-center">
+        <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+      </div>
+    ),
+  }
+);
 
 const VideoAnimation = () => {
   return (

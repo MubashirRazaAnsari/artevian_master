@@ -1,40 +1,102 @@
-import BusinessCounter from "@/Components/BusinessCounter";
-import Banner from "@/Components/Banner";
-import Hero from "@/Components/Hero";
-import Portfolio from "@/Components/Portfolio";
-import Pricing from "@/Components/ourPackages/Pricing";
-import Testimonials from "@/Components/Testimonials";
+"use client";
 import React from "react";
-import SEOpg from "@/assets/seopg.jpg";
+import dynamic from "next/dynamic";
+import seo from "@/assets/seo.png";
+import seo1 from "@/assets/seo1.png";
+import seo2 from "@/assets/seo2.png";
+import seo3 from "@/assets/seo3.png";
 
-const page = () => {
+// Dynamically import components
+const BusinessCounter = dynamic(() => import("@/Components/BusinessCounter"), {
+  loading: () => (
+    <div className="h-32 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+    </div>
+  ),
+});
+
+const Banner = dynamic(() => import("@/Components/Banner"), {
+  loading: () => (
+    <div className="h-32 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+    </div>
+  ),
+});
+
+const Hero = dynamic(() => import("@/Components/Hero"), {
+  loading: () => (
+    <div className="h-32 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+    </div>
+  ),
+});
+
+const Portfolio = dynamic(() => import("@/Components/Portfolio"), {
+  loading: () => (
+    <div className="h-32 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+    </div>
+  ),
+});
+
+const Pricing = dynamic(() => import("@/Components/ourPackages/Pricing"), {
+  loading: () => (
+    <div className="h-32 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+    </div>
+  ),
+});
+
+const CollectionData = dynamic(() => import("@/Components/CollectionData"), {
+  loading: () => (
+    <div className="h-32 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+    </div>
+  ),
+});
+
+const Testimonials = dynamic(() => import("@/Components/Testimonials"), {
+  loading: () => (
+    <div className="h-32 flex items-center justify-center">
+      <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
+    </div>
+  ),
+});
+
+const SEO = () => {
   return (
-    <main className=" overflow-hidden">
+    <main className="overflow-hidden">
       <Banner
-        page_title="SEO Services"
-        text_one="To Get the Best"
-        text_two="rates in market compitative prices"
-        text_colored="SEO"
+        page_title="SEO"
+        text_one="Unleash the "
+        text_two="behind every brand we build"
+        text_colored="power "
       />
       <Hero
         hero_title="SEO"
         paragraph1={
-          "Be found by the right people at the right time. Our SEO experts craft smart, data-driven strategies to improve your site’s visibility on Google and other search engines. "
+          "Your brand is more than a logo—it's your story, your voice, your identity. At Artevian, we build brands from the ground up or give existing ones a modern refresh"
         }
         paragraph2={
-          " From keyword research and on-page optimization to backlinks and local SEO, Artevian helps you climb the ranks—and stay there."
+          " From brand strategy and naming to logo design and visual systems, we ensure your brand speaks with clarity, consistency, and confidence."
         }
-        img={SEOpg}
+        img={seo}
       />
       <BusinessCounter />
       <Portfolio
-        text_one="Thinking about"
-        text_two=", Hire us to get you dream fulfilled"
-        text_colored="SEO"
+        text_one="Choose The Right "
+        text_two="That Shows Your Business"
+        text_colored="Type of Branding"
         selectedPortfolio="SEO"
         portfolio_title={
-          "Boost Visibility and Rankings with Strategic Search Optimization"
+          "Shaping Strong Brand Identities That Resonate and Last"
         }
+      />
+      <CollectionData
+        image_one={seo1}
+        image_two={seo2}
+        image_three={seo3}
+        image_four={seo}
       />
       <Pricing initialActiveTab="SEO" />
       <Testimonials />
@@ -42,4 +104,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default SEO;

@@ -29,32 +29,42 @@ const CollectionData = ({
         </div>
         <div className="sm:col-span-2 col-span-0"></div>
         <div className="xl:col-span-4 md:col-span-4 sm:col-span-4 col-span-12 order-1 sm:order-none">
-          <Image
-            src={image_one}
-            alt="BiteMaBiscuits"
-            className="object-contain sm:w-full w-4/5 mx-auto"
-            objectFit="contain"
-          />
+          <div className="relative aspect-square w-full">
+            <Image
+              src={image_one}
+              alt="Collection Image 1"
+              fill
+              className="object-contain sm:w-full w-4/5 mx-auto"
+              sizes="(max-width: 768px) 80vw, (max-width: 1200px) 33vw, 25vw"
+              loading="lazy"
+              quality={85}
+            />
+          </div>
         </div>
       </div>
 
       <div className="grid grid-cols-12 gap-4 lg:py-6 py-4">
-        <div className="xl:col-span-4 md:col-span-4 sm:col-span-4 col-span-12 order-1 sm:order-none">
-          <Image
-            src={image_two}
-            alt="death"
-            className="object-contain sm:w-full w-4/5 mx-auto"
-            objectFit="contain"
-          />
+        <div className="xl:col-span-4 md:col-span-4 sm:col-span-4 col-span-12">
+          <div className="relative aspect-square w-full">
+            <Image
+              src={image_two}
+              alt="Collection Image 2"
+              fill
+              className="object-contain sm:w-full w-4/5 mx-auto"
+              sizes="(max-width: 768px) 80vw, (max-width: 1200px) 33vw, 25vw"
+              loading="lazy"
+              quality={85}
+            />
+          </div>
         </div>
         <div className="sm:col-span-2 col-span-0"></div>
-        <div className="sm:col-span-6 col-span-12 text-gray-700 font-medium xl:text-2xl text-base order-2 sm:order-none max-sm:mt-4 flex justify-center items-center">
+        <div className="sm:col-span-6 col-span-12 text-gray-700 font-medium xl:text-2xl text-base flex justify-center items-center">
           {text_two || (
             <p>
-              <span className="text-primary">At Artevian</span>, we believe that
-              art has the power to transform and uplift. That's why we're
-              dedicated to creating art that inspires, motivates, and connects
-              people.
+              Our team combines technical expertise with artistic vision to
+              create illustrations that not only look stunning but also
+              effectively communicate your message. From concept sketches to
+              final artwork, we ensure every detail is perfect.
             </p>
           )}
         </div>
@@ -64,43 +74,50 @@ const CollectionData = ({
         <div className="sm:col-span-6 col-span-12 text-gray-700 font-medium xl:text-2xl text-base order-2 sm:order-none max-sm:mt-4 flex justify-center items-center">
           {text_three || (
             <p>
-              Our <span className="text-primary">creative process</span> is
-              built on a foundation of{" "}
-              <span className="text-primary">
-                collaboration, innovation, and attention
-              </span>{" "}
-              to detail.
+              Whether you need custom illustrations for your brand, editorial
+              artwork, or unique digital art, we have the skills and creativity
+              to bring your vision to life. Let's create something extraordinary
+              together.
             </p>
           )}
         </div>
         <div className="sm:col-span-2 col-span-0"></div>
         <div className="xl:col-span-4 md:col-span-4 sm:col-span-4 col-span-12 order-1 sm:order-none">
-          <Image
-            src={image_three}
-            alt="Fr0sty1"
-            className="object-contain sm:w-full w-4/5 mx-auto"
-            objectFit="contain"
-          />
+          <div className="relative aspect-square w-full">
+            <Image
+              src={image_three}
+              alt="Collection Image 3"
+              fill
+              className="object-contain sm:w-full w-4/5 mx-auto"
+              sizes="(max-width: 768px) 80vw, (max-width: 1200px) 33vw, 25vw"
+              loading="lazy"
+              quality={85}
+            />
+          </div>
         </div>
       </div>
 
       <div className="grid grid-cols-12 gap-4 lg:py-6 py-4">
-        <div className="xl:col-span-4 md:col-span-4 sm:col-span-4 col-span-12 order-1 sm:order-none">
-          <Image
-            src={image_four}
-            alt="Sattler"
-            className="object-contain sm:w-full w-4/5 mx-auto"
-            objectFit="contain"
-          />
+        <div className="xl:col-span-4 md:col-span-4 sm:col-span-4 col-span-12">
+          <div className="relative aspect-square w-full">
+            <Image
+              src={image_four}
+              alt="Collection Image 4"
+              fill
+              className="object-contain sm:w-full w-4/5 mx-auto"
+              sizes="(max-width: 768px) 80vw, (max-width: 1200px) 33vw, 25vw"
+              loading="lazy"
+              quality={85}
+            />
+          </div>
         </div>
         <div className="sm:col-span-2 col-span-0"></div>
-        <div className="sm:col-span-6 col-span-12 text-gray-700 font-medium xl:text-2xl text-base order-2 sm:order-none max-sm:mt-4 flex justify-center items-center">
+        <div className="sm:col-span-6 col-span-12 text-gray-700 font-medium xl:text-2xl text-base flex justify-center items-center">
           {text_four || (
             <p>
-              In a world where art and technology collide, we're{" "}
-              <span className="text-primary">the masters of fusion</span>. Our
-              team of visionary artists and illustrators weave together
-              traditional and digital media.
+              Our illustrations are more than just images—they're stories
+              waiting to be told. We blend creativity with strategy to create
+              artwork that resonates with your audience and elevates your brand.
             </p>
           )}
         </div>
