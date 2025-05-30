@@ -12,20 +12,55 @@ const images = [
   "/assets/bgHero2.png",
   "/assets/bgHero3.png",
 ];
+
 const HomeHeroSection = () => {
   const [showModal, setShowModal] = React.useState(false);
-
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  // Preload images
+  useEffect(() => {
+    const preloadImages = async () => {
+      const imagePromises = images.map((src) => {
+        return new Promise((resolve, reject) => {
+          const img = new Image();
+          img.src = src;
+          img.onload = resolve;
+          img.onerror = reject;
+        });
+      });
+
+      try {
+        await Promise.all(imagePromises);
+        setImagesLoaded(true);
+      } catch (error) {
+        console.error("Error preloading images:", error);
+        setImagesLoaded(true); // Continue even if some images fail to load
+      }
+    };
+
+    preloadImages();
+  }, []);
 
   // Auto slide every 5 seconds
   useEffect(() => {
+    if (!imagesLoaded) return;
+
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) =>
         prevIndex === images.length - 1 ? 0 : prevIndex + 1
       );
     }, 5000);
     return () => clearInterval(interval);
-  }, []);
+  }, [imagesLoaded]);
+
+  if (!imagesLoaded) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+      </div>
+    );
+  }
 
   return (
     <div
@@ -64,6 +99,7 @@ const HomeHeroSection = () => {
                   autoStart: true,
                   loop: true,
                   deleteSpeed: 10,
+                  delay: 50,
                 }}
               />
             </h1>
@@ -98,6 +134,7 @@ const HomeHeroSection = () => {
               height={1000}
               className="w-full h-auto max-h-[300px] sm:max-h-[400px] md:max-h-[500px] lg:max-h-[600px] xl:max-h-[700px] object-contain roboUpAndDown"
               priority
+              loading="eager"
             />
           </div>
         </div>

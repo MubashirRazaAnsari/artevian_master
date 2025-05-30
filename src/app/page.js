@@ -1,17 +1,26 @@
 "use client";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense, lazy } from "react";
 import BusinessCounter from "@/Components/BusinessCounter";
 import BusinessRock from "@/Components/BusinessRock";
 // import Collection from "@/Components/Collection";
-import Gallery from "@/Components/portfolio/Gallery";
-import DesignQuality from "@/Components/DesignQuality";
 import HomeHeroSection from "@/Components/HomeHeroSection";
 import HomeServiceSlider from "@/Components/HomeServiceSlider";
-import MagicHappens from "@/Components/MagicHappens";
-import Pricing from "@/Components/ourPackages/Pricing";
-import TechSlider from "@/Components/TechSlider";
-import Testimonials from "@/Components/Testimonials";
 import ContactPopUp from "@/Components/ContactPopUp";
+
+// Lazy load heavy components
+const MagicHappens = lazy(() => import("@/Components/MagicHappens"));
+const TechSlider = lazy(() => import("@/Components/TechSlider"));
+const Gallery = lazy(() => import("@/Components/portfolio/Gallery"));
+const Pricing = lazy(() => import("@/Components/ourPackages/Pricing"));
+const DesignQuality = lazy(() => import("@/Components/DesignQuality"));
+const Testimonials = lazy(() => import("@/Components/Testimonials"));
+
+// Loading component
+const LoadingSpinner = () => (
+  <div className="min-h-[50vh] flex items-center justify-center">
+    <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary"></div>
+  </div>
+);
 
 export default function Home() {
   const [showPopup, setShowPopup] = useState(false);
@@ -91,14 +100,34 @@ export default function Home() {
 
       <HomeHeroSection />
       <HomeServiceSlider />
-      <MagicHappens />
-      <TechSlider />
-      <Gallery />
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <MagicHappens />
+      </Suspense>
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <TechSlider />
+      </Suspense>
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <Gallery />
+      </Suspense>
+
       <BusinessRock />
-      <Pricing />
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <Pricing />
+      </Suspense>
+
       <BusinessCounter />
-      <DesignQuality />
-      <Testimonials />
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <DesignQuality />
+      </Suspense>
+
+      <Suspense fallback={<LoadingSpinner />}>
+        <Testimonials />
+      </Suspense>
 
       {showPopup && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
