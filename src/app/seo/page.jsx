@@ -1,10 +1,10 @@
 "use client";
 import React from "react";
 import dynamic from "next/dynamic";
-import seo from "@/assets/seo.png";
-import seo1 from "@/assets/seo1.png";
-import seo2 from "@/assets/seo2.png";
-import seo3 from "@/assets/seo3.png";
+import seo from "@/assets/SEO/seo1.png";
+import seo1 from "@/assets/SEO/seo2.png";
+import seo2 from "@/assets/SEO/seo3.webp";
+import seo3 from "@/assets/SEO/seo4.webp";
 
 // Dynamically import components
 const BusinessCounter = dynamic(() => import("@/Components/BusinessCounter"), {
