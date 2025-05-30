@@ -190,7 +190,7 @@ const Navbar = () => {
   };
 
   const isDarkLogo =
-    isScrolled || ["/", "/2d-3d", "/video-editing"].includes(endpoint);
+    isScrolled || !["/", "/2d-3d", "/video-editing"].includes(endpoint);
   const logoSrc = isDarkLogo ? logo : logo2;
 
   const { handleEnter, handleLeave, handleSubEnter, handleSubLeave } =
@@ -236,7 +236,7 @@ const Navbar = () => {
           />
           <ul
             className={`hidden lg:flex gap-8 font-medium items-center xl:text-xl text-lg ${
-              isDarkLogo ? "text-white/80" : "text-gray-800"
+              isDarkLogo ? "text-gray-800" : "text-white/80"
             }`}
           >
             {["/", "/about", "/portfolio", "/contact"].map((path) => (

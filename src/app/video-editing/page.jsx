@@ -25,6 +25,7 @@ const VideoAnimation = () => {
             muted
             playsInline
             className="w-full h-full object-cover"
+            poster="/assets/bgHero1.png"
           >
             <source
               src="/assets/videos/video-editing-bg.mp4"

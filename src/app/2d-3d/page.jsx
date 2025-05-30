@@ -25,6 +25,7 @@ const AnimationPage = () => {
             muted
             playsInline
             className="w-full h-full object-cover"
+            poster="/assets/bgHero2.png"
           >
             <source src="/assets/videos/2d-3d-bg.mp4" type="video/mp4" />
           </video>

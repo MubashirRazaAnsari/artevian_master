@@ -78,7 +78,7 @@ const ContactPopUp = ({ onClose }) => {
         className="absolute inset-0 bg-black bg-opacity-50"
         onClick={onClose}
       ></div>
-      <div className="relative h-auto max-h-[85vh] bg-my-gradient px-4 lg:py-8 py-4 rounded-2xl w-[95%] sm:w-[90%] md:w-[85%] lg:w-[65%] xl:w-[55%] max-w-3xl mx-auto ">
+      <div className="relative h-auto md:max-h-[85vh] bg-my-gradient px-4 lg:py-8 py-4 rounded-2xl w-[95%] sm:w-[90%] md:w-[85%] lg:w-[65%] xl:w-[55%] max-w-3xl mx-auto ">
         <button onClick={onClose} className="font-bold ml-1">
           <IoClose size={24} />
         </button>
