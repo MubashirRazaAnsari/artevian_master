@@ -5,7 +5,7 @@ import mediaTune from "@/assets/media-tune.png";
 import kaantech from "@/assets/Charli.png";
 import nick_122 from "@/assets/Torado.png";
 import papajohns from "@/assets/Fr0sty1.jpg";
-import Brandingpg from "@/assets/mouse2.jpg";
+import Brandingpg from "@/assets/Brandingpg.jpg";
 
 // Dynamically import components
 const BusinessCounter = dynamic(() => import("@/Components/BusinessCounter"), {
@@ -26,7 +26,7 @@ const Banner = dynamic(() => import("@/Components/Banner"), {
 
 const Hero = dynamic(() => import("@/Components/Hero"), {
   loading: () => (
-    <div className="h-32 flex items-center justify-center">
+    <div className="h-25 flex items-center justify-center">
       <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary"></div>
     </div>
   ),
@@ -93,12 +93,12 @@ const Branding = () => {
           "Shaping Strong Brand Identities That Resonate and Last"
         }
       />
-      <CollectionData
+      {/* <CollectionData
         image_one={mediaTune}
         image_two={nick_122}
         image_three={kaantech}
         image_four={papajohns}
-      />
+      /> */}
       <Pricing initialActiveTab="Branding" />
       <Testimonials />
     </main>

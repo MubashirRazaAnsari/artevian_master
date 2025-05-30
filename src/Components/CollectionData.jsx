@@ -29,12 +29,12 @@ const CollectionData = ({
         </div>
         <div className="sm:col-span-2 col-span-0"></div>
         <div className="xl:col-span-4 md:col-span-4 sm:col-span-4 col-span-12 order-1 sm:order-none">
-          <div className="relative aspect-square w-full">
+          <div className="relative aspect-square w-full rounded-lg overflow-hidden border-2 border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <Image
               src={image_one}
               alt="Collection Image 1"
               fill
-              className="object-contain sm:w-full w-4/5 mx-auto"
+              className="object-contain sm:w-full w-4/5 mx-auto p-2"
               sizes="(max-width: 768px) 80vw, (max-width: 1200px) 33vw, 25vw"
               loading="lazy"
               quality={85}
@@ -45,12 +45,12 @@ const CollectionData = ({
 
       <div className="grid grid-cols-12 gap-4 lg:py-6 py-4">
         <div className="xl:col-span-4 md:col-span-4 sm:col-span-4 col-span-12">
-          <div className="relative aspect-square w-full">
+          <div className="relative aspect-square w-full rounded-lg overflow-hidden border-2 border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <Image
               src={image_two}
               alt="Collection Image 2"
               fill
-              className="object-contain sm:w-full w-4/5 mx-auto"
+              className="object-contain sm:w-full w-4/5 mx-auto p-2"
               sizes="(max-width: 768px) 80vw, (max-width: 1200px) 33vw, 25vw"
               loading="lazy"
               quality={85}
@@ -83,12 +83,12 @@ const CollectionData = ({
         </div>
         <div className="sm:col-span-2 col-span-0"></div>
         <div className="xl:col-span-4 md:col-span-4 sm:col-span-4 col-span-12 order-1 sm:order-none">
-          <div className="relative aspect-square w-full">
+          <div className="relative aspect-square w-full rounded-lg overflow-hidden border-2 border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <Image
               src={image_three}
               alt="Collection Image 3"
               fill
-              className="object-contain sm:w-full w-4/5 mx-auto"
+              className="object-contain sm:w-full w-4/5 mx-auto p-2"
               sizes="(max-width: 768px) 80vw, (max-width: 1200px) 33vw, 25vw"
               loading="lazy"
               quality={85}
@@ -99,12 +99,12 @@ const CollectionData = ({
 
       <div className="grid grid-cols-12 gap-4 lg:py-6 py-4">
         <div className="xl:col-span-4 md:col-span-4 sm:col-span-4 col-span-12">
-          <div className="relative aspect-square w-full">
+          <div className="relative aspect-square w-full rounded-lg overflow-hidden border-2 border-gray-100 shadow-lg hover:shadow-xl transition-shadow duration-300">
             <Image
               src={image_four}
               alt="Collection Image 4"
               fill
-              className="object-contain sm:w-full w-4/5 mx-auto"
+              className="object-contain sm:w-full w-4/5 mx-auto p-2"
               sizes="(max-width: 768px) 80vw, (max-width: 1200px) 33vw, 25vw"
               loading="lazy"
               quality={85}

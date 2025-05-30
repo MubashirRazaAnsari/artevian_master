@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import dynamic from "next/dynamic";
+
+import digitalpg from "@/assets/digitalpg.jpg";
 import digital from "@/assets/chart1.webp";
 import digital1 from "@/assets/chart2.webp";
 import digital2 from "@/assets/chart3.webp";
@@ -80,7 +82,7 @@ const DigitalMarketing = () => {
         paragraph2={
           " From brand strategy and naming to logo design and visual systems, we ensure your brand speaks with clarity, consistency, and confidence."
         }
-        img={digital}
+        img={digitalpg}
       />
       <BusinessCounter />
       <Portfolio

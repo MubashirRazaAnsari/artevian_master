@@ -191,7 +191,7 @@ const Navbar = () => {
 
   const isDarkLogo =
     isScrolled || !["/", "/2d-3d", "/video-editing"].includes(endpoint);
-  const logoSrc = isDarkLogo ? logo : logo2;
+  const logoSrc = isDarkLogo ? logo2 : logo;
 
   const { handleEnter, handleLeave, handleSubEnter, handleSubLeave } =
     useMenuHoverHandlers({

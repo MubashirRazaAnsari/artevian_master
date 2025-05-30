@@ -163,7 +163,7 @@ const CollectionDataWebsite = () => {
 
       <div className="grid grid-cols-12 sm:gap-0 gap-0 lg:py-6 py-4">
         <p className="sm:col-span-6 col-span-12 text-gray-700 font-medium xl:text-2xl text-base order-2 sm:order-none max-sm:mt-4 flex justify-center items-center">
-          In the world of Artevian websites are not just static pages – they're
+          In t he world of Artevian websites are not just static pages – they're
           dynamic experiences that pulse with life, energy, and emotion. Our
           team of expert designers and developers create bespoke websites that
           respond, adapt, and evolve, providing a seamless and unforgettable

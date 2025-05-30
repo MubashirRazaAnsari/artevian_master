@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import dynamic from "next/dynamic";
+import seopg from "@/assets/seopg.jpg";
+
 import seo from "@/assets/SEO/seo1.png";
 import seo1 from "@/assets/SEO/seo2.png";
 import seo2 from "@/assets/SEO/seo3.webp";
@@ -80,7 +82,7 @@ const SEO = () => {
         paragraph2={
           " From brand strategy and naming to logo design and visual systems, we ensure your brand speaks with clarity, consistency, and confidence."
         }
-        img={seo}
+        img={seopg}
       />
       <BusinessCounter />
       <Portfolio

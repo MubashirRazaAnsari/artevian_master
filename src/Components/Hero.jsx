@@ -5,21 +5,21 @@ import Link from "next/link";
 
 const Hero = ({ hero_title, paragraph1, paragraph2, img }) => {
   return (
-    <div className="w-full flex justify-center items-center lg:py-16 py-8 px-4 max-h-screen">
+    <div className="w-full flex justify-center items-center lg:pt-4 lg:pb-12 py-4 px-4 max-h-screen">
       <div className="container lg:w-[90%]">
-        <div className="grid grid-cols-12 lg:gap-4 gap-3">
+        <div className="grid grid-cols-12 lg:gap-8 gap-4 items-center">
           <div
-            className="md:col-span-6 col-span-12"
+            className="md:col-span-6 col-span-12 flex flex-col justify-center"
             data-aos-delay="100"
             data-aos="fade-right"
           >
-            <h4 className="lg:text-6xl sm:text-4xl text-3xl font-bold text-gray-800 lg:mb-8 mb-3">
+            <h4 className="lg:text-6xl sm:text-4xl text-3xl font-bold text-gray-800 lg:mb-6 mb-3">
               {hero_title} <span className="text-primary">Services</span>
             </h4>
             {paragraph1 ? (
-              <p className="text-gray-500 lg:my-4 my-2">{paragraph1}</p>
+              <p className="text-gray-500 lg:my-3 my-2">{paragraph1}</p>
             ) : (
-              <p className="text-gray-500 lg:my-4 my-2">
+              <p className="text-gray-500 lg:my-3 my-2">
                 At Artevian, we're more than just a creative service—we're your
                 strategic design ally. Whether you're launching a new venture or
                 refining your existing brand, we bring clarity, creativity, and
@@ -30,7 +30,7 @@ const Hero = ({ hero_title, paragraph1, paragraph2, img }) => {
             {paragraph2 ? (
               <p className="text-gray-500">{paragraph2}</p>
             ) : (
-              <p className="text-gray-500 lg:my-4 my-2">
+              <p className="text-gray-500 lg:my-3 my-2">
                 Our tailored solutions are crafted to align with your goals,
                 speak to your audience, and elevate your digital presence. From
                 concept to execution, Artevian ensures every visual element
@@ -38,16 +38,16 @@ const Hero = ({ hero_title, paragraph1, paragraph2, img }) => {
               </p>
             )}
             <Link href="/contact">
-              <button className="btn lg:mt-8 mt-4">Contact Us</button>
+              <button className="btn lg:mt-6 mt-3">Contact Us</button>
             </Link>
           </div>
 
           <div
-            className="md:col-span-6 col-span-12 flex justify-end max-sm:justify-center"
+            className="md:col-span-6 col-span-12 flex items-center justify-center"
             data-aos-delay="100"
             data-aos="fade-left"
           >
-            <div className="relative xl:w-[70%] lg:w-[90%] max-sm:w-[75%] aspect-square">
+            <div className="relative w-full aspect-square max-w-[500px]">
               <Image
                 src={img || hero}
                 alt={`${hero_title || "Hero"} image`}
