@@ -43,22 +43,22 @@ import Branding5 from "@/assets/Branding/Branding5.jpg";
 import Branding6 from "@/assets/Branding/Branding6.jpg";
 
 // Art & Illustration Images
-import art1 from "@/assets/2D-Static/art1.jpg";
-import art2 from "@/assets/2D-Static/art2.jpg";
-import art3 from "@/assets/2D-Static/art3.jpg";
-import art4 from "@/assets/2D-Static/art4.png";
-import art5 from "@/assets/2D-Static/art5.jpg";
-import art6 from "@/assets/2D-Static/art6.jpg";
-import art7 from "@/assets/2D-Static/art7.jpg";
-import art8 from "@/assets/2D-Static/art8.jpg";
-import art9 from "@/assets/2D-Static/art9.jpg";
-import art10 from "@/assets/2D-Static/art10.jpg";
-import art11 from "@/assets/2D-Static/art11.jpg";
-import art12 from "@/assets/2D-Static/art12.jpg";
-import art13 from "@/assets/2D-Static/art13.jpg";
-import art14 from "@/assets/2D-Static/art14.jpg";
-import art15 from "@/assets/2D-Static/art15.jpg";
-import art16 from "@/assets/2D-Static/art16.jpg";
+import art1 from "@/assets/2D-Static/art1.webp";
+import art2 from "@/assets/2D-Static/art2.webp";
+import art3 from "@/assets/2D-Static/art3.webp";
+import art4 from "@/assets/2D-Static/art4.webp";
+import art5 from "@/assets/2D-Static/art5.webp";
+import art6 from "@/assets/2D-Static/art6.webp";
+import art7 from "@/assets/2D-Static/art7.webp";
+import art8 from "@/assets/2D-Static/art8.webp";
+import art9 from "@/assets/2D-Static/art9.webp";
+import art10 from "@/assets/2D-Static/art10.webp";
+import art11 from "@/assets/2D-Static/art11.webp";
+import art12 from "@/assets/2D-Static/art12.webp";
+import art13 from "@/assets/2D-Static/art13.webp";
+import art14 from "@/assets/2D-Static/art14.webp";
+import art15 from "@/assets/2D-Static/art15.webp";
+import art16 from "@/assets/2D-Static/art16.webp";
 import art17 from "@/assets/2D-Static/art17.jpg";
 import art18 from "@/assets/2D-Static/art18.jpg";
 

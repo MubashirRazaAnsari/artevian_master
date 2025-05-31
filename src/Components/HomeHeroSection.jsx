@@ -8,9 +8,9 @@ import Link from "next/link";
 import Typewriter from "typewriter-effect";
 
 const images = [
-  "/assets/bgHero1.png",
-  "/assets/bgHero2.png",
-  "/assets/bgHero3.png",
+  "/assets/bgHero1.webp",
+  "/assets/bgHero2.webp",
+  "/assets/bgHero3.webp",
 ];
 
 const HomeHeroSection = () => {
