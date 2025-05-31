@@ -5,10 +5,10 @@ import Banner from "@/Components/Banner";
 import Hero from "@/Components/Hero";
 import Portfolio from "@/Components/Portfolio";
 import React from "react";
-import art8 from "@/assets/2D-Static/art8.jpg";
-import art2 from "@/assets/2D-Static/art2.jpg";
-import art11 from "@/assets/2D-Static/art11.jpg";
-import art15 from "@/assets/2D-Static/art15.jpg";
+import art8 from "@/assets/2D-Static/art8.webp";
+import art2 from "@/assets/2D-Static/art2.webp";
+import art11 from "@/assets/2D-Static/art11.webp";
+import art15 from "@/assets/2D-Static/art15.webp";
 import CollectionData from "@/Components/CollectionData.jsx";
 import Artpg from "@/assets/Artpg.jpg";
 
