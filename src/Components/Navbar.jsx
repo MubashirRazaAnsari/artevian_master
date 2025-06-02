@@ -111,17 +111,18 @@ const ServiceSubMenu = ({
     {activeCategory === title && (
       <div className="absolute left-full top-0 w-48 bg-white rounded-lg shadow-lg py-2 z-50 ml-2">
         {links.map((link) => (
-          <Link
-            key={link.href}
-            href={link.href}
-            className={`block py-2 px-4 hover:bg-gray-50 transition-all text-base ${
-              isActiveLink(link.href)
-                ? "text-primary bg-gray-50"
-                : "text-gray-700"
-            }`}
-          >
-            {link.label}
-          </Link>
+          <div key={link.href} className="block">
+            <Link
+              href={link.href}
+              className={`block py-2 px-4 hover:bg-gray-50 transition-all text-base ${
+                isActiveLink(link.href)
+                  ? "text-primary bg-gray-50"
+                  : "text-gray-700"
+              }`}
+            >
+              {link.label}
+            </Link>
+          </div>
         ))}
       </div>
     )}
@@ -241,19 +242,22 @@ const Navbar = () => {
           >
             {["/", "/about", "/portfolio", "/contact"].map((path) => (
               <li key={path}>
-                <Link
-                  href={path}
-                  className={`hover:text-primary transition-all duration-150 ${
-                    isActiveLink(path) ? "text-primary" : ""
-                  }`}
-                >
-                  <span className="block">
-                    {path === "/"
-                      ? "Home"
-                      : path.replace("/", "").charAt(0).toUpperCase() +
-                        path.slice(2)}
-                  </span>
-                </Link>
+                <div className="block">
+                  <Link
+                    href={path}
+                    className={`hover:text-primary transition-all duration-150 ${
+                      isActiveLink(path) ? "text-primary" : ""
+                    }`}
+                    passHref
+                  >
+                    <span className="block">
+                      {path === "/"
+                        ? "Home"
+                        : path.replace("/", "").charAt(0).toUpperCase() +
+                          path.slice(2)}
+                    </span>
+                  </Link>
+                </div>
               </li>
             ))}
             <li
@@ -320,16 +324,17 @@ const Navbar = () => {
                 {["", "about", "portfolio", "contact"].map((page) => (
                   <li
                     key={page}
-                    onClick={() => handleClose(page)}
                     className={`hover:text-primary cursor-pointer ${
                       isActiveLink(`/${page}`)
                         ? "text-primary"
                         : "text-gray-200"
                     }`}
                   >
-                    {page === ""
-                      ? "Home"
-                      : page.charAt(0).toUpperCase() + page.slice(1)}
+                    <div className="block" onClick={() => handleClose(page)}>
+                      {page === ""
+                        ? "Home"
+                        : page.charAt(0).toUpperCase() + page.slice(1)}
+                    </div>
                   </li>
                 ))}
                 <MobileMenu

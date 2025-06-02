@@ -82,19 +82,10 @@ export default function RootLayout({ children }) {
         />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
-        {/* Preload critical assets */}
-        <link
-          rel="preload"
-          href="/src/assets/homeHero.png"
-          as="image"
-          type="image/png"
-        />
-        <link
-          rel="preload"
-          href="/src/assets/logo.webp"
-          as="image"
-          type="image/webp"
-        />
+        <script
+          src="https://website-widgets.pages.dev/dist/sienna.min.js"
+          defer
+        ></script>
       </head>
       <body className={inter.className}>
         <ErrorBoundary>
@@ -119,12 +110,6 @@ s1.setAttribute('crossorigin','*');
 s0.parentNode.insertBefore(s1,s0);
 })();`,
           }}
-        />
-
-        {/* ADA Compliance Widget */}
-        <Script
-          src="https://website-widgets.pages.dev/dist/sienna.min.js"
-          strategy="lazyOnload"
         />
       </body>
     </html>

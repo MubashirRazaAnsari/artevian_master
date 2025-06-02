@@ -21,17 +21,17 @@ const HomeHeroSection = () => {
   // Preload images
   useEffect(() => {
     const preloadImages = async () => {
-      const imagePromises = images.map((src) => {
-        return new Promise((resolve, reject) => {
-          const img = new Image();
-          img.src = src;
-          img.onload = resolve;
-          img.onerror = reject;
-        });
-      });
-
       try {
-        await Promise.all(imagePromises);
+        await Promise.all(
+          images.map((src) => {
+            return new Promise((resolve, reject) => {
+              const img = new window.Image();
+              img.src = src;
+              img.onload = resolve;
+              img.onerror = reject;
+            });
+          })
+        );
         setImagesLoaded(true);
       } catch (error) {
         console.error("Error preloading images:", error);

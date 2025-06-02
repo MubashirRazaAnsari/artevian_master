@@ -21,13 +21,13 @@ const MagicHappens = () => {
           that focus on generating a high return on investment with our smart
           web design services. Our web design pricing and combo packages are
           affordable and customized to match your business goals with a unique
-          approach that maximizes your brand’s revenue.
+          approach that maximizes your brand's revenue.
         </p>
         <div className="grid grid-cols-12 gap-3 mt-16">
           <div
             data-aos="fade-up"
             data-aos-delay="50"
-            className="lg:col-span-4 md:col-span-6 col-span-12 rounded-md  shadow-md border-[1px] border-gray-300 p-4"
+            className="lg:col-span-4 md:col-span-6 col-span-12 rounded-md shadow-md border-[1px] border-gray-300 p-4"
           >
             <div className="w-fit p-2 rounded-lg mx-auto bg-my-gradient">
               <Image
@@ -52,7 +52,7 @@ const MagicHappens = () => {
           <div
             data-aos="fade-up"
             data-aos-delay="150"
-            className="lg:col-span-4 md:col-span-6 col-span-12 rounded-md  shadow-md border-[1px] border-gray-300 p-4"
+            className="lg:col-span-4 md:col-span-6 col-span-12 rounded-md shadow-md border-[1px] border-gray-300 p-4"
           >
             <div className="w-fit p-2 rounded-lg mx-auto bg-my-gradient">
               <Image
