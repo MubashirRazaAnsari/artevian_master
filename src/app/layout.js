@@ -85,13 +85,13 @@ export default function RootLayout({ children }) {
         {/* Preload critical assets */}
         <link
           rel="preload"
-          href="/assets/bgHero1.png"
+          href="/src/assets/homeHero.png"
           as="image"
           type="image/png"
         />
         <link
           rel="preload"
-          href="/assets/logo.webp"
+          href="/src/assets/logo.webp"
           as="image"
           type="image/webp"
         />
