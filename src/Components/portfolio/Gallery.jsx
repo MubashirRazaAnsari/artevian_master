@@ -7,7 +7,7 @@ import { galleryData } from "../../../data/gallery";
 import { categories } from "../../../data/pricing";
 import { usePathname, useRouter } from "next/navigation";
 import { IoClose } from "react-icons/io5";
-
+import LazyYoutubeEmbed from "../video/LazyYoutubeEmbed";
 const Gallery = ({ selectedPortfolio, portfolio_title }) => {
   const [selectedCategory, setSelectedCategory] = useState(
     selectedPortfolio || "Website Design"
@@ -351,12 +351,16 @@ const Gallery = ({ selectedPortfolio, portfolio_title }) => {
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           className="w-full h-full rounded-lg"
                           allowFullScreen
-                        /> */}
+                        /> 
                         <iframe
                           src={getYouTubeEmbedUrl(item.videoUrl)} // Use your utility
                           className="w-full h-full"
                           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                           allowFullScreen
+                          title={item.title}
+                        /> */}
+                        <LazyYoutubeEmbed
+                          videoId={item.videoUrl}
                           title={item.title}
                         />
                       </motion.div>
@@ -412,64 +416,65 @@ const Gallery = ({ selectedPortfolio, portfolio_title }) => {
       </div>
 
       {/* Portfolio Modal - Only show on service and portfolio pages */}
-      {pathname !== "/" && (
-        <AnimatePresence>
-          {selectedItem && (
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
-              onClick={closeModal}
-            >
+      {pathname !== "/" ||
+        ((pathname !== "/video-editing" || pathname !== "/2d-3d") && (
+          <AnimatePresence>
+            {selectedItem && (
               <motion.div
-                initial={{ scale: 0.9, opacity: 0 }}
-                animate={{ scale: 1, opacity: 1 }}
-                exit={{ scale: 0.9, opacity: 0 }}
-                className="relative max-w-6xl w-full bg-white rounded-xl overflow-hidden"
-                onClick={(e) => e.stopPropagation()}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+                onClick={closeModal}
               >
-                <button
-                  onClick={closeModal}
-                  className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/70 transition-colors z-10"
+                <motion.div
+                  initial={{ scale: 0.9, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  exit={{ scale: 0.9, opacity: 0 }}
+                  className="relative max-w-6xl w-full bg-white rounded-xl overflow-hidden"
+                  onClick={(e) => e.stopPropagation()}
                 >
-                  <IoClose size={24} />
-                </button>
+                  <button
+                    onClick={closeModal}
+                    className="absolute top-4 right-4 text-white bg-black/50 rounded-full p-2 hover:bg-black/70 transition-colors z-10"
+                  >
+                    <IoClose size={24} />
+                  </button>
 
-                <div className="relative w-full aspect-video">
-                  {selectedItem.category === "Video Editing" ||
-                  selectedItem.category === "2D/3D Animation" ? (
-                    <iframe
-                      src={selectedItem.videoUrl}
-                      className="w-full h-full"
-                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                      allowFullScreen
-                      title={selectedItem.title}
-                    />
-                  ) : (
-                    <Image
-                      src={selectedItem.imageUrl}
-                      alt={selectedItem.title}
-                      fill
-                      className="object-contain"
-                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
-                      loading="lazy"
-                      quality={75}
-                    />
-                  )}
-                </div>
+                  <div className="relative w-full aspect-video">
+                    {selectedItem.category === "Video Editing" ||
+                    selectedItem.category === "2D/3D Animation" ? (
+                      <iframe
+                        src={selectedItem.videoUrl}
+                        className="w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        title={selectedItem.title}
+                      />
+                    ) : (
+                      <Image
+                        src={selectedItem.imageUrl}
+                        alt={selectedItem.title}
+                        fill
+                        className="object-contain"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
+                        loading="lazy"
+                        quality={75}
+                      />
+                    )}
+                  </div>
 
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-2">
-                    {selectedItem.title}
-                  </h3>
-                  <p className="text-gray-600">{selectedItem.description}</p>
-                </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold mb-2">
+                      {selectedItem.title}
+                    </h3>
+                    <p className="text-gray-600">{selectedItem.description}</p>
+                  </div>
+                </motion.div>
               </motion.div>
-            </motion.div>
-          )}
-        </AnimatePresence>
-      )}
+            )}
+          </AnimatePresence>
+        ))}
     </div>
   );
 };

@@ -9,7 +9,7 @@ export default function LazyYoutubeEmbed({ videoId, title }) {
     <div className="aspect-video w-full relative rounded-xl overflow-hidden bg-black">
       {isIframeLoaded ? (
         <iframe
-          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=1&modestbranding=1&rel=0`}
+          src={`https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&modestbranding=1&rel=0`}
           title={title}
           className="w-full h-full"
           frameBorder="0"
